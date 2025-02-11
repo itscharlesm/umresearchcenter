@@ -1,0 +1,53 @@
+.accordion .card {
+    border: none;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.accordion .card-header {
+    background: #1a1a37 !important;
+    color: #ffbc3b !important;
+    padding: 10px;
+}
+
+.accordion .card-header button {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffbc3b;
+    width: 100%;
+    text-align: left;
+}
+
+.accordion .card-body {
+    background: #f8f9fa;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.accordion .card-header button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.accordion .card-header button:hover {
+    color: #ffaa00;
+}
+
+.content-sidebar {
+    padding: 20px;
+}
+
+.content-sidebar a {
+    background: #f8f9fa;
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.content-sidebar a.active {
+    background: #ffc107;
+    font-weight: bold;
+}
