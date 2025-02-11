@@ -51,7 +51,7 @@
                         </li>
                         {{-- Academics --}}
                         <li class="nav-item dropdown view  {{ request()->is('academic/*') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('academic.academic-departments') }}">Academics</a>
+                            <a class="nav-link" href="">Academics</a>
 
                         </li>
                         <li class="nav-item dropdown view  {{ request()->is('academic/*') ? 'active' : '' }}">

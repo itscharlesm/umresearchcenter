@@ -8,7 +8,7 @@
                         data-aos-once="false">Academic Programs</h2>
                     <div class="border-top w-100 border-primary d-none d-sm-block"></div>
                     <div data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="100" data-aos-once="false">
-                        <a href="{{ route('academic.academic-departments') }}"
+                        <a href=""
                             class="btn btn-sm btn-outline-primary ml-sm-3 d-none d-sm-block">see
                             all</a>
                     </div>
