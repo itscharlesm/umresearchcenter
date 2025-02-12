@@ -7,7 +7,7 @@
                 <div class="col-lg-3 col-sm-8 col-md-3 mb-lg-0">
                     <a class="logo-footer" href="index.html">
                         <img class="mb-4" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false" src="{{ asset('images/cmc-logo.webp') }}" alt="logo"
+                            data-aos-once="false" src="{{ asset('images/logo/header_logo.png') }}" alt="logo"
                             style="width: 197px; height: auto;">
                     </a>
                     <ul class="list-unstyled">

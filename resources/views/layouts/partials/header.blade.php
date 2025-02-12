@@ -1,6 +1,6 @@
 <header class="fixed-top header">
     <!-- top header -->
-    <div class="top-header py-2 bg-white">
+    <div class="top-header py-2" style="background: #EBEBEB;">
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-lg-4 text-center text-lg-left">
@@ -16,9 +16,6 @@
                         <li class="list-inline-item"><a
                                 class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#loginModal"
                                 data-toggle="modal" data-target="#loginModal">login</a></li>
-                        <li class="list-inline-item"><a
-                                class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#signupModal"
-                                data-toggle="modal" data-target="#signupModal">register</a></li>
                     </ul>
                 </div>
             </div>
@@ -30,7 +27,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark p-0 align-items-baseline">
                 <div class="d-flex m-auto align-items-center">
                     <a class="navbar-brand" href="{{ route('home') }}">
-                        <img src="{{ asset('images/logo/header_logo.jpg') }}" alt="logo"
+                        <img src="{{ asset('images/logo/header_logo.png') }}" alt="logo"
                             style="height: auto; width: 150px;">
                     </a>
                 </div>
@@ -38,7 +35,6 @@
                     aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="navbar-nav ml-auto text-center">
                         <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
@@ -104,11 +100,9 @@
                                 Careers
                             </a>
                         </li>
-
                     </ul>
                 </div>
             </nav>
         </div>
-
     </div>
 </header>
