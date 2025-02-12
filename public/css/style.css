@@ -375,7 +375,7 @@ a h4:hover {
 }
 
 .bg-secondary {
-  background: #1a1a37 !important;
+  background: #BE0002 !important;
 }
 
 .bg-gray {
@@ -552,7 +552,7 @@ textarea.form-control {
 
 @media (max-width: 991px) {
   .navbar-collapse {
-    background: #1a1a37;
+    background: #BE0002;
     max-height: calc(100vh - 80px);
   }
 

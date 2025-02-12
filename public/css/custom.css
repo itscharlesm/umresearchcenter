@@ -5,7 +5,7 @@
 }
 
 .accordion .card-header {
-    background: #1a1a37 !important;
+    background: #BE0002 !important;
     color: #ffbc3b !important;
     padding: 10px;
 }
@@ -14,7 +14,7 @@
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
-    color: #ffbc3b;
+    color: #FFFFFF;
     width: 100%;
     text-align: left;
 }

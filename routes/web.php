@@ -33,7 +33,31 @@ Route::post('/login', [AdminController::class, 'validateUser']);
 Route::get('/logout', [AdminController::class, 'logout']);
 
 // About
+Route::get('/about/center/vmc', [AboutController::class, 'about']);
 
+// Special Laravel Commands
+Route::group(['prefix' => 'laravel'], function () {
+    Route::get('/cache:clear', function () {
+        Artisan::call('cache:clear');
+        return "Cache is cleared";
+    });
+    Route::get('/view:clear', function () {
+        Artisan::call('view:clear');
+        return "View is cleared";
+    });
+    Route::get('/route:clear', function () {
+        Artisan::call('route:clear');
+        return "Route is cleared";
+    });
+    Route::get('/config:clear', function () {
+        Artisan::call('config:clear');
+        return "Config is cleared";
+    });
+    Route::get('/config:cache', function () {
+        Artisan::call('config:cache');
+        return "Config is cached";
+    });
+});
 
 // //about
 // Route::get('/about/school/vmc', [AboutController::class, 'vmc'])->name('about.cmc');
@@ -151,33 +175,3 @@ Route::get('/logout', [AdminController::class, 'logout']);
 // Route::get('/services/cmc-cial', [ServicesController::class, 'cmc_cial'])->name('services.cmc-cial');
 
 // Route::get('/campus-tour', [ServicesController::class, 'campus_tour'])->name('services.campus-tour');
-
-
-// Special Laravel Commands
-Route::group(['prefix' => 'laravel'], function () {
-    Route::get('/cache:clear', function () {
-        Artisan::call('cache:clear');
-        return "Cache is cleared";
-    });
-
-    Route::get('/view:clear', function () {
-        Artisan::call('view:clear');
-        return "View is cleared";
-    });
-
-    Route::get('/route:clear', function () {
-        Artisan::call('route:clear');
-        return "Route is cleared";
-    });
-
-    Route::get('/config:clear', function () {
-        Artisan::call('config:clear');
-        return "Config is cleared";
-    });
-
-    Route::get('/config:cache', function () {
-        Artisan::call('config:cache');
-        return "Config is cached";
-    });
-
-});

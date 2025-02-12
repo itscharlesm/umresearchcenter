@@ -25,11 +25,11 @@
     <div class="navigation w-100">
         <div class="container ">
             <nav class="navbar navbar-expand-lg navbar-dark p-0 align-items-baseline">
-                <div class="d-flex m-auto align-items-center">
+                <div class="d-flex m-auto align-items-center flex-column">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="{{ asset('images/logo/header_logo.png') }}" alt="logo"
-                            style="height: auto; width: 150px;">
+                        <img src="{{ asset('images/logo/header_logo.png') }}" alt="logo" style="height: auto; width: 150px;">
                     </a>
+                    <h6 class="text-white font-weight-bold">Research and Publication Center</h6>
                 </div>
                 <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
                     aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <a class="dropdown-item" href="#">About RPC and its VMG</a>
+                                    <a class="dropdown-item" href="{{ url('/about/center/vmc') }}">About RPC and its VMG</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="#">Research Agenda and Priority Areas</a>
