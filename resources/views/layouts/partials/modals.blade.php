@@ -46,7 +46,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('admin.login') }}" class="row" method="POST">
+                <form action="{{ url('/login') }}" class="row" method="POST">
                     {{ csrf_field() }}
                     <div class="col-12">
                         <input type="text" class="form-control mb-3" id="loginName" name="email"

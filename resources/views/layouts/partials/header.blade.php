@@ -26,7 +26,7 @@
         <div class="container ">
             <nav class="navbar navbar-expand-lg navbar-dark p-0 align-items-baseline">
                 <div class="d-flex m-auto align-items-center">
-                    <a class="navbar-brand" href="{{ route('home') }}">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                         <img src="{{ asset('images/logo/header_logo.png') }}" alt="logo"
                             style="height: auto; width: 150px;">
                     </a>
@@ -38,67 +38,24 @@
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="navbar-nav ml-auto text-center">
                         <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('home') }}">Home</a>
-                        </li>
-                        {{-- Admissions --}}
-                        <li class="nav-item dropdown view {{ request()->is('admission/*') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('admission.about-admission') }}">Admission</a>
-                        </li>
-                        {{-- Academics --}}
-                        <li class="nav-item dropdown view  {{ request()->is('academic/*') ? 'active' : '' }}">
-                            <a class="nav-link" href="">Academics</a>
-                        </li>
-                        <li class="nav-item dropdown view  {{ request()->is('academic/*') ? 'active' : '' }}">
-                            <a class="nav-link" href="#">Colleges</a>
-                        </li>
-                        <li class="nav-item {{ request()->is('campus-tour/*') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('services.campus-tour') }}">Campus tour</a>
+                            <a class="nav-link" href="{{ url('/') }}">Home</a>
                         </li>
                         {{-- News --}}
                         <li class="nav-item dropdown view">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                News and Information
+                                About Us
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <a class="dropdown-item" href="#">News</a>
+                                    <a class="dropdown-item" href="#">About RPC and its VMG</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Awards and Accreditations</a>
+                                    <a class="dropdown-item" href="#">Research Agenda and Priority Areas</a>
                                 </li>
-                                <li><a class="dropdown-item" href="#">Frequently Asked Questions</a></li>
+                                <li><a class="dropdown-item" href="#">Research Programs and Fundings</a></li>
+                                <li><a class="dropdown-item" href="#">Contact Us</a></li>
                             </ul>
-                        </li>
-                        {{-- Online Services --}}
-                        <li class="nav-item dropdown view">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Services
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item"
-                                        href="{{ route('services.cmc-cial') }}">Internalization</a></li>
-                                <li><a class="dropdown-item"
-                                        href="{{ route('services.scholarship-service') }}">Scholarship</a></li>
-                                <li><a class="dropdown-item" href="{{ route('services.student-affairs') }}">Student
-                                        Affairs</a></li>
-                                <li><a class="dropdown-item" href="#">Research</a></li>
-                                <li><a class="dropdown-item" href="#">Alumni Affairs</a></li>
-                                <li><a class="dropdown-item" href="{{ route('services.guidance-service') }}">Guidance
-                                        Services & Training</a>
-                                <li><a class="dropdown-item" href="{{ route('services.library-service') }}">Library
-                                        Services</a></li>
-                                <li><a class="dropdown-item" href="{{ route('services.health-service') }}">Health
-                                        Services</a></li>
-                            </ul>
-                        </li>
-                        {{-- Online Services --}}
-                        <li class="nav-item dropdown view">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Careers
-                            </a>
                         </li>
                     </ul>
                 </div>

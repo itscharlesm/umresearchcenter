@@ -2,13 +2,13 @@
 @section('content')
     {{-- {{ siteHit() }} --}}
     @include('main.carousel')
-    @include('main.banner')
-    @include('main.about')
+    {{-- @include('main.banner') --}}
+    {{-- @include('main.about') --}}
     @include('main.events')
-    @include('main.news')
+    {{-- @include('main.news')
     @include('main.campus-tour')
     @include('main.college')
-    @include('main.testimonials')
+    @include('main.testimonials') --}}
 
     {{-- @include('main.features')
     @include('main.factcounter')

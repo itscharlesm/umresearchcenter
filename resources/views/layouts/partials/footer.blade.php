@@ -7,16 +7,16 @@
                 <div class="col-lg-3 col-sm-8 col-md-3 mb-lg-0">
                     <a class="logo-footer" href="index.html">
                         <img class="mb-4" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false" src="{{ asset('images/logo/header_logo.png') }}" alt="logo"
+                            data-aos-once="false" src="{{ asset('images/logo/header_logo.jpg') }}" alt="logo"
                             style="width: 197px; height: auto;">
                     </a>
                     <ul class="list-unstyled">
                         <li class="mb-2" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false">064-428-0205</li>
+                            data-aos-once="false">Address: Research and Publication Center University of Mindanao Room H1C, DPT Building Matina Campus, Davao City</li>
                         <li class="mb-2" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false">Osmeña Drive, Kidapawan City</li>
+                            data-aos-once="false">Phone: 082 305-0645/47 loc 174 082 244-3457-58 loc 174</li>
                         <li class="mb-2" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false">help@cmc.edu.ph</li>
+                            data-aos-once="false">Email: rpc@umindanao.edu.ph</li>
                     </ul>
                 </div>
 
@@ -26,23 +26,23 @@
                         data-aos-once="false">CMC</h4>
                     <ul class="list-unstyled">
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="about.html">About Us</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="about.html">About Us</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="teacher.html">Academics</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="teacher.html">Academics</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="contact.html">Research</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="contact.html">Research</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="blog.html">Community Engagement</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="blog.html">Community Engagement</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="about.html">CMCian Life</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="about.html">CMCian Life</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="teacher.html">Online Service</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="teacher.html">Online Service</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="contact.html">Alumni</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="contact.html">Alumni</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="blog.html">CMC Cial</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="blog.html">CMC Cial</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="blog.html">Publications</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="blog.html">Publications</a></li>
                         <!-- Add more links as needed -->
                     </ul>
                 </div>
@@ -53,19 +53,19 @@
                         data-aos-once="false">SHORT LINKS</h4>
                     <ul class="list-unstyled">
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="courses.html">Online Enrollment</a>
+                            data-aos-once="false"><a class="text-color-footer" href="courses.html">Online Enrollment</a>
                         </li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="events.html">CMC - EIS</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="events.html">CMC - EIS</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="notice.html">CMC - SIS</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="notice.html">CMC - SIS</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="scholarship.html">Online Request</a>
+                            data-aos-once="false"><a class="text-color-footer" href="scholarship.html">Online Request</a>
                         </li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="scholarship.html">Scholarships</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="scholarship.html">Scholarships</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="scholarship.html">Updates</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="scholarship.html">Updates</a></li>
                         <!-- Add more links as needed -->
                     </ul>
                 </div>
@@ -76,43 +76,43 @@
                         data-aos-once="false">Facebook Pages</h4>
                     <ul class="list-unstyled">
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="https://themefisher.com/">ICMC
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">ICMC
                                 Communication</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="https://themefisher.com/">CMC
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC
                                 Admission</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="https://themefisher.com/">CMC
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC
                                 Registrar</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="https://themefisher.com/">CMC
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC
                                 Accounting & Finance</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="https://themefisher.com/">CMC Senior
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC Senior
                                 High School</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="https://themefisher.com/">CMC Computing
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC Computing
                                 Ed</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="https://themefisher.com/">CMC Criminal
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC Criminal
                                 Justice</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="https://themefisher.com/">CMC Civil
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC Civil
                                 Eng'g Ed</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="https://themefisher.com/">CMC
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC
                                 Accountancy & Buss.</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="https://themefisher.com/">CMC Teacher
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC Teacher
                                 Education</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="https://themefisher.com/">CMC Physical
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC Physical
                                 Education</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="https://themefisher.com/">CMC
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC
                                 Psychology Dep't</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color" href="https://themefisher.com/">CMC Graduate
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC Graduate
                                 School Ed.</a></li>
                         <!-- Add more links as needed -->
                     </ul>
@@ -131,7 +131,7 @@
                     <script>
                         document.write(new Date().getFullYear());
                     </script>
-                    All Rights Reserved Central Mindanao Colleges, designed & developed
+                    All Rights Reserved University of Mindanao Research and Publication Center, designed & developed
                     by
                     <a href="https://www.infinitwebsolutions.com/" class="text-white">Infinit Web Solutions</a>
                 </p>

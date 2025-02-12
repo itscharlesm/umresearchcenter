@@ -390,6 +390,10 @@ a h4:hover {
   color: #2C2C2C;
 }
 
+.text-color-footer {
+  color: #e2dfdf;
+}
+
 .text-light {
   color: #8585a4 !important;
 }
@@ -542,7 +546,7 @@ textarea.form-control {
 
 @media (max-width: 991px) {
   .navigation {
-    background: #1a1a37;
+    background: #FFB600;
   }
 }
 
@@ -565,12 +569,12 @@ textarea.form-control {
 @media (max-width: 991px) {
   .navbar-nav {
     padding-left: 0;
-    background: #1a1a37;
+    background: #BE0002;
   }
 }
 
 .nav-bg {
-  background-color: #1a1a37;
+  background-color: #FFB600;
 }
 
 .nav-item {
