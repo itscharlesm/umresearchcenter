@@ -30,11 +30,10 @@
             <nav class="navbar navbar-expand-lg navbar-dark p-0 align-items-baseline">
                 <div class="d-flex m-auto align-items-center">
                     <a class="navbar-brand" href="{{ route('home') }}">
-                        <img src="{{ asset('images/cmc-logo.webp') }}" alt="logo"
+                        <img src="{{ asset('images/logo/header_logo.jpg') }}" alt="logo"
                             style="height: auto; width: 150px;">
                     </a>
                 </div>
-
                 <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
                     aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -52,7 +51,6 @@
                         {{-- Academics --}}
                         <li class="nav-item dropdown view  {{ request()->is('academic/*') ? 'active' : '' }}">
                             <a class="nav-link" href="">Academics</a>
-
                         </li>
                         <li class="nav-item dropdown view  {{ request()->is('academic/*') ? 'active' : '' }}">
                             <a class="nav-link" href="#">Colleges</a>
@@ -74,8 +72,6 @@
                                     <a class="dropdown-item" href="#">Awards and Accreditations</a>
                                 </li>
                                 <li><a class="dropdown-item" href="#">Frequently Asked Questions</a></li>
-
-
                             </ul>
                         </li>
                         {{-- Online Services --}}
@@ -111,7 +107,6 @@
 
                     </ul>
                 </div>
-
             </nav>
         </div>
 

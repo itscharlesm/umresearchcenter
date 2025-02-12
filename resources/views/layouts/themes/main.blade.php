@@ -8,7 +8,7 @@
 <body>
     <!-- preloader start -->
     <div class="preloader">
-        <img src="{{ asset('images/preloader.gif') }}" alt="preloader">
+        <img src="{{ asset('images/new-preloader-white.gif') }}" alt="preloader">
     </div>
     <!-- preloader end -->
     @if (session('alert'))

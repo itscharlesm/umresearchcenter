@@ -1,9 +1,10 @@
 <meta charset="utf-8">
 {{-- make the title a dynamic --}}
-<title>Central Mindanao Colleges</title>
+<title>University of Mindanao Research and Publication Center</title>
+<link rel="icon" type="image/png" href="{{ asset('images/logo/um-logo.png') }}">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description"
-    content="CENTRAL MINDANAO COLLEGES (CMC) demonstrates an unwavering commitment to achieving excellence in all facets of its academic pursuits.">
+    content="University of Mindanao Research and Publication Center">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name=author content="Infinit Web Solutions">
 
