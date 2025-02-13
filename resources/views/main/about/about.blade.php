@@ -9,32 +9,33 @@
                     <x-breadcrumb :items="[
                         ['label' => 'Home', 'url' => url('/'), 'active' => false],
                         ['label' => 'About RPC and its VMGO', 'url' => '#', 'active' => true],
+                        ['label' => 'Research Agenda and Priority Areas', 'url' => '#', 'active' => true],
                     ]" />
                     <hr>
                 </div>
                 <!-- First Section -->
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2 class="mb-3">About RPC</h2>
+                        <h2>About RPC</h2>
+                        <p class="font-weight-light text-justify">
+                            The University of Mindanao acknowledges the vital role of research as a catalyst in the promotion of
+                            instruction and extension in higher education. As such, it focuses its strategic direction on the
+                            development of a strong research culture that would enable its faculty, staff and students to be
+                            engaged in research that is responsive to the local, regional and national development needs.
+                        </p>
+                        <p class="font-weight-light text-justify">
+                            The Research and Publication Center (RPC) was established to manage and implement the research
+                            program of the University. It provides inputs to administrators for policy and/or decision-making
+                            through conduct of analyses and evaluations of programs and projects. It spearheads capacity
+                            development activities aimed at building and upgrading the research skills of faculty, staff and
+                            students. It exercises monitoring and facilitating functions for the research projects of the
+                            University. It aims to upscale the horizon of knowledge generation and utilization in the sphere
+                            where the University of Mindanao is significantly contributing as an academic institution and as a
+                            kernel of new knowledge.
+                        </p>
                     </div>
-                    <p class="font-weight-light text-justify">
-                        The University of Mindanao acknowledges the vital role of research as a catalyst in the promotion of
-                        instruction and extension in higher education. As such, it focuses its strategic direction on the
-                        development of a strong research culture that would enable its faculty, staff and students to be
-                        engaged in research that is responsive to the local, regional and national development needs.
-                    </p>
-                    <p class="font-weight-light text-justify">
-                        The Research and Publication Center (RPC) was established to manage and implement the research
-                        program of the University. It provides inputs to administrators for policy and/or decision-making
-                        through conduct of analyses and evaluations of programs and projects. It spearheads capacity
-                        development activities aimed at building and upgrading the research skills of faculty, staff and
-                        students. It exercises monitoring and facilitating functions for the research projects of the
-                        University. It aims to upscale the horizon of knowledge generation and utilization in the sphere
-                        where the University of Mindanao is significantly contributing as an academic institution and as a
-                        kernel of new knowledge.
-                    </p>
                 </div>
-
+    
                 <!-- Second Section -->
                 <div class="col-lg-12">
                     <!-- Accordion Section -->
@@ -58,7 +59,7 @@
                                 </div>
                             </div>
                         </div>
-
+    
                         <div class="card mt-2">
                             <div class="card-header" id="headingTwo">
                                 <h2 class="mb-0">
