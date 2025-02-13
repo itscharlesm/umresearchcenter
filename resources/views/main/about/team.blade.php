@@ -10,7 +10,7 @@
             <!-- Breadcrumb -->
             <x-breadcrumb :items="[
                 ['label' => 'Home', 'url' => url('/'), 'active' => false],
-                ['label' => 'About Us', 'url' => '#', 'active' => true],
+                ['label' => 'Our Team', 'url' => '#', 'active' => true],
             ]" />
             <div class="row justify-content-center">
                 <!-- Maria -->
