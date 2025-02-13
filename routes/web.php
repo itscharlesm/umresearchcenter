@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\CommunityEngagementController;
@@ -36,6 +37,9 @@ Route::get('/logout', [AdminController::class, 'logout']);
 Route::get('/about/about-us', [AboutController::class, 'about_us']);
 Route::get('/about/our-team', [AboutController::class, 'meet_our_team']);
 Route::get('/about/contact-us', [AboutController::class, 'contact_us']);
+
+// Download
+Route::get('/downloads', [DownloadController::class, 'downloads']);
 
 // Special Laravel Commands
 Route::group(['prefix' => 'laravel'], function () {

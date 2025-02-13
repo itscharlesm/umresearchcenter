@@ -27,7 +27,8 @@
             <nav class="navbar navbar-expand-lg navbar-dark p-0 align-items-baseline">
                 <div class="d-flex m-auto align-items-center flex-column">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="{{ asset('images/logo/header_logo.png') }}" alt="logo" style="height: auto; width: 150px;">
+                        <img src="{{ asset('images/logo/header_logo.png') }}" alt="logo"
+                            style="height: auto; width: 150px;">
                     </a>
                     <h6 class="text-white font-weight-bold">Research and Publication Center</h6>
                 </div>
@@ -37,10 +38,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="navbar-nav ml-auto text-center">
+                        {{-- Home --}}
                         <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ url('/') }}">Home</a>
                         </li>
-                        {{-- News --}}
+                        {{-- About Us --}}
                         <li class="nav-item dropdown view {{ request()->is('about/*') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,18 +50,25 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('about/about-us') ? 'active' : '' }}" href="{{ url('/about/about-us') }}">
+                                    <a class="dropdown-item {{ request()->is('about/about-us') ? 'active' : '' }}"
+                                        href="{{ url('/about/about-us') }}">
                                         About Us
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('about/our-team') ? 'active' : '' }}" href="{{ url('/about/our-team') }}">Our Team</a>
+                                    <a class="dropdown-item {{ request()->is('about/our-team') ? 'active' : '' }}"
+                                        href="{{ url('/about/our-team') }}">Our Team</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('about/contact-us') ? 'active' : '' }}" href="{{ url('/about/contact-us') }}">Contact Us</a>
+                                    <a class="dropdown-item {{ request()->is('about/contact-us') ? 'active' : '' }}"
+                                        href="{{ url('/about/contact-us') }}">Contact Us</a>
                                 </li>
                             </ul>
-                        </li>                        
+                        </li>
+                        {{-- Downloads --}}
+                        <li class="nav-item {{ request()->is('/downloads') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ url('/downloads') }}">Downloads</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
