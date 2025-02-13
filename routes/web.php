@@ -33,7 +33,8 @@ Route::post('/login', [AdminController::class, 'validateUser']);
 Route::get('/logout', [AdminController::class, 'logout']);
 
 // About
-Route::get('/about/center/vmc', [AboutController::class, 'about']);
+Route::get('/about/vmc', [AboutController::class, 'about']);
+Route::get('/about/agenda', [AboutController::class, 'agenda']);
 
 // Special Laravel Commands
 Route::group(['prefix' => 'laravel'], function () {

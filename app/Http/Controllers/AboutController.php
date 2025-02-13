@@ -11,4 +11,9 @@ class AboutController extends Controller
     {
         return view('main.about.about', );
     }
+
+    public function agenda()
+    {
+        return view('main.about.agenda', );
+    }
 }

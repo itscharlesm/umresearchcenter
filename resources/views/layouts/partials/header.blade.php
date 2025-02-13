@@ -48,10 +48,10 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <a class="dropdown-item" href="{{ url('/about/center/vmc') }}">About RPC and its VMG</a>
+                                    <a class="dropdown-item" href="{{ url('/about/vmc') }}">About RPC and its VMG</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Research Agenda and Priority Areas</a>
+                                    <a class="dropdown-item" href="{{ url('/about/agenda') }}">Research Agenda and Priority Areas</a>
                                 </li>
                                 <li><a class="dropdown-item" href="#">Research Programs and Fundings</a></li>
                                 <li><a class="dropdown-item" href="#">Contact Us</a></li>
