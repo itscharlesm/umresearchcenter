@@ -208,23 +208,61 @@
                             <div class="section-title">
                                 <h2>Research Agenda</h2>
                                 <p class="font-weight-light text-justify">
-                                    In light of the emerging directions under the new Institutional Strategic Plan for 2017-2022,
-                                    the Research and Publication Center developed its new agenda framework to address the third key
-                                    result area “Excellence in Research”. The research excellence indicators include: international
-                                    research reputation, production of high quality research outputs which have demonstrable and
+                                    In light of the emerging directions under the new Institutional Strategic Plan for
+                                    2017-2022,
+                                    the Research and Publication Center developed its new agenda framework to address the
+                                    third key
+                                    result area “Excellence in Research”. The research excellence indicators include:
+                                    international
+                                    research reputation, production of high quality research outputs which have demonstrable
+                                    and
                                     measurable impacts, sustained support from external funders, and a supportive research
                                     environment for both faculty and students.
                                 </p>
                             </div>
                             <div class="section-title">
-                                <h2>Research Agenda</h2>
+                                <h2>Delivering Research Excellence</h2>
+                                <p class="font-weight-bold text-justify">
+                                    1. Research Reputation
+                                </p>
                                 <p class="font-weight-light text-justify">
-                                    In light of the emerging directions under the new Institutional Strategic Plan for 2017-2022,
-                                    the Research and Publication Center developed its new agenda framework to address the third key
-                                    result area “Excellence in Research”. The research excellence indicators include: international
-                                    research reputation, production of high quality research outputs which have demonstrable and
-                                    measurable impacts, sustained support from external funders, and a supportive research
-                                    environment for both faculty and students.
+                                    The RPC shall be a highly responsive research center by providing focus and capitalizing
+                                    on its critical mass and interdisciplinary capabilities. It shall establish and earn
+                                    reputation through the establishment of the following institutes: 1.1 Biodiversity and
+                                    environmental studies 1.2 Economy and enterprise studies 1.3 Social welfare and
+                                    well-being studies 1.4 Emerging technologies These institutes shall practice the highest
+                                    standards of research integrity which are essential elements of quality.
+                                </p>
+                                <p class="font-weight-bold text-justify">
+                                    2. Research Impact
+                                </p>
+                                <p class="font-weight-light text-justify">
+                                    The RPC shall maximize knowledge exchange between the University and the wider society.
+                                    It aims to do this through its regular public lectures where research findings are
+                                    shared with stakeholders for utilization. It shall continue to publish its research
+                                    journal in the world-wide Open Directory of Open Access Journals. It shall sustain its
+                                    dissemination activities through paper presentations in various research conferences. It
+                                    shall also maximize the impact of its research on public policy, and political
+                                    stakeholders through its Institute of Popular Opinion (IPO) which shall take massive
+                                    efforts to produce policy papers and press releases. RPC shall also seek to bring to
+                                    market the intellectual property arising from our faculty/students’ works through its
+                                    Innovation Technology Support Office (ITSO).
+                                </p>
+                                <p class="font-weight-bold text-justify">
+                                    3. Research Funds
+                                </p>
+                                <p class="font-weight-light text-justify">
+                                    The RPC shall draw upon its already established linkages, increase research
+                                    collaborations with external experts in order to augment its funding resources. Research
+                                    proposals shall be regularly submitted to funding agencies.
+                                </p>
+                                <p class="font-weight-bold text-justify">
+                                    4. Support for Research
+                                </p>
+                                <p class="font-weight-light text-justify">
+                                    The RPC shall upscale its research arsenal through the acquisition of current software
+                                    and technology. It shall enhance its training program to capacitate faculty and students
+                                    to produce quality research and effectively communicate their findings.
                                 </p>
                             </div>
                         </div>
