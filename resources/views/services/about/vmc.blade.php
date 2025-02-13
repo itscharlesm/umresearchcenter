@@ -7,7 +7,7 @@
                 <x-content-header title="Vision, Mission, Values and Goals" />
             </div>
             <x-breadcrumb :items="[
-                ['label' => 'Home', 'url' => route('home'), 'active' => false],
+                ['label' => 'Home', 'url' => url('/'), 'active' => false],
                 ['label' => 'Vision, Mission, Values and Goals', 'url' => '#', 'active' => true],
             ]" />
             <div class="row align-items-center">

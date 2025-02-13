@@ -7,7 +7,7 @@
                 <x-content-header title="About CMC" />
             </div>
             <x-breadcrumb :items="[
-                ['label' => 'Home', 'url' => route('home'), 'active' => false],
+                ['label' => 'Home', 'url' => url('/'), 'active' => false],
                 ['label' => 'About CMC', 'url' => '#', 'active' => true],
             ]" />
             <div class="col-md-12 order-2 order-md-2 mt-5">

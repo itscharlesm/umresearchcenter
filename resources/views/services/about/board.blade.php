@@ -7,7 +7,7 @@
                 <x-content-header title="Board of Directors" />
             </div>
             <x-breadcrumb :items="[
-                ['label' => 'Home', 'url' => route('home'), 'active' => false],
+                ['label' => 'Home', 'url' => url('/'), 'active' => false],
                 ['label' => 'Board of Directors', 'url' => '#', 'active' => true],
             ]" />
             <div class="row align-items-center">

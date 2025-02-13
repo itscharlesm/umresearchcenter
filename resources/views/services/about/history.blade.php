@@ -7,7 +7,7 @@
                 <x-content-header title="History" />
             </div>
             <x-breadcrumb :items="[
-                ['label' => 'Home', 'url' => route('home'), 'active' => false],
+                ['label' => 'Home', 'url' => url('/'), 'active' => false],
                 ['label' => 'History', 'url' => '#', 'active' => true],
             ]" />
             <div class="col-md-12 order-1 order-md-1 mb-4 mb-md-0">

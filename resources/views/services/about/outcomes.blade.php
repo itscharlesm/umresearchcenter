@@ -7,7 +7,7 @@
                 <x-content-header title="Institutional Learning Outcomes" />
             </div>
             <x-breadcrumb :items="[
-                ['label' => 'Home', 'url' => route('home'), 'active' => false],
+                ['label' => 'Home', 'url' => url('/'), 'active' => false],
                 ['label' => 'Institutional Learning Outcomes', 'url' => '#', 'active' => true],
             ]" />
             <div class="row align-items-center">

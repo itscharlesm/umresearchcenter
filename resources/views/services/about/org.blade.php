@@ -7,7 +7,7 @@
                 <x-content-header title="School Organizational Structure" />
             </div>
             <x-breadcrumb :items="[
-                ['label' => 'Home', 'url' => route('home'), 'active' => false],
+                ['label' => 'Home', 'url' => url('/'), 'active' => false],
                 ['label' => 'About', 'url' => '#', 'active' => true],
                 ['label' => 'School Organizational Structure', 'url' => '#', 'active' => true],
             ]" />

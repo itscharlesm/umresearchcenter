@@ -61,13 +61,13 @@ Route::group(['prefix' => 'laravel'], function () {
 });
 
 // //about
-// Route::get('/about/school/vmc', [AboutController::class, 'vmc'])->name('about.cmc');
-// Route::get('/about/history', [AboutController::class, 'history'])->name('history.cmc');
-// Route::get('/about/president', [AboutController::class, 'cmcPresident'])->name('president.cmc');
-// Route::get('/about/school/outcomes', [AboutController::class, 'learningOutcomes'])->name('outcomes.cmc');
-// Route::get('/about/schoolorg', [AboutController::class, 'schoolOrgStructure'])->name('org.cmc');
-// Route::get('/about/boardofdirectors', [AboutController::class, 'boardOfDirectors'])->name('board.cmc');
-// Route::get('/about/cmc', [AboutController::class, 'about'])->name('about.about.cmc');
+Route::get('/about/school/vmc', [AboutController::class, 'vmc'])->name('about.cmc');
+Route::get('/about/history', [AboutController::class, 'history'])->name('history.cmc');
+Route::get('/about/president', [AboutController::class, 'cmcPresident'])->name('president.cmc');
+Route::get('/about/school/outcomes', [AboutController::class, 'learningOutcomes'])->name('outcomes.cmc');
+Route::get('/about/schoolorg', [AboutController::class, 'schoolOrgStructure'])->name('org.cmc');
+Route::get('/about/boardofdirectors', [AboutController::class, 'boardOfDirectors'])->name('board.cmc');
+Route::get('/about/cmc', [AboutController::class, 'abouts'])->name('about.about.cmc');
 
 // //admission
 // Route::get('/admission/about-admission', [AdmissionController::class, 'about'])->name('admission.about.cmc');
