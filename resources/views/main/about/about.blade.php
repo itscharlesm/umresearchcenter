@@ -1,15 +1,26 @@
 @extends('layouts.themes.main')
 @section('content')
-    <br><br><br><br><br>
     <!-- About -->
     <section class="section bg-grey">
         <div class="container-fluid px-5">
+            <hr>
             <div class="row">
+                <div class="col-md-12">
+                    <x-breadcrumb :items="[
+                        ['label' => 'Home', 'url' => url('/'), 'active' => false, 'class' => 'text-[#5C5C77]'],
+                        [
+                            'label' => 'About RPC and its VMGO',
+                            'url' => '#',
+                            'active' => true,
+                            'class' => 'text-[#BE0002] font-bold',
+                        ],
+                    ]" />
+                    <hr>
+                </div>
                 <!-- First Section -->
                 <div class="col-lg-12">
                     <div class="section-title">
                         <h2 class="mb-3">About RPC</h2>
-                        <hr>
                     </div>
                     <p class="font-weight-light text-justify">
                         The University of Mindanao acknowledges the vital role of research as a catalyst in the promotion of
