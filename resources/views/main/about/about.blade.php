@@ -5,7 +5,7 @@
             <!-- Title -->
             <div class="content-header text-center" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="100"
                 data-aos-once="false" style="margin-top: 100px;">
-                <x-content-header title="About Us" />
+                <x-content-header title="ABOUT US" />
             </div>
             <!-- Breadcrumb -->
             <x-breadcrumb :items="[

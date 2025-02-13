@@ -53,7 +53,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Meet our Team</a>
+                                    <a class="dropdown-item {{ request()->is('about/our-team') ? 'active' : '' }}" href="{{ url('/about/our-team') }}">Our Team</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="#">Contact Us</a>

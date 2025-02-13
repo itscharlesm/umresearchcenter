@@ -34,6 +34,7 @@ Route::get('/logout', [AdminController::class, 'logout']);
 
 // About
 Route::get('/about/about-us', [AboutController::class, 'about_us']);
+Route::get('/about/our-team', [AboutController::class, 'meet_our_team']);
 
 // Special Laravel Commands
 Route::group(['prefix' => 'laravel'], function () {

@@ -11,4 +11,9 @@ class AboutController extends Controller
     {
         return view('main.about.about', );
     }
+
+    public function meet_our_team()
+    {
+        return view('main.about.team', );
+    }
 }
