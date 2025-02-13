@@ -265,6 +265,20 @@
                                     to produce quality research and effectively communicate their findings.
                                 </p>
                             </div>
+                            <div class="section-title">
+                                <h2>Research Priority Areas</h2>
+                                <p class="font-weight-light text-justify">
+                                    Based on the evaluation of UM’s Sustainable Development Agenda Framework (2012-2017) and
+                                    aligned with the Harmonized National Research and Development Agenda (HNRDA) of the DOST
+                                    and the research priority clusters of the National Higher Education Research Agenda
+                                    (NHERA), UM shall focus on the following interdisciplinary research themes for the next
+                                    five years:
+                                </p>
+                            </div>
+                            <div class="text-center">
+                                <img src="{{ asset('images/about/priority.png') }}" alt="logo"
+                                    style="height: 395px; width: 430px;">
+                            </div>
                         </div>
                     </div>
                 </div>
