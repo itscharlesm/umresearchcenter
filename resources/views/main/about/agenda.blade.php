@@ -8,13 +8,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <x-breadcrumb :items="[
-                            ['label' => 'Home', 'url' => url('/'), 'active' => false, 'class' => 'text-[#5C5C77]'],
-                            [
-                                'label' => 'Research Agenda and Priority Areas',
-                                'url' => '#',
-                                'active' => true,
-                                'class' => 'text-[#BE0002] font-bold',
-                            ],
+                            ['label' => 'Home', 'url' => url('/'), 'active' => false],
+                            ['label' => 'Research Agenda and Priority Areas', 'url' => '#', 'active' => true],
                         ]" />
                         <hr>
                     </div>

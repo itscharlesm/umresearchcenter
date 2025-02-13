@@ -41,22 +41,30 @@
                             <a class="nav-link" href="{{ url('/') }}">Home</a>
                         </li>
                         {{-- News --}}
-                        <li class="nav-item dropdown view">
+                        <li class="nav-item dropdown view {{ request()->is('about/*') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 About Us
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <a class="dropdown-item" href="{{ url('/about/vmc') }}">About RPC and its VMG</a>
+                                    <a class="dropdown-item {{ request()->is('about/vmc') ? 'active' : '' }}" href="{{ url('/about/vmc') }}">
+                                        About RPC and its VMG
+                                    </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="{{ url('/about/agenda') }}">Research Agenda and Priority Areas</a>
+                                    <a class="dropdown-item {{ request()->is('about/agenda') ? 'active' : '' }}" href="{{ url('/about/agenda') }}">
+                                        Research Agenda and Priority Areas
+                                    </a>
                                 </li>
-                                <li><a class="dropdown-item" href="#">Research Programs and Fundings</a></li>
-                                <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Research Programs and Fundings</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Contact Us</a>
+                                </li>
                             </ul>
-                        </li>
+                        </li>                        
                     </ul>
                 </div>
             </nav>
