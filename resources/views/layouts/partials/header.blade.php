@@ -48,17 +48,12 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('about/vmc') ? 'active' : '' }}" href="{{ url('/about/vmc') }}">
-                                        About RPC and its VMG
+                                    <a class="dropdown-item {{ request()->is('about/about-us') ? 'active' : '' }}" href="{{ url('/about/about-us') }}">
+                                        About Us
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('about/agenda') ? 'active' : '' }}" href="{{ url('/about/agenda') }}">
-                                        Research Agenda and Priority Areas
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Research Programs and Fundings</a>
+                                    <a class="dropdown-item" href="#">Meet our Team</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="#">Contact Us</a>

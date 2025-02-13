@@ -1,28 +1,27 @@
 @extends('layouts.themes.main')
 @section('content')
-    <!-- About -->
     <section class="section bg-grey">
         <div class="container lg-10">
+            <!-- Title -->
             <div class="content-header text-center" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="100"
-                data-aos-once="false" style="margin-top: 150px;">
+                data-aos-once="false" style="margin-top: 100px;">
                 <x-content-header title="About Us" />
             </div>
-
+            <!-- Breadcrumb -->
             <x-breadcrumb :items="[
                 ['label' => 'Home', 'url' => url('/'), 'active' => false],
                 ['label' => 'Research', 'url' => '#', 'active' => true],
             ]" />
-
             <div class="row">
                 <!-- Sidebar -->
                 <div class="col-12 col-md-3 mb-3">
                     <div class="content-sidebar">
-                        <h5><b>About Us Section</b></h5>
+                        <h5><b>Sections</b></h5>
                         <a href="#" class="nav-link tab-link active" data-target="about">About RPC</a>
-                        <a href="#" class="nav-link tab-link" data-target="agenda">Research Agenda</a>
+                        <a href="#" class="nav-link tab-link" data-target="agenda">Research Agenda and Priority Areas</a>
+                        <a href="#" class="nav-link tab-link" data-target="programs">Research Programs and Fundings</a>
                     </div>
                 </div>
-
                 <!-- Tab Content -->
                 <div class="col-12 col-md-9">
                     <div class="tab-content" id="researchTabsContent">
@@ -64,6 +63,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Sidebar -->
                         <div class="tab-pane fade" id="agenda">
                             <h2>Research Agenda</h2>
                             <p class="font-weight-light text-justify">
