@@ -56,7 +56,7 @@
                                     <a class="dropdown-item {{ request()->is('about/our-team') ? 'active' : '' }}" href="{{ url('/about/our-team') }}">Our Team</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Contact Us</a>
+                                    <a class="dropdown-item {{ request()->is('about/contact-us') ? 'active' : '' }}" href="{{ url('/about/contact-us') }}">Contact Us</a>
                                 </li>
                             </ul>
                         </li>                        
