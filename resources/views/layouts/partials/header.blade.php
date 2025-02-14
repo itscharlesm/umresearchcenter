@@ -79,8 +79,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('about/our-team') ? 'active' : '' }}"
-                                        href="{{ url('/about/our-team') }}">Emerging Technologies and Green Innovation Studies</a>
+                                    <a class="dropdown-item {{ request()->is('institute/emerging') ? 'active' : '' }}"
+                                        href="{{ url('/institute/emerging') }}">Emerging Technologies and Green Innovation Studies</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item {{ request()->is('about/contact-us') ? 'active' : '' }}"

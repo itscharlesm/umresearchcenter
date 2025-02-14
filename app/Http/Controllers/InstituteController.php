@@ -11,4 +11,9 @@ class InstituteController extends Controller
     {
         return view('main.institute.popular', );
     }
+
+    public function emerging()
+    {
+        return view('main.institute.emerging', );
+    }
 }
