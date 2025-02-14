@@ -11,4 +11,9 @@ class CenterController extends Controller
     {
         return view('main.center.nanotechnology', );
     }
+
+    public function coleoptera()
+    {
+        return view('main.center.coleoptera', );
+    }
 }

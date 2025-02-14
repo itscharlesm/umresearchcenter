@@ -50,6 +50,7 @@ Route::get('/institute/social', [InstituteController::class, 'social']);
 
 // Center
 Route::get('/center/nanotechnology', [CenterController::class, 'nanotechnology']);
+Route::get('/center/coleoptera', [CenterController::class, 'coleoptera']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);
