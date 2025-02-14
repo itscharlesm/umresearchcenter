@@ -96,6 +96,10 @@
                                 </li>
                             </ul>
                         </li>
+                        {{-- Lingkages --}}
+                        <li class="nav-item {{ request()->is('/linkages') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ url('/linkages') }}">Linkages</a>
+                        </li>
                         {{-- Downloads --}}
                         <li class="nav-item {{ request()->is('/downloads') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ url('/downloads') }}">Downloads</a>
