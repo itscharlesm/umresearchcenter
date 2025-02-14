@@ -65,6 +65,37 @@
                                 </li>
                             </ul>
                         </li>
+                        {{-- Institutes --}}
+                        <li class="nav-item dropdown view {{ request()->is('institute/*') ? 'active' : '' }}">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Institutes
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item {{ request()->is('institute/popular') ? 'active' : '' }}"
+                                        href="{{ url('/institute/popular') }}">
+                                        Popular Opinion
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item {{ request()->is('about/our-team') ? 'active' : '' }}"
+                                        href="{{ url('/about/our-team') }}">Emerging Technologies and Green Innovation Studies</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item {{ request()->is('about/contact-us') ? 'active' : '' }}"
+                                        href="{{ url('/about/contact-us') }}">Biodiversity and Environment Studies</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item {{ request()->is('about/contact-us') ? 'active' : '' }}"
+                                        href="{{ url('/about/contact-us') }}">Economy and Enterprise Studies</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item {{ request()->is('about/contact-us') ? 'active' : '' }}"
+                                        href="{{ url('/about/contact-us') }}">Social Welfare and Human Development Studies</a>
+                                </li>
+                            </ul>
+                        </li>
                         {{-- Downloads --}}
                         <li class="nav-item {{ request()->is('/downloads') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ url('/downloads') }}">Downloads</a>

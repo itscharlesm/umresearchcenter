@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\InstituteController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ResearchController;
@@ -37,6 +38,9 @@ Route::get('/logout', [AdminController::class, 'logout']);
 Route::get('/about/about-us', [AboutController::class, 'about_us']);
 Route::get('/about/our-team', [AboutController::class, 'meet_our_team']);
 Route::get('/about/contact-us', [AboutController::class, 'contact_us']);
+
+// Institute
+Route::get('/institute/popular', [InstituteController::class, 'popular']);
 
 // Download
 Route::get('/downloads', [DownloadController::class, 'downloads']);
