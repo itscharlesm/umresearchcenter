@@ -83,8 +83,8 @@
                                         href="{{ url('/institute/emerging') }}">Emerging Technologies and Green Innovation Studies</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('about/contact-us') ? 'active' : '' }}"
-                                        href="{{ url('/about/contact-us') }}">Biodiversity and Environment Studies</a>
+                                    <a class="dropdown-item {{ request()->is('institute/biodiversity') ? 'active' : '' }}"
+                                        href="{{ url('/institute/biodiversity') }}">Biodiversity and Environment Studies</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item {{ request()->is('about/contact-us') ? 'active' : '' }}"

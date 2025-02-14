@@ -42,6 +42,7 @@ Route::get('/about/contact-us', [AboutController::class, 'contact_us']);
 // Institute
 Route::get('/institute/popular', [InstituteController::class, 'popular']);
 Route::get('/institute/emerging', [InstituteController::class, 'emerging']);
+Route::get('/institute/biodiversity', [InstituteController::class, 'biodiversity']);
 
 // Download
 Route::get('/downloads', [DownloadController::class, 'downloads']);
