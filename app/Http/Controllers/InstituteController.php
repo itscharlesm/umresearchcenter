@@ -21,4 +21,9 @@ class InstituteController extends Controller
     {
         return view('main.institute.economy', );
     }
+
+    public function social()
+    {
+        return view('main.institute.social', );
+    }
 }

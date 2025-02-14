@@ -91,8 +91,8 @@
                                         href="{{ url('/institute/economy') }}">Economy and Enterprise Studies</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('institute/biodiversity') ? 'active' : '' }}"
-                                        href="{{ url('/about/contact-us') }}">Social Welfare and Human Development Studies</a>
+                                    <a class="dropdown-item {{ request()->is('institute/social') ? 'active' : '' }}"
+                                        href="{{ url('/institute/social') }}">Social Welfare and Human Development Studies</a>
                                 </li>
                             </ul>
                         </li>
