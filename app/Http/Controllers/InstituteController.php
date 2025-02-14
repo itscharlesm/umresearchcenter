@@ -17,8 +17,8 @@ class InstituteController extends Controller
         return view('main.institute.emerging', );
     }
 
-    public function biodiversity()
+    public function economy()
     {
-        return view('main.institute.biodiversity', );
+        return view('main.institute.economy', );
     }
 }

@@ -87,11 +87,11 @@
                                         href="{{ url('/institute/biodiversity') }}">Biodiversity and Environment Studies</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('about/contact-us') ? 'active' : '' }}"
-                                        href="{{ url('/about/contact-us') }}">Economy and Enterprise Studies</a>
+                                    <a class="dropdown-item {{ request()->is('institute/economy') ? 'active' : '' }}"
+                                        href="{{ url('/institute/economy') }}">Economy and Enterprise Studies</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('about/contact-us') ? 'active' : '' }}"
+                                    <a class="dropdown-item {{ request()->is('institute/biodiversity') ? 'active' : '' }}"
                                         href="{{ url('/about/contact-us') }}">Social Welfare and Human Development Studies</a>
                                 </li>
                             </ul>
