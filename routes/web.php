@@ -6,6 +6,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\InstituteController;
 use App\Http\Controllers\LinkageController;
 use App\Http\Controllers\DownloadController;
+use App\Http\Controllers\CenterController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\CommunityEngagementController;
@@ -46,6 +47,9 @@ Route::get('/institute/emerging', [InstituteController::class, 'emerging']);
 Route::get('/institute/biodiversity', [InstituteController::class, 'biodiversity']);
 Route::get('/institute/economy', [InstituteController::class, 'economy']);
 Route::get('/institute/social', [InstituteController::class, 'social']);
+
+// Center
+Route::get('/center/nanotechnology', [CenterController::class, 'nanotechnology']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);

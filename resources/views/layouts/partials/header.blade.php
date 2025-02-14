@@ -96,6 +96,29 @@
                                 </li>
                             </ul>
                         </li>
+                        {{-- Centers --}}
+                        <li class="nav-item dropdown view {{ request()->is('center/*') ? 'active' : '' }}">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Centers
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item {{ request()->is('center/nanotechnology') ? 'active' : '' }}"
+                                        href="{{ url('/center/nanotechnology') }}">
+                                        Green Nanotechnology Innovations for Environmental Solutions (CGNIES)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item {{ request()->is('center/coleoptera') ? 'active' : '' }}"
+                                        href="{{ url('/center/coleoptera') }}">Coleoptera Research Center</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item {{ request()->is('center/policy') ? 'active' : '' }}"
+                                        href="{{ url('/center/policy') }}">UM Public Policy Center</a>
+                                </li>
+                            </ul>
+                        </li>
                         {{-- Lingkages --}}
                         <li class="nav-item {{ request()->is('linkages') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ url('/linkages') }}">Linkages</a>
