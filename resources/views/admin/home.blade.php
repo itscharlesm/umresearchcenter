@@ -28,9 +28,9 @@
                     <div class="col-md-8">
                         <div class="timeline">
                             <div class="time-label">
-                                <span class="bg-primary"><i class="fa fa-bullhorn"></i> Announcements</span>
+                                <span class="bg-warning"><i class="fa fa-bullhorn"></i> Announcements</span>
                                 @if (session('usr_type') == 1)
-                                    <a class="btn btn-primary float-right" href="javascript:void(0)" data-toggle="modal"
+                                    <a class="btn btn-warning float-right" href="javascript:void(0)" data-toggle="modal"
                                         data-target="#newAnnouncementModal"><i class="fa fa-comment"></i> Compose</a>
                                 @endif
                             </div>
@@ -73,15 +73,16 @@
                     {{-- Recent Users --}}
                     <div class="col-md-4">
                         <div class="card card-info">
-                            <div class="card-header border-bottom-0 bg-navy">
-                                <h3 class="card-title" style="color:white"><i class="fas fa-history"></i> Recent Users</h3>
+                            <div class="card-header border-bottom-0 bg-warning">
+                                <h3 class="card-title" style="color:black"><i class="fas fa-history"></i> Recent Users</h3>
                             </div>
                             <div class="card-body pt-0">
                                 <ul class="products-list product-list-in-card pl-2 pr-2">
                                     @foreach ($logins as $login)
                                         <li class="item">
                                             <div class="product-img">
-                                                <img class="img-size-50 img-circle" src="{{ asset('images/avatar.png') }}" alt="user image">
+                                                <img class="img-size-50 img-circle" src="{{ asset('images/avatar.png') }}"
+                                                    alt="user image">
                                             </div>
                                             <div class="product-info">
                                                 <a href="#" class="product-title">{{ $login->usr_last_name }},

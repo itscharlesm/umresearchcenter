@@ -9,7 +9,7 @@
                 </button>
             </div>
             <form method="POST" action="{{ action('App\Http\Controllers\UserController@update') }}">
-                {{ csrf_field() }}
+                @csrf
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="usr_email">E-Mail *</label>

@@ -8,6 +8,7 @@ function setUserSessionVariables($user)
     //Set user sessions
     Session::put('usr_id', $user->usr_id);
     Session::put('usr_uuid', $user->usr_uuid);
+    Session::put('usr_type', $user->usr_type);
     Session::put('usr_first_name', $user->usr_first_name);
     Session::put('usr_last_name', $user->usr_last_name);
     Session::put('usr_email', $user->usr_email);

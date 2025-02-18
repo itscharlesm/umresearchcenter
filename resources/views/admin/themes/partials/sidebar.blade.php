@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-light-purple elevation-4">
+<aside class="main-sidebar sidebar-light-red elevation-4">
     {{-- Brand Logo --}}
     <a href="#" class="brand-link" id="logoPic">
         <img src="{{ asset('images/logo/um-logo.png') }}" alt="School Logo"
