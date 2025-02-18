@@ -65,8 +65,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <button type="submit" class="btn btn-danger">Update
-                                                            Description</button>
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="fa fa-close"></span> Close</button>
+                                                        <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span> Update</button>
                                                     </form>
                                                 </div>
                                             </div>
