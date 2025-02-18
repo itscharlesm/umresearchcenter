@@ -24,7 +24,7 @@
         <div class="container-fluid">
             @include('layouts.partials.alerts')
             <div class="card">
-                <div class="card-header bg-secondary">
+                <div class="card-header bg-warning">
                     List of users
                 </div>
                 <div class="card-body overflow-auto">
@@ -48,7 +48,7 @@
                                     <td style="vertical-align: middle;">{{ $user->usr_email }}</td>
                                     <td style="vertical-align: middle;">{{ $user->role_name }}</td>
                                     <td style="vertical-align: middle;">
-                                        <a class="btn btn-info btn-sm activate-btn" href="javascript:void(0)"
+                                        <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
                                             data-toggle="modal" data-target="#updateRoleModal-{{ $user->usr_id }}">
                                             <span class="fa fa-edit"></span> Role
                                         </a>
@@ -154,7 +154,7 @@
             </div>
             <div class="row mb-2 align-items-center">
                 <div class="col-md-6 mb-2 mb-md-0">
-                    <a class="btn btn-primary btn-sm activate-btn" href="javascript:void(0)" data-toggle="modal"
+                    <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)" data-toggle="modal"
                         data-target="#addUserModal">
                         <span class="fa fa-plus"></span> Add User
                     </a>
