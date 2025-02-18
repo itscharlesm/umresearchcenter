@@ -2,6 +2,7 @@
 @section('content')
     <section class="section bg-grey">
         <div class="container lg-10">
+            @include('layouts.partials.alerts')
             <!-- Title -->
             <div class="content-header text-center" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="100"
                 data-aos-once="false" style="margin-top: 100px;">

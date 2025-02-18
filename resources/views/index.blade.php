@@ -1,5 +1,6 @@
 @extends('layouts.themes.main')
 @section('content')
+    @include('layouts.partials.alerts')
     {{-- {{ siteHit() }} --}}
     @include('main.carousel')
     {{-- @include('main.banner') --}}

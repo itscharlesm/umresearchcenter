@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\InstituteController;
@@ -11,7 +14,6 @@ use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\CommunityEngagementController;
 use App\Http\Controllers\StudentOrganizationController;
-use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserManagementController;
 use App\Http\Controllers\Admin\AcademicProgramController;
 use App\Http\Controllers\Admin\ContentController;
@@ -33,8 +35,18 @@ use App\Http\Controllers\InternationalAffairsController;
 Route::get('/', [MainController::class, 'main']);
 
 //admin route
-Route::post('/login', [AdminController::class, 'validateUser']);
-Route::get('/logout', [AdminController::class, 'logout']);
+Route::post('/login', [UserController::class, 'validateUser']);
+Route::get('/logout', [UserController::class, 'logout']);
+Route::get('/admin/home', [AdminController::class, 'home']);
+
+// User
+Route::post('admin/register-user', [UserController::class, 'registerUser']);
+Route::post('user/update', [UserController::class, 'update']);
+Route::post('user/update-password', [UserController::class, 'updatePassword2']);
+
+//Announcements
+Route::post('announcement/save', [AnnouncementController::class, 'save']);
+Route::get('announcement/delete/{ann_uuid}', [AnnouncementController::class, 'delete']);
 
 // About
 Route::get('/about/about-us', [AboutController::class, 'about_us']);
@@ -83,13 +95,13 @@ Route::group(['prefix' => 'laravel'], function () {
 });
 
 // //about
-Route::get('/about/school/vmc', [AboutController::class, 'vmc'])->name('about.cmc');
-Route::get('/about/history', [AboutController::class, 'history'])->name('history.cmc');
-Route::get('/about/president', [AboutController::class, 'cmcPresident'])->name('president.cmc');
-Route::get('/about/school/outcomes', [AboutController::class, 'learningOutcomes'])->name('outcomes.cmc');
-Route::get('/about/schoolorg', [AboutController::class, 'schoolOrgStructure'])->name('org.cmc');
-Route::get('/about/boardofdirectors', [AboutController::class, 'boardOfDirectors'])->name('board.cmc');
-Route::get('/about/cmc', [AboutController::class, 'abouts'])->name('about.about.cmc');
+// Route::get('/about/school/vmc', [AboutController::class, 'vmc'])->name('about.cmc');
+// Route::get('/about/history', [AboutController::class, 'history'])->name('history.cmc');
+// Route::get('/about/president', [AboutController::class, 'cmcPresident'])->name('president.cmc');
+// Route::get('/about/school/outcomes', [AboutController::class, 'learningOutcomes'])->name('outcomes.cmc');
+// Route::get('/about/schoolorg', [AboutController::class, 'schoolOrgStructure'])->name('org.cmc');
+// Route::get('/about/boardofdirectors', [AboutController::class, 'boardOfDirectors'])->name('board.cmc');
+// Route::get('/about/cmc', [AboutController::class, 'abouts'])->name('about.about.cmc');
 
 // //admission
 // Route::get('/admission/about-admission', [AdmissionController::class, 'about'])->name('admission.about.cmc');
