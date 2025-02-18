@@ -50,6 +50,7 @@ class UserController extends Controller
         try {
             $userId = DB::table('users')->insertGetId([
                 'usr_uuid' => generateuuid(),
+                'usr_type' => 3,
                 'usr_first_name' => $request->usr_first_name,
                 'usr_middle_name' => $request->usr_middle_name,
                 'usr_last_name' => $request->usr_last_name,
