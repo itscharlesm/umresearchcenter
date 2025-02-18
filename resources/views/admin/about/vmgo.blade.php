@@ -28,22 +28,28 @@
                     <table class="table table-hover table-striped table-sm responsive">
                         <thead>
                             <tr>
-                                <th style="text-align: center; vertical-align: middle">Description</th>
+                                <th style="text-align: center; vertical-align: middle">Vision</th>
+                                <th style="text-align: center; vertical-align: middle">Mission</th>
+                                <th style="text-align: center; vertical-align: middle">Goals</th>
+                                <th style="text-align: center; vertical-align: middle">Objectives</th>
                                 <th style="text-align: center; vertical-align: middle; width: 100px">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($rpc_description as $rpc)
+                            @foreach ($vmgo_descriptions as $vmgo)
                                 <tr style="text-align: center; vertical-align: middle;">
-                                    <td style="vertical-align: middle;">{!! $rpc->rpc_description !!}</td>
+                                    <td style="vertical-align: middle;">{!! $vmgo->vmgo_vision !!}</td>
+                                    <td style="vertical-align: middle;">{!! $vmgo->vmgo_mission !!}</td>
+                                    <td style="vertical-align: middle;">{!! $vmgo->vmgo_goals !!}</td>
+                                    <td style="vertical-align: middle;">{!! $vmgo->vmgo_objectives !!}</td>
                                     <td style="vertical-align: middle;">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
-                                            data-toggle="modal" data-target="#updateDescriptionModal-{{ $rpc->rpc_id }}">
+                                            data-toggle="modal" data-target="#updateDescriptionModal-">
                                             <span class="fa fa-edit"></span> Update
                                         </a>
                                     </td>
-                                    <div class="modal fade" id="updateDescriptionModal-{{ $rpc->rpc_id }}" tabindex="-1"
-                                        role="dialog" aria-labelledby="updateDescriptionModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="updateDescriptionModal-" tabindex="-1" role="dialog"
+                                        aria-labelledby="updateDescriptionModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -54,14 +60,13 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{ url('admin/about/rpc/update/' . $rpc->rpc_id) }}"
-                                                        method="POST">
+                                                    <form action="" method="POST">
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
                                                                     <label for="usr_full_name">Description:</label>
-                                                                    <textarea class="form-control summernote" name="rpc_description">{!! $rpc->rpc_description !!}</textarea>
+                                                                    <textarea class="form-control summernote" name="rpc_description"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>

@@ -56,4 +56,13 @@ class AboutController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_vmgo()
+    {
+        $vmgo_descriptions = DB::table('vmgo')
+            ->where('vmgo_active', 1)
+            ->get();
+
+        return view('admin.about.vmgo', compact('vmgo_descriptions'));
+    }
 }
