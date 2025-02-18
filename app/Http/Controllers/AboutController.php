@@ -49,7 +49,6 @@ class AboutController extends Controller
                 'rpc_modified_by' => session('usr_id'),
             ]);
 
-
         // Flash success message
         session()->flash('successMessage', 'RPC description updated successfully.');
 
@@ -64,5 +63,35 @@ class AboutController extends Controller
             ->get();
 
         return view('admin.about.vmgo', compact('vmgo_descriptions'));
+    }
+
+    public function admin_vmgo_update(Request $request, $vmgo_id)
+    {
+        // Validate the request
+        $request->validate([
+            'vmgo_vision' => 'nullable|string',
+            'vmgo_mission' => 'nullable|string',
+            'vmgo_goals' => 'nullable|string',
+            'vmgo_objectives' => 'nullable|string'
+        ]);
+
+        // Update the user role in the database
+        DB::table('vmgo')
+            ->where('vmgo_id', $vmgo_id)
+            ->update([
+                'vmgo_vision' => $request->vmgo_vision,
+                'vmgo_mission' => $request->vmgo_mission,
+                'vmgo_goals' => $request->vmgo_goals,
+                'vmgo_objectives' => $request->vmgo_objectives,
+                'vmgo_date_modified' => Carbon::now(),
+                'vmgo_modified_by' => session('usr_id'),
+            ]);
+
+
+        // Flash success message
+        session()->flash('successMessage', 'RPC description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
     }
 }

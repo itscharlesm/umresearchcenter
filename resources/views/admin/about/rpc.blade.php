@@ -34,7 +34,7 @@
                         </thead>
                         <tbody>
                             @foreach ($rpc_description as $rpc)
-                                <tr style="text-align: center; vertical-align: middle;">
+                                <tr style="text-align: justify; vertical-align: middle;">
                                     <td style="vertical-align: middle;">{!! $rpc->rpc_description !!}</td>
                                     <td style="vertical-align: middle;">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"

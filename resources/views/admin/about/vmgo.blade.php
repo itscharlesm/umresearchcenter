@@ -37,7 +37,7 @@
                         </thead>
                         <tbody>
                             @foreach ($vmgo_descriptions as $vmgo)
-                                <tr style="text-align: center; vertical-align: middle;">
+                                <tr style="text-align: justify; vertical-align: middle;">
                                     <td style="vertical-align: middle;">{!! $vmgo->vmgo_vision !!}</td>
                                     <td style="vertical-align: middle;">{!! $vmgo->vmgo_mission !!}</td>
                                     <td style="vertical-align: middle;">{!! $vmgo->vmgo_goals !!}</td>
@@ -60,7 +60,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="" method="POST">
+                                                    <form action="{{ url('admin/about/vmgo/update/' . $vmgo->vmgo_id) }}" method="POST">
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-md-6">
