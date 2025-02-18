@@ -31,15 +31,6 @@
                         <input class="form-control" type="text" name="usr_middle_name" id="usr_middle_name"
                             placeholder="Middle Name" value="{{ session('usr_middle_name') }}" />
                     </div>
-                    <div class="form-group">
-                        <label for="usr_birth_date">Birth Date *</label>
-                        <input class="form-control" type="date" name="usr_birth_date" id="usr_birth_date"
-                            value="{{ session('usr_birth_date') }}" required />
-                    </div>
-                    <div class="col-12 mb-3">
-                        {{-- {!! NoCaptcha::renderJs() !!} --}}
-                        {{-- {!! NoCaptcha::display() !!} --}}
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" name="usr_uuid" value="{{ session('usr_uuid') }}" />
