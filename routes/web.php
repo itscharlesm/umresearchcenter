@@ -60,6 +60,7 @@ Route::get('/about/contact-us', [AboutController::class, 'contact_us']);
 
 // About Admin
 Route::get('/admin/about/rpc', [AboutController::class, 'admin_rpc']);
+Route::post('/admin/about/rpc/update/{rpc_id}', [AboutController::class, 'admin_rpc_update']);
 
 // Institute
 Route::get('/institute/popular', [InstituteController::class, 'popular']);

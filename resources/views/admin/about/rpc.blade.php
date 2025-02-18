@@ -42,6 +42,35 @@
                                             <span class="fa fa-edit"></span> Update
                                         </a>
                                     </td>
+                                    <div class="modal fade" id="updateDescriptionModal-{{ $rpc->rpc_id }}" tabindex="-1"
+                                        role="dialog" aria-labelledby="updateDescriptionModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="updateDescriptionModalLabel">Update RPC</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{{ url('admin/about/rpc/update/' . $rpc->rpc_id) }}" method="POST">
+                                                        @csrf
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="usr_full_name">Description:</label>
+                                                                    <textarea class="form-control summernote" name="rpc_description">{!! $rpc->rpc_description !!}</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-danger">Update
+                                                            Description</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -50,4 +79,18 @@
             </div>
         </div>
     </section>
+    <script>
+        $(document).ready(function() {
+            $('.summernote').summernote({
+                height: 200,
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']]
+                ]
+            });
+        });
+    </script>
 @endsection
