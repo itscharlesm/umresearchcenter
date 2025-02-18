@@ -34,10 +34,13 @@ use App\Http\Controllers\InternationalAffairsController;
 // Home
 Route::get('/', [MainController::class, 'main']);
 
-//admin route
+// Login
 Route::post('/login', [UserController::class, 'validateUser']);
 Route::get('/logout', [UserController::class, 'logout']);
+
+// Admin Page
 Route::get('/admin/home', [AdminController::class, 'home']);
+Route::get('/admin/users', [AdminController::class, 'users']);
 
 // User
 Route::post('admin/register-user', [UserController::class, 'registerUser']);

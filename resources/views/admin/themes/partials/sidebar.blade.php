@@ -33,6 +33,29 @@
                     </a>
                 </li>
 
+                {{-- Admin Management --}}
+                @if (session('usr_type') == 1 || session('usr_type') == 2)
+                    <li class="nav-header">Admin Management</li>
+                    <li class="nav-item {{ request()->is('admin/users*') ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ request()->is('admin/users*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-cog"></i>
+                            <p>
+                                Manage Users
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\AdminController@users') }}"
+                                    class="nav-link {{ request()->is('admin/users') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Users</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
+
                 {{-- Signout --}}
                 <li class="nav-item">
                     <a href="{{ action('App\Http\Controllers\UserController@logout') }}" class="nav-link">

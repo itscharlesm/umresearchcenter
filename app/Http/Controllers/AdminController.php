@@ -32,4 +32,15 @@ class AdminController extends Controller
 
         return view('admin.home', compact('logins', 'announcements'));
     }
+
+    public function users()
+    {
+        $users = DB::table('users')
+            ->join('roles', 'roles.usr_type', '=', 'users.usr_type')
+            ->select('users.usr_id', 'users.usr_last_name', 'users.usr_first_name', 'users.usr_middle_name', 'roles.role_name', 'users.usr_email') // Select role_name instead of usr_type
+            ->where('users.usr_active', 1)
+            ->get();
+
+        return view('admin.users.index', compact('users'));
+    }
 }

@@ -115,7 +115,7 @@
                 </div>
                 <form action="{{ action('App\Http\Controllers\AnnouncementController@save') }}" method="POST"
                     enctype="multipart/form-data">
-                    {{ csrf_field() }}
+                    @csrf
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="ann_title">Title <span style="color:red;">*</span></label>
