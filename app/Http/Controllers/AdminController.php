@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Session;
+use Carbon\Carbon;
 use DB;
 
 class AdminController extends Controller
@@ -37,10 +38,39 @@ class AdminController extends Controller
     {
         $users = DB::table('users')
             ->join('roles', 'roles.usr_type', '=', 'users.usr_type')
-            ->select('users.usr_id', 'users.usr_last_name', 'users.usr_first_name', 'users.usr_middle_name', 'roles.role_name', 'users.usr_email') // Select role_name instead of usr_type
+            ->select('users.usr_id', 'users.usr_last_name', 'users.usr_first_name', 'users.usr_middle_name', 'users.usr_type', 'roles.role_name', 'users.usr_email') // Added users.usr_type
             ->where('users.usr_active', 1)
             ->get();
 
-        return view('admin.users.index', compact('users'));
+        $roles = DB::table('roles')
+            ->where('role_active', 1)
+            ->select('usr_type', 'role_name')
+            ->get();
+
+        return view('admin.users.index', compact('users', 'roles'));
+    }
+
+    public function update_role(Request $request, $usr_id)
+    {
+        // Validate the request
+        $request->validate([
+            'usr_type' => 'required|exists:roles,usr_type', // Ensure the role exists in the roles table
+        ]);
+
+        // Update the user role in the database
+        DB::table('users')
+            ->where('usr_id', $usr_id)
+            ->update([
+                'usr_type' => $request->usr_type,
+                'usr_date_modified' => Carbon::now(),
+                'usr_modified_by' => session('usr_id'),
+            ]);
+    
+
+        // Flash success message
+        session()->flash('successMessage', 'User role has been updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
     }
 }

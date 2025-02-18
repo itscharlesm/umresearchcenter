@@ -49,7 +49,7 @@
                                     <td style="vertical-align: middle;">{{ $user->role_name }}</td>
                                     <td style="vertical-align: middle;">
                                         <a class="btn btn-info btn-sm activate-btn" href="javascript:void(0)"
-                                            data-toggle="modal" data-target="#updateEmailModal-{{ $user->usr_id }}">
+                                            data-toggle="modal" data-target="#updateRoleModal-{{ $user->usr_id }}">
                                             <span class="fa fa-edit"></span> Role
                                         </a>
                                         <a class="btn btn-danger btn-sm activate-btn" href="javascript:void(0)"
@@ -57,6 +57,50 @@
                                             <span class="fa fa-lock"></span> Password
                                         </a>
                                     </td>
+                                    <div class="modal fade" id="updateRoleModal-{{ $user->usr_id }}" tabindex="-1" role="dialog"
+                                        aria-labelledby="updateRoleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-md" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="updateRoleModalLabel">Update Role</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{{ url('admin/users/update/role/' . $user->usr_id) }}" method="POST">
+                                                        @csrf
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="usr_full_name">Name:</label>
+                                                                    <input type="text" class="form-control" value="{{ $user->usr_last_name }}, {{ $user->usr_first_name }}{{ $user->usr_middle_name }}" readonly>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="usr_type">Role:</label>
+                                                                    <select class="form-control" name="usr_type">
+                                                                        @foreach($roles as $role)
+                                                                            @if($role->usr_type != 1)
+                                                                                <option value="{{ $role->usr_type }}" 
+                                                                                    {{ $role->usr_type == $user->usr_type ? 'selected' : '' }}>
+                                                                                    {{ $role->role_name }}
+                                                                                </option>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-danger">Update Role</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </tr>
                             @endforeach
                         </tbody>
