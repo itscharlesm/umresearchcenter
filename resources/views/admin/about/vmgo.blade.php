@@ -50,7 +50,7 @@
                                     </td>
                                     <div class="modal fade" id="updateDescriptionModal-" tabindex="-1" role="dialog"
                                         aria-labelledby="updateDescriptionModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-dialog modal-xl" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="updateDescriptionModalLabel">Update RPC</h5>
@@ -63,17 +63,37 @@
                                                     <form action="" method="POST">
                                                         @csrf
                                                         <div class="row">
-                                                            <div class="col-md-12">
+                                                            <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label for="usr_full_name">Description:</label>
-                                                                    <textarea class="form-control summernote" name="rpc_description"></textarea>
+                                                                    <label for="vmgo_vision">Vision Description:</label>
+                                                                    <textarea class="form-control summernote" name="vmgo_vision">{!! $vmgo->vmgo_vision !!}</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="vmgo_mission">Mission Description:</label>
+                                                                    <textarea class="form-control summernote" name="vmgo_mission">{!! $vmgo->vmgo_mission !!}</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="vmgo_goals">Goals Description:</label>
+                                                                    <textarea class="form-control summernote" name="vmgo_goals">{!! $vmgo->vmgo_goals !!}</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="vmgo_objectives">Objectives Description:</label>
+                                                                    <textarea class="form-control summernote" name="vmgo_objectives">{!! $vmgo->vmgo_objectives !!}</textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="fa fa-close"></span> Close</button>
                                                         <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span> Update</button>
                                                     </form>
-                                                </div>
+                                                </div>                                                
                                             </div>
                                         </div>
                                     </div>

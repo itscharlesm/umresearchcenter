@@ -60,7 +60,7 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
-                                                                    <label for="usr_full_name">Description:</label>
+                                                                    <label for="rpc_description">Description:</label>
                                                                     <textarea class="form-control summernote" name="rpc_description">{!! $rpc->rpc_description !!}</textarea>
                                                                 </div>
                                                             </div>
