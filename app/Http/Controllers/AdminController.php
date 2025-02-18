@@ -65,12 +65,33 @@ class AdminController extends Controller
                 'usr_date_modified' => Carbon::now(),
                 'usr_modified_by' => session('usr_id'),
             ]);
-    
+
 
         // Flash success message
         session()->flash('successMessage', 'User role has been updated successfully.');
 
         // Redirect back
+        return redirect()->back();
+    }
+
+    public function reset_password(Request $request, $usr_id)
+    {
+        // Define the new password
+        $newPassword = '123456';
+
+        // Update the usr_password field for the given user
+        DB::table('users')
+            ->where('usr_id', $usr_id)
+            ->update([
+                'usr_password' => md5($newPassword),
+                'usr_date_modified' => Carbon::now(),
+                'usr_modified_by' => session('usr_id'),
+            ]);
+
+        // Show success message
+        session()->flash('successMessage', 'Password reset successfully, Kindly message the user for the default password: 123456.');
+
+        // Redirect back to the page
         return redirect()->back();
     }
 }

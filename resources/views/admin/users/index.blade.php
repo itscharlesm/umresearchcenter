@@ -101,6 +101,41 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="modal fade" id="forgotPasswordModal-{{ $user->usr_id }}" tabindex="-1" role="dialog"
+                                        aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="forgotPasswordModalLabel">Admin Password Update</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{{ url('admin/users/update/password/' . $user->usr_id) }}" method="POST">
+                                                        @csrf
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="usr_full_name">User Name:</label>
+                                                                    <input type="text" class="form-control"
+                                                                        value="{{ $user->usr_last_name }}, {{ $user->usr_first_name }}{{ $user->usr_middle_name }}"
+                                                                        readonly>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="usr_email">Email:</label>
+                                                                    <input type="text" class="form-control" value="{{ $user->usr_email }}" readonly>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-danger">Reset Password</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -109,43 +144,4 @@
             </div>
         </div>
     </section>
-
-    {{-- Forgot Password Modal --}}
-    @foreach ($users as $user)
-        <div class="modal fade" id="forgotPasswordModal-{{ $user->usr_id }}" tabindex="-1" role="dialog"
-            aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="forgotPasswordModalLabel">Admin Password Update</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="{{ url('admin/student/admin-update-password/' . $user->usr_id) }}" method="POST">
-                            @csrf
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="usr_full_name">User Name:</label>
-                                        <input type="text" class="form-control"
-                                            value="{{ $user->usr_last_name }}, {{ $user->usr_first_name }}{{ $user->usr_middle_name }}"
-                                            readonly>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="usr_email">Email:</label>
-                                        <input type="text" class="form-control" value="{{ $user->usr_email }}" readonly>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-danger">Reset Password</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endforeach
 @endsection

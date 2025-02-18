@@ -42,6 +42,7 @@ Route::get('/logout', [UserController::class, 'logout']);
 Route::get('/admin/home', [AdminController::class, 'home']);
 Route::get('/admin/users', [AdminController::class, 'users']);
 Route::post('/admin/users/update/role/{usr_id}', [AdminController::class, 'update_role']);
+Route::post('admin/users/update/password/{usr_id}', [AdminController::class, 'reset_password']);
 
 // User
 Route::post('admin/register-user', [UserController::class, 'registerUser']);
