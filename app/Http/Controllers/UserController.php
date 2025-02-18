@@ -101,4 +101,33 @@ class UserController extends Controller
         session()->flash('successMessage', 'User information has been updated.');
         return redirect()->action([AdminController::class, 'home']);
     }
+
+    public function updatePassword2(Request $request)
+    {
+        $current_password = $request->current_password;
+        $new_password1 = $request->new_password1;
+        $new_password2 = $request->new_password2;
+
+        $user = DB::table('users')
+            ->where('usr_id', '=', session('usr_id'))
+            ->first();
+
+        if (md5($current_password) == $user->usr_password) {
+            if ($new_password1 == $new_password2) {
+
+                DB::table('users')
+                    ->where('usr_id', '=', session('usr_id'))
+                    ->update([
+                        'usr_password' => md5($new_password1)
+                    ]);
+
+                session()->flash('successMessage', 'User password has been changed.');
+            } else {
+                session()->flash('infoMessage', 'Password did not matched.');
+            }
+        } else {
+            session()->flash('warningMessage', 'Incorrect user password.');
+        }
+        return redirect()->action([AdminController::class, 'home']);
+    }
 }

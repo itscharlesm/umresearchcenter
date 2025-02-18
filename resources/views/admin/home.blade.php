@@ -1,6 +1,5 @@
 @extends('admin.themes.layouts.main')
 @section('content')
-
     {{-- Content Header --}}
     <div class="content-header">
         <div class="container-fluid">
@@ -36,7 +35,7 @@
                             </div>
                             @foreach ($announcements as $announcement)
                                 <div>
-                                    <i class="fas fa-newspaper bg-blue"></i>
+                                    <i class="fas fa-newspaper bg-yellow"></i>
                                     <div class="timeline-item">
                                         <span class="time"><i class="fas fa-clock"></i>
                                             {{ \Carbon\Carbon::parse($announcement->ann_date_created)->diffForHumans() }}</span>
@@ -139,8 +138,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary"><span class="fa fa-save"></span> Save</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><span
+                                class="fa fa-close"></span> Close</button>
+                        <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span> Save</button>
                     </div>
                 </form>
             </div>

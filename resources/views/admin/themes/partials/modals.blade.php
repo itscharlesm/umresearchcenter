@@ -8,7 +8,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" action="{{ action('App\Http\Controllers\UserController@update') }}">
+            <form method="POST" action="{{ url('user/update') }}">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -35,7 +35,7 @@
                 <div class="modal-footer">
                     <input type="hidden" name="usr_uuid" value="{{ session('usr_uuid') }}" />
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-danger">Save changes</button>
                 </div>
             </form>
         </div>
@@ -52,8 +52,8 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" action="{{ action('App\Http\Controllers\UserController@updatePassword2') }}">
-                {{ csrf_field() }}
+            <form method="POST" action="{{ url('user/update-password') }}">
+                @csrf
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="current_password">Current Password</label>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Update password</button>
+                    <button type="submit" class="btn btn-danger">Update password</button>
                 </div>
             </form>
         </div>
