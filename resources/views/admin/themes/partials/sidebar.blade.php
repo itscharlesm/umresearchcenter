@@ -1,8 +1,8 @@
 <aside class="main-sidebar sidebar-light-red elevation-4">
     {{-- Brand Logo --}}
     <a href="#" class="brand-link" id="logoPic">
-        <img src="{{ asset('images/logo/um-logo.png') }}" alt="School Logo"
-            class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="{{ asset('images/logo/um-logo.png') }}" alt="School Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8">
         <span class="brand-text font-weight-light">University of Mindanao</span>
     </a>
 
@@ -38,7 +38,7 @@
                     <li class="nav-header">Admin Management</li>
                     <li class="nav-item {{ request()->is('admin/users*') ? 'menu-open' : '' }}">
                         <a href="#" class="nav-link {{ request()->is('admin/users*') ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-cog"></i>
+                            <i class="nav-icon fas fa-users"></i>
                             <p>
                                 Manage Users
                                 <i class="right fas fa-angle-left"></i>
@@ -50,6 +50,51 @@
                                     class="nav-link {{ request()->is('admin/users') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Users</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item {{ request()->is('admin/about*') ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ request()->is('admin/about*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-award"></i>
+                            <p>
+                                Manage About
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\AboutController@admin_rpc') }}"
+                                    class="nav-link {{ request()->is('admin/about/rpc') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>RPC</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\AdminController@users') }}"
+                                    class="nav-link {{ request()->is('admin/about') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>VMGO</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\AdminController@users') }}"
+                                    class="nav-link {{ request()->is('admin/about') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Agenda and Priority</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\AdminController@users') }}"
+                                    class="nav-link {{ request()->is('admin/about') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Programs and Fundings</p>
                                 </a>
                             </li>
                         </ul>

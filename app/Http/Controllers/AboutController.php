@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use DB;
 
 class AboutController extends Controller
 {
@@ -21,4 +22,13 @@ class AboutController extends Controller
     {
         return view('main.about.contact', );
     }
+
+    public function admin_rpc()
+{
+    $rpc_description = DB::table('rpc')
+        ->where('rpc_active', 1)
+        ->get();
+
+    return view('admin.about.rpc', compact('rpc_description'));
+}
 }

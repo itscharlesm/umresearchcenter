@@ -58,6 +58,9 @@ Route::get('/about/about-us', [AboutController::class, 'about_us']);
 Route::get('/about/our-team', [AboutController::class, 'meet_our_team']);
 Route::get('/about/contact-us', [AboutController::class, 'contact_us']);
 
+// About Admin
+Route::get('/admin/about/rpc', [AboutController::class, 'admin_rpc']);
+
 // Institute
 Route::get('/institute/popular', [InstituteController::class, 'popular']);
 Route::get('/institute/emerging', [InstituteController::class, 'emerging']);
