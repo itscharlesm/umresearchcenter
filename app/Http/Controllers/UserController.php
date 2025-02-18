@@ -62,16 +62,16 @@ class UserController extends Controller
 
             DB::commit();
 
+            // Redirect back to the page
             session()->flash('successMessage', 'User has been successfully created.');
-
-            return redirect()->action([AdminController::class, 'home']);
+            return redirect()->back();
 
         } catch (\Exception $e) {
             DB::rollBack();
 
+            // Redirect back to the page
             session()->flash('errorMessage', 'Something went wrong. Please try again.');
-
-            return redirect()->action([MainController::class, 'main']);
+            return redirect()->back();
         }
     }
 
