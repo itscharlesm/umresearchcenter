@@ -17,8 +17,11 @@ class AboutController extends Controller
         // Fetch the single active row from the vmgo table
         $vmgo = DB::table('vmgo')->where('vmgo_active', 1)->first();
 
-        // Fetch the single active row from the vmgo table
+        // Fetch the single active row from the agenda_priority table
         $agpr = DB::table('agenda_priority')->where('agpr_active', 1)->first();
+
+        // Fetch the single active row from the program_funding table
+        $prfu = DB::table('program_funding')->where('prfu_active', 1)->first();
 
         // Pass the rpc_description, vmgo_vision, and vmgo_mission to the view
         return view('main.about.about', [
@@ -29,6 +32,8 @@ class AboutController extends Controller
             'vmgo_objectives' => $vmgo->vmgo_objectives ?? '',
             'agpr_agenda' => $agpr->agpr_agenda ?? '',
             'agpr_priority' => $agpr->agpr_priority ?? '',
+            'prfu_program' => $prfu->prfu_program ?? '',
+            'prfu_funding' => $prfu->prfu_funding ?? ''
         ]);
     }
 

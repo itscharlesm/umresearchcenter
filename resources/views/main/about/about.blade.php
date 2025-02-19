@@ -180,15 +180,15 @@
                         <div class="tab-pane fade" id="programs">
                             <div class="section-title">
                                 <h2>Research Programs</h2>
-                                <p class="font-weight-light text-justify">
-                                    Programs.
-                                </p>
+                                <div>
+                                    {!! $prfu_program !!}
+                                </div>
                             </div>
                             <div class="section-title">
                                 <h2>Research Fundings</h2>
-                                <p class="font-weight-light text-justify">
-                                    Fundings.
-                                </p>
+                                <div>
+                                    {!! $prfu_funding !!}
+                                </div>
                             </div>
                         </div>
                     </div>
