@@ -11,7 +11,11 @@ class AboutController extends Controller
 {
     public function about_us()
     {
-        return view('main.about.about', );
+        // Fetch the single active row from the rpc table
+        $rpc = DB::table('rpc')->where('rpc_active', 1)->first();
+
+        // Pass the rpc_description to the view
+        return view('main.about.about', ['rpc_description' => $rpc->rpc_description ?? '']);
     }
 
     public function meet_our_team()
