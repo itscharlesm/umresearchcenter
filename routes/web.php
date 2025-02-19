@@ -82,6 +82,7 @@ Route::get('/institute/social', [InstituteController::class, 'social']);
 Route::get('/admin/institute/popular', [InstituteController::class, 'admin_popular']);
 Route::post('/admin/institute/popular/update/{po_id}', [InstituteController::class, 'admin_popular_update']);
 Route::get('/admin/institute/emerging', [InstituteController::class, 'admin_emerging']);
+Route::post('/admin/institute/emerging/update/{etgis_id}', [InstituteController::class, 'admin_emerging_update']);
 
 // Center
 Route::get('/center/nanotechnology', [CenterController::class, 'nanotechnology']);

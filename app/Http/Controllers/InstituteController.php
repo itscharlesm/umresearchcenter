@@ -75,20 +75,20 @@ class InstituteController extends Controller
         return view('admin.institute.emerging', compact('etgis_description'));
     }
 
-    public function admin_emerging_update(Request $request, $po_id)
+    public function admin_emerging_update(Request $request, $etgis_id)
     {
         // Validate the request
         $request->validate([
-            'po_description' => 'required|string',
+            'etgis_description' => 'required|string',
         ]);
 
         // Update the user role in the database
-        DB::table('popular_opinion')
-            ->where('po_id', $po_id)
+        DB::table('emerging_technologies')
+            ->where('etgis_id', $etgis_id)
             ->update([
-                'po_description' => $request->po_description,
-                'po_date_modified' => Carbon::now(),
-                'po_modified_by' => session('usr_id'),
+                'etgis_description' => $request->etgis_description,
+                'etgis_date_modified' => Carbon::now(),
+                'etgis_modified_by' => session('usr_id'),
             ]);
 
         // Flash success message

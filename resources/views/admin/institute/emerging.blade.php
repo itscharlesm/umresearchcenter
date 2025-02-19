@@ -38,23 +38,27 @@
                                     <td style="vertical-align: middle;">{!! $etgis->etgis_description !!}</td>
                                     <td style="vertical-align: middle;">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
-                                            data-toggle="modal" data-target="#updateDescriptionModal-{{ $etgis->etgis_id }}">
+                                            data-toggle="modal"
+                                            data-target="#updateDescriptionModal-{{ $etgis->etgis_id }}">
                                             <span class="fa fa-edit"></span> Update
                                         </a>
                                     </td>
-                                    <div class="modal fade" id="updateDescriptionModal-{{ $etgis->etgis_id }}" tabindex="-1"
-                                        role="dialog" aria-labelledby="updateDescriptionModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="updateDescriptionModal-{{ $etgis->etgis_id }}"
+                                        tabindex="-1" role="dialog" aria-labelledby="updateDescriptionModalLabel"
+                                        aria-hidden="true">
                                         <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="updateDescriptionModalLabel">Update Description</h5>
+                                                    <h5 class="modal-title" id="updateDescriptionModalLabel">Update
+                                                        Description</h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{ url('admin/institute/popular/update/' . $etgis->etgis_id) }}"
+                                                    <form
+                                                        action="{{ url('admin/institute/emerging/update/' . $etgis->etgis_id) }}"
                                                         method="POST">
                                                         @csrf
                                                         <div class="row">
