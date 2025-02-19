@@ -28,8 +28,8 @@
                     <table class="table table-hover table-striped table-sm responsive">
                         <thead>
                             <tr>
-                                <th style="text-align: center; vertical-align: middle">Agenda</th>
-                                <th style="text-align: center; vertical-align: middle">Priority</th>
+                                <th style="text-align: center; vertical-align: middle">Program</th>
+                                <th style="text-align: center; vertical-align: middle">Funding</th>
                                 <th style="text-align: center; vertical-align: middle; width: 100px">Action</th>
                             </tr>
                         </thead>
@@ -56,18 +56,18 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{ url('admin/about/agenda-priority/update/' . $prfu->prfu_id )}}" method="POST">
+                                                    <form action="{{ url('admin/about/program-funding/update/' . $prfu->prfu_id )}}" method="POST">
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label for="prfu_program">Agenda Description:</label>
+                                                                    <label for="prfu_program">Program Description:</label>
                                                                     <textarea class="form-control summernote" name="prfu_program">{!! $prfu->prfu_program !!}</textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label for="prfu_funding">Priority Description:</label>
+                                                                    <label for="prfu_funding">Funding Description:</label>
                                                                     <textarea class="form-control summernote" name="prfu_funding">{!! $prfu->prfu_funding !!}</textarea>
                                                                 </div>
                                                             </div>

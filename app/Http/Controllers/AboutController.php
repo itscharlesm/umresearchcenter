@@ -137,4 +137,30 @@ class AboutController extends Controller
 
         return view('admin.about.program_funding', compact('prfu_descriptions'));
     }
+
+    public function admin_program_funding_update(Request $request, $prfu_id)
+    {
+        // Validate the request
+        $request->validate([
+            'prfu_program' => 'nullable|string',
+            'prfu_funding' => 'nullable|string'
+        ]);
+
+        // Update the user role in the database
+        DB::table('program_funding')
+            ->where('prfu_id', $prfu_id)
+            ->update([
+                'prfu_program' => $request->prfu_program,
+                'prfu_funding' => $request->prfu_funding,
+                'prfu_date_modified' => Carbon::now(),
+                'prfu_modified_by' => session('usr_id'),
+            ]);
+
+
+        // Flash success message
+        session()->flash('successMessage', 'Agenda and Priority descriptions updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }

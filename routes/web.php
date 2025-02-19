@@ -66,6 +66,7 @@ Route::post('/admin/about/vmgo/update/{vmgo_id}', [AboutController::class, 'admi
 Route::get('/admin/about/agenda-priority', [AboutController::class, 'admin_agenda_priority']);
 Route::post('/admin/about/agenda-priority/update/{agpr_id}', [AboutController::class, 'admin_agenda_priority_update']);
 Route::get('/admin/about/program-funding', [AboutController::class, 'admin_program_funding']);
+Route::post('/admin/about/program-funding/update/{prfu_id}', [AboutController::class, 'admin_program_funding_update']);
 
 // Institute
 Route::get('/institute/popular', [InstituteController::class, 'popular']);
