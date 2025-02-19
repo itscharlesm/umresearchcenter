@@ -82,8 +82,8 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ action('App\Http\Controllers\AdminController@users') }}"
-                                    class="nav-link {{ request()->is('admin/about') ? 'active' : '' }}">
+                                <a href="{{ action('App\Http\Controllers\AboutController@admin_agenda_priority') }}"
+                                    class="nav-link {{ request()->is('admin/about/agenda-priority') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Agenda and Priority</p>
                                 </a>

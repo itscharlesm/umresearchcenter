@@ -94,4 +94,13 @@ class AboutController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_agenda_priority()
+    {
+        $agpr_descriptions = DB::table('agenda_priority')
+            ->where('agpr_active', 1)
+            ->get();
+
+        return view('admin.about.agenda_priority', compact('agpr_descriptions'));
+    }
 }

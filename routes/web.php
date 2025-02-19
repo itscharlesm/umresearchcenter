@@ -63,6 +63,7 @@ Route::get('/admin/about/rpc', [AboutController::class, 'admin_rpc']);
 Route::post('/admin/about/rpc/update/{rpc_id}', [AboutController::class, 'admin_rpc_update']);
 Route::get('/admin/about/vmgo', [AboutController::class, 'admin_vmgo']);
 Route::post('/admin/about/vmgo/update/{rpc_id}', [AboutController::class, 'admin_vmgo_update']);
+Route::get('/admin/about/agenda-priority', [AboutController::class, 'admin_agenda_priority']);
 
 // Institute
 Route::get('/institute/popular', [InstituteController::class, 'popular']);
