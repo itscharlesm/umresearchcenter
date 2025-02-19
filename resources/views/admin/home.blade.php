@@ -21,7 +21,7 @@
     <section class="content">
         <div class="container-fluid">
             @include('layouts.partials.alerts')
-            @if (session('usr_type') == 1)
+            @if (session('usr_type') == 1 || session('usr_type') == 2 || session('usr_type') == 3)
                 <div class="row">
                     {{-- Headers and Recent Users --}}
                     <div class="col-md-8">
