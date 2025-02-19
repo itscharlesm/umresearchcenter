@@ -81,6 +81,7 @@ Route::get('/institute/social', [InstituteController::class, 'social']);
 // Institute Admin
 Route::get('/admin/institute/popular', [InstituteController::class, 'admin_popular']);
 Route::post('/admin/institute/popular/update/{po_id}', [InstituteController::class, 'admin_popular_update']);
+Route::get('/admin/institute/emerging', [InstituteController::class, 'admin_emerging']);
 
 // Center
 Route::get('/center/nanotechnology', [CenterController::class, 'nanotechnology']);

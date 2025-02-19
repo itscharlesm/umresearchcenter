@@ -5,15 +5,14 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Popular Opinion</h1>
+                    <h1 class="m-0">INSTITUTE OF EMERGING TECHNOLOGIES AND GREEN INNOVATION STUDIES</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
-                        </li>
                         <li class="breadcrumb-item active">Institutes</li>
-                        <li class="breadcrumb-item active">Popular Opinion</li>
+                        <li class="breadcrumb-item active">Emerging Technologies and Green Innovation</li>
                     </ol>
                 </div>
             </div>
@@ -34,16 +33,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($po_description as $po)
+                            @foreach ($etgis_description as $etgis)
                                 <tr style="vertical-align: middle;">
-                                    <td style="vertical-align: middle;">{!! $po->po_description !!}</td>
+                                    <td style="vertical-align: middle;">{!! $etgis->etgis_description !!}</td>
                                     <td style="vertical-align: middle;">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
-                                            data-toggle="modal" data-target="#updateDescriptionModal-{{ $po->po_id }}">
+                                            data-toggle="modal" data-target="#updateDescriptionModal-{{ $etgis->etgis_id }}">
                                             <span class="fa fa-edit"></span> Update
                                         </a>
                                     </td>
-                                    <div class="modal fade" id="updateDescriptionModal-{{ $po->po_id }}" tabindex="-1"
+                                    <div class="modal fade" id="updateDescriptionModal-{{ $etgis->etgis_id }}" tabindex="-1"
                                         role="dialog" aria-labelledby="updateDescriptionModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
@@ -55,14 +54,14 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{ url('admin/institute/popular/update/' . $po->po_id) }}"
+                                                    <form action="{{ url('admin/institute/popular/update/' . $etgis->etgis_id) }}"
                                                         method="POST">
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
-                                                                    <label for="po_description">Description:</label>
-                                                                    <textarea class="form-control summernote" name="po_description">{!! $po->po_description !!}</textarea>
+                                                                    <label for="etgis_description">Description:</label>
+                                                                    <textarea class="form-control summernote" name="etgis_description">{!! $etgis->etgis_description !!}</textarea>
                                                                 </div>
                                                             </div>
                                                         </div>

@@ -65,4 +65,36 @@ class InstituteController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_emerging()
+    {
+        $etgis_description = DB::table('emerging_technologies')
+            ->where('etgis_active', 1)
+            ->get();
+
+        return view('admin.institute.emerging', compact('etgis_description'));
+    }
+
+    public function admin_emerging_update(Request $request, $po_id)
+    {
+        // Validate the request
+        $request->validate([
+            'po_description' => 'required|string',
+        ]);
+
+        // Update the user role in the database
+        DB::table('popular_opinion')
+            ->where('po_id', $po_id)
+            ->update([
+                'po_description' => $request->po_description,
+                'po_date_modified' => Carbon::now(),
+                'po_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }

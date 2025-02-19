@@ -11,8 +11,8 @@
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
-                        <li class="breadcrumb-item active">Agenda and Priority</li>
                         </li>
+                        <li class="breadcrumb-item active">Agenda and Priority</li>
                     </ol>
                 </div>
             </div>

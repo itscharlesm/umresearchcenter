@@ -127,8 +127,8 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ action('App\Http\Controllers\AboutController@admin_vmgo') }}"
-                                    class="nav-link {{ request()->is('admin/about/vmgo') ? 'active' : '' }}">
+                                <a href="{{ action('App\Http\Controllers\InstituteController@admin_emerging') }}"
+                                    class="nav-link {{ request()->is('admin/institute/emerging') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>ETGIS</p>
                                 </a>
