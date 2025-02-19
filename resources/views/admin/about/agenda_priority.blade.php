@@ -56,18 +56,18 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="" method="POST">
+                                                    <form action="{{ url('admin/about/agenda-priority/update/' . $agpr->agpr_id )}}" method="POST">
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label for="agpr_agenda">Vision Description:</label>
+                                                                    <label for="agpr_agenda">Agenda Description:</label>
                                                                     <textarea class="form-control summernote" name="agpr_agenda">{!! $agpr->agpr_agenda !!}</textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label for="agpr_priority">Mission Description:</label>
+                                                                    <label for="agpr_priority">Priority Description:</label>
                                                                     <textarea class="form-control summernote" name="agpr_priority">{!! $agpr->agpr_priority !!}</textarea>
                                                                 </div>
                                                             </div>

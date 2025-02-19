@@ -87,9 +87,8 @@ class AboutController extends Controller
                 'vmgo_modified_by' => session('usr_id'),
             ]);
 
-
         // Flash success message
-        session()->flash('successMessage', 'RPC description updated successfully.');
+        session()->flash('successMessage', 'VGMO descriptions updated successfully.');
 
         // Redirect back
         return redirect()->back();
@@ -102,5 +101,31 @@ class AboutController extends Controller
             ->get();
 
         return view('admin.about.agenda_priority', compact('agpr_descriptions'));
+    }
+
+    public function admin_agenda_priority_update(Request $request, $agpr_id)
+    {
+        // Validate the request
+        $request->validate([
+            'agpr_agenda' => 'nullable|string',
+            'agpr_priority' => 'nullable|string'
+        ]);
+
+        // Update the user role in the database
+        DB::table('agenda_priority')
+            ->where('agpr_id', $agpr_id)
+            ->update([
+                'agpr_agenda' => $request->agpr_agenda,
+                'agpr_priority' => $request->agpr_priority,
+                'agpr_date_modified' => Carbon::now(),
+                'agpr_modified_by' => session('usr_id'),
+            ]);
+
+
+        // Flash success message
+        session()->flash('successMessage', 'Agenda and Priority descriptions updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
     }
 }
