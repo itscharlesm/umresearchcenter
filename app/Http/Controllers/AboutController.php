@@ -14,8 +14,17 @@ class AboutController extends Controller
         // Fetch the single active row from the rpc table
         $rpc = DB::table('rpc')->where('rpc_active', 1)->first();
 
-        // Pass the rpc_description to the view
-        return view('main.about.about', ['rpc_description' => $rpc->rpc_description ?? '']);
+        // Fetch the single active row from the vmgo table
+        $vmgo = DB::table('vmgo')->where('vmgo_active', 1)->first();
+
+        // Pass the rpc_description, vmgo_vision, and vmgo_mission to the view
+        return view('main.about.about', [
+            'rpc_description' => $rpc->rpc_description ?? '',
+            'vmgo_vision' => $vmgo->vmgo_vision ?? '',
+            'vmgo_mission' => $vmgo->vmgo_mission ?? '',
+            'vmgo_goals' => $vmgo->vmgo_goals ?? '',
+            'vmgo_objectives' => $vmgo->vmgo_objectives ?? '',
+        ]);
     }
 
     public function meet_our_team()
@@ -151,7 +160,6 @@ class AboutController extends Controller
                 'agpr_modified_by' => session('usr_id'),
             ]);
 
-
         // Flash success message
         session()->flash('successMessage', 'Agenda and Priority descriptions updated successfully.');
 
@@ -185,7 +193,6 @@ class AboutController extends Controller
                 'prfu_date_modified' => Carbon::now(),
                 'prfu_modified_by' => session('usr_id'),
             ]);
-
 
         // Flash success message
         session()->flash('successMessage', 'Agenda and Priority descriptions updated successfully.');
