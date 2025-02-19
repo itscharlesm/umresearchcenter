@@ -94,7 +94,7 @@
                                 <a href="{{ action('App\Http\Controllers\AboutController@admin_program_funding') }}"
                                     class="nav-link {{ request()->is('admin/about/program-funding') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Programs and Fundings</p>
+                                    <p>Program and Funding</p>
                                 </a>
                             </li>
                         </ul>
