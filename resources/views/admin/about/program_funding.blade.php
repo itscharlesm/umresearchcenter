@@ -34,10 +34,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($agpr_descriptions as $agpr)
+                            @foreach ($prfu_descriptions as $prfu)
                                 <tr style="text-align: justify; vertical-align: middle;">
-                                    <td style="vertical-align: middle;">{!! $agpr->agpr_agenda !!}</td>
-                                    <td style="vertical-align: middle;">{!! $agpr->agpr_priority !!}</td>
+                                    <td style="vertical-align: middle;">{!! $prfu->prfu_program !!}</td>
+                                    <td style="vertical-align: middle;">{!! $prfu->prfu_funding !!}</td>
                                     <td style="vertical-align: middle;">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
                                             data-toggle="modal" data-target="#updateDescriptionModal-">
@@ -56,19 +56,19 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{ url('admin/about/agenda-priority/update/' . $agpr->agpr_id )}}" method="POST">
+                                                    <form action="{{ url('admin/about/agenda-priority/update/' . $prfu->prfu_id )}}" method="POST">
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label for="agpr_agenda">Agenda Description:</label>
-                                                                    <textarea class="form-control summernote" name="agpr_agenda">{!! $agpr->agpr_agenda !!}</textarea>
+                                                                    <label for="prfu_program">Agenda Description:</label>
+                                                                    <textarea class="form-control summernote" name="prfu_program">{!! $prfu->prfu_program !!}</textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label for="agpr_priority">Priority Description:</label>
-                                                                    <textarea class="form-control summernote" name="agpr_priority">{!! $agpr->agpr_priority !!}</textarea>
+                                                                    <label for="prfu_funding">Priority Description:</label>
+                                                                    <textarea class="form-control summernote" name="prfu_funding">{!! $prfu->prfu_funding !!}</textarea>
                                                                 </div>
                                                             </div>
                                                         </div>

@@ -128,4 +128,13 @@ class AboutController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_program_funding()
+    {
+        $prfu_descriptions = DB::table('program_funding')
+            ->where('prfu_active', 1)
+            ->get();
+
+        return view('admin.about.program_funding', compact('prfu_descriptions'));
+    }
 }
