@@ -33,6 +33,15 @@
                     </a>
                 </li>
 
+                {{-- Messages --}}
+                <li class="nav-item">
+                    <a href="{{ action('App\Http\Controllers\AdminController@messages') }}"
+                        class="nav-link {{ request()->is('admin/messages') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-message"></i>
+                        <p>Messages</p>
+                    </a>
+                </li>
+
                 {{-- Admin Management --}}
                 @if (session('usr_type') == 1 || session('usr_type') == 2)
                     <li class="nav-header">Admin Management</li>

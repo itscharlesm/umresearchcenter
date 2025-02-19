@@ -94,4 +94,13 @@ class AdminController extends Controller
         // Redirect back to the page
         return redirect()->back();
     }
+
+    public function messages()
+    {
+        $messages = DB::table('contact')
+            ->where('con_active', 1)
+            ->get();
+
+        return view('admin.messages', compact('messages'));
+    }
 }
