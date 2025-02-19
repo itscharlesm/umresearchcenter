@@ -19,36 +19,43 @@
                     <div class="p-4 bg-white shadow-sm rounded">
                         <h4 class="text-danger font-italic">Quick Contact</h4>
                         <p>
-                            <i class="fas fa-map-marker-alt text-danger"></i> 
-                            <strong>Address:</strong> Research and Publication Center, University of Mindanao, Room H1C, DPT Building, Matina Campus, Davao City
+                            <i class="fas fa-map-marker-alt text-danger"></i>
+                            <strong>Address:</strong> Research and Publication Center, University of Mindanao, Room H1C, DPT
+                            Building, Matina Campus, Davao City
                         </p>
                         <p>
-                            <i class="fas fa-phone-alt text-danger"></i> 
+                            <i class="fas fa-phone-alt text-danger"></i>
                             <strong>Phone:</strong> 082 305-0645/47 loc 174, 082 244-3457-58 loc 174
                         </p>
                         <p>
-                            <i class="fas fa-envelope text-danger"></i> 
+                            <i class="fas fa-envelope text-danger"></i>
                             <strong>Email:</strong> rpc@umindanao.edu.ph
                         </p>
                         <p>
-                            <i class="fab fa-facebook text-danger"></i> 
+                            <i class="fab fa-facebook text-danger"></i>
                             <strong>Facebook:</strong> University of Mindanao Research and Publication Center
                         </p>
                     </div>
                 </div>
-            
+
                 <!-- Right Section: Contact Form -->
                 <div class="col-md-6">
                     <div class="p-4 bg-white shadow-sm rounded">
-                        <form action="#" method="POST">
+                        <form action="{{ url('about/contact-us/message') }}" method="POST">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Name*" required>
+                                <input type="text" class="form-control" placeholder="Your Name" name="con_name" required>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Your Mail*" required>
+                                <input type="number" class="form-control" placeholder="Your Number" name="con_number"
+                                    required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" rows="4" placeholder="Your Message.." required></textarea>
+                                <input type="email" class="form-control" placeholder="Your Mail" name="con_email"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="4" placeholder="Your Message..." name="con_message" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-danger btn-block">
                                 SEND MESSAGE
@@ -57,7 +64,6 @@
                     </div>
                 </div>
             </div>
-            
         </div>
     </section>
 @endsection

@@ -59,6 +59,7 @@ Route::get('announcement/delete/{ann_uuid}', [AnnouncementController::class, 'de
 Route::get('/about/about-us', [AboutController::class, 'about_us']);
 Route::get('/about/our-team', [AboutController::class, 'meet_our_team']);
 Route::get('/about/contact-us', [AboutController::class, 'contact_us']);
+Route::post('/about/contact-us/message', [AboutController::class, 'contact_us_message']);
 
 // About Admin
 Route::get('/admin/about/rpc', [AboutController::class, 'admin_rpc']);

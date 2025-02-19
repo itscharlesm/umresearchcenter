@@ -24,6 +24,32 @@ class AboutController extends Controller
         return view('main.about.contact', );
     }
 
+    public function contact_us_message(Request $request)
+    {
+        // Validate request data
+        $request->validate([
+            'con_name' => 'required|string|max:255',
+            'con_number' => 'required|numeric',
+            'con_email' => 'required|email|max:255',
+            'con_message' => 'required|string|max:1000',
+        ]);
+
+        // Insert data into the database
+        DB::table('contact')->insert([
+            'con_name' => ucwords(strtolower($request->con_name)),
+            'con_number' => $request->con_number,
+            'con_email' => $request->con_email,
+            'con_message' => $request->con_message,
+            'con_status' => 'Pending',
+            'con_date_created' => Carbon::now(),
+            'con_active' => 1,
+        ]);
+
+        // Redirect with success message
+        session()->flash('successMessage', 'Message sent successfully.');
+        return redirect()->action([MainController::class, 'main']);
+    }
+
     public function admin_rpc()
     {
         $rpc_description = DB::table('rpc')
