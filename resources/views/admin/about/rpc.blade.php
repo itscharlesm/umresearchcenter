@@ -34,7 +34,7 @@
                         </thead>
                         <tbody>
                             @foreach ($rpc_description as $rpc)
-                                <tr style="text-align: justify; vertical-align: middle;">
+                                <tr style="vertical-align: middle;">
                                     <td style="vertical-align: middle;">{!! $rpc->rpc_description !!}</td>
                                     <td style="vertical-align: middle;">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
@@ -87,6 +87,7 @@
         $(document).ready(function() {
             $('.summernote').summernote({
                 height: 200,
+                styleWithSpan: false, // Ensures proper list styling
                 toolbar: [
                     ['style', ['bold', 'italic', 'underline', 'clear']],
                     ['font', ['strikethrough', 'superscript', 'subscript']],
@@ -95,16 +96,15 @@
                     ['height', ['height']]
                 ],
                 callbacks: {
+                    onInit: function() {
+                        // Ensure lists have correct styles on initialization
+                        $('.note-editable').find('ul').css('list-style-type', 'disc');
+                        $('.note-editable').find('ol').css('list-style-type', 'decimal');
+                    },
                     onBlur: function(e) {
-                        $('.summernote').each(function() {
-                            let editor = $(this);
-                            let content = editor.summernote('code');
-                            content = content.replace(/<ul>/g,
-                                '<ul style="list-style-type: disc;">');
-                            content = content.replace(/<ol>/g,
-                                '<ol style="list-style-type: decimal;">');
-                            editor.summernote('code', content);
-                        });
+                        // Apply styles only to existing lists instead of resetting content
+                        $('.note-editable').find('ul').css('list-style-type', 'disc');
+                        $('.note-editable').find('ol').css('list-style-type', 'decimal');
                     }
                 }
             });

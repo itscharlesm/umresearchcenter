@@ -35,7 +35,7 @@
                         </thead>
                         <tbody>
                             @foreach ($prfu_descriptions as $prfu)
-                                <tr style="text-align: justify; vertical-align: middle;">
+                                <tr style="vertical-align: middle;">
                                     <td style="vertical-align: middle;">{!! $prfu->prfu_program !!}</td>
                                     <td style="vertical-align: middle;">{!! $prfu->prfu_funding !!}</td>
                                     <td style="vertical-align: middle;">
@@ -56,7 +56,9 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{ url('admin/about/program-funding/update/' . $prfu->prfu_id )}}" method="POST">
+                                                    <form
+                                                        action="{{ url('admin/about/program-funding/update/' . $prfu->prfu_id) }}"
+                                                        method="POST">
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-md-6">
@@ -72,10 +74,13 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="fa fa-close"></span> Close</button>
-                                                        <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span> Update</button>
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal"><span class="fa fa-close"></span>
+                                                            Close</button>
+                                                        <button type="submit" class="btn btn-danger"><span
+                                                                class="fa fa-save"></span> Update</button>
                                                     </form>
-                                                </div>                                                
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -91,6 +96,7 @@
         $(document).ready(function() {
             $('.summernote').summernote({
                 height: 200,
+                styleWithSpan: false, // Ensures proper list styling
                 toolbar: [
                     ['style', ['bold', 'italic', 'underline', 'clear']],
                     ['font', ['strikethrough', 'superscript', 'subscript']],
@@ -99,16 +105,15 @@
                     ['height', ['height']]
                 ],
                 callbacks: {
+                    onInit: function() {
+                        // Ensure lists have correct styles on initialization
+                        $('.note-editable').find('ul').css('list-style-type', 'disc');
+                        $('.note-editable').find('ol').css('list-style-type', 'decimal');
+                    },
                     onBlur: function(e) {
-                        $('.summernote').each(function() {
-                            let editor = $(this);
-                            let content = editor.summernote('code');
-                            content = content.replace(/<ul>/g,
-                                '<ul style="list-style-type: disc;">');
-                            content = content.replace(/<ol>/g,
-                                '<ol style="list-style-type: decimal;">');
-                            editor.summernote('code', content);
-                        });
+                        // Apply styles only to existing lists instead of resetting content
+                        $('.note-editable').find('ul').css('list-style-type', 'disc');
+                        $('.note-editable').find('ol').css('list-style-type', 'decimal');
                     }
                 }
             });
