@@ -44,10 +44,10 @@
                                 <tr style="text-align: center; vertical-align: middle;">
                                     <td style="vertical-align: middle;">
                                         {{ \Carbon\Carbon::parse($con->con_date_created)->format('F j, Y | g:i A') }}
-                                    </td>                                    
+                                    </td>
                                     <td style="vertical-align: middle;">{{ $con->con_name }}</td>
                                     <td style="vertical-align: middle;">{{ $con->con_number }}</td>
-                                    <td style="vertical-align: middle;">{{ $con->con_email}}</td>
+                                    <td style="vertical-align: middle;">{{ $con->con_email }}</td>
                                     <td style="vertical-align: middle;">{{ $con->con_status }}</td>
                                     <td style="vertical-align: middle;">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
@@ -60,14 +60,16 @@
                                         <div class="modal-dialog modal-md" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="viewConcernModalLabel">Contact Information</h5>
+                                                    <h5 class="modal-title" id="viewConcernModalLabel">Contact Information
+                                                    </h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action=""
+                                                    <form
+                                                        action="{{ url('admin/messages/concern/update/' . $con->con_id) }}"
                                                         method="POST">
                                                         @csrf
                                                         <div class="row">
@@ -80,7 +82,8 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label for="con_date_created">Date Submitted:</label>
-                                                                    <p>{{ \Carbon\Carbon::parse($con->con_date_created)->format('F j, Y | g:i A') }}</p>
+                                                                    <p>{{ \Carbon\Carbon::parse($con->con_date_created)->format('F j, Y | g:i A') }}
+                                                                    </p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -111,15 +114,24 @@
                                                                 <div class="form-group">
                                                                     <label for="con_status">Status:</label>
                                                                     <select class="form-control" name="con_status">
-                                                                        <option value="Pending" {{ $con->con_status == 'Pending' ? 'selected' : '' }}>Pending</option>
-                                                                        <option value="Ongoing" {{ $con->con_status == 'Ongoing' ? 'selected' : '' }}>Ongoing</option>
-                                                                        <option value="Completed" {{ $con->con_status == 'Completed' ? 'selected' : '' }}>Completed</option>
+                                                                        <option value="Pending"
+                                                                            {{ $con->con_status == 'Pending' ? 'selected' : '' }}>
+                                                                            Pending</option>
+                                                                        <option value="Ongoing"
+                                                                            {{ $con->con_status == 'Ongoing' ? 'selected' : '' }}>
+                                                                            Ongoing</option>
+                                                                        <option value="Completed"
+                                                                            {{ $con->con_status == 'Completed' ? 'selected' : '' }}>
+                                                                            Completed</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="fa fa-close"></span> Close</button>
-                                                        <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span> Update</button>
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal"><span class="fa fa-close"></span>
+                                                            Close</button>
+                                                        <button type="submit" class="btn btn-danger"><span
+                                                                class="fa fa-save"></span> Update</button>
                                                     </form>
                                                 </div>
                                             </div>

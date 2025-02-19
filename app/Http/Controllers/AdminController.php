@@ -54,7 +54,7 @@ class AdminController extends Controller
     {
         // Validate the request
         $request->validate([
-            'usr_type' => 'required|exists:roles,usr_type', // Ensure the role exists in the roles table
+            'usr_type' => 'required|exists:roles,usr_type',
         ]);
 
         // Update the user role in the database
@@ -102,5 +102,28 @@ class AdminController extends Controller
             ->get();
 
         return view('admin.messages', compact('messages'));
+    }
+
+    public function messages_update(Request $request, $con_id)
+    {
+        // Validate the request
+        $request->validate([
+            'con_status' => 'required|in:Pending,Ongoing,Completed',
+        ]);
+
+        // Update the status of the concern in the database
+        DB::table('contact')
+            ->where('con_id', $con_id)
+            ->update([
+                'con_status' => $request->con_status,
+                'con_date_modified' => Carbon::now(),
+                'con_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Concern status updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
     }
 }
