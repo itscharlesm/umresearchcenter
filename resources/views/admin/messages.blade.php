@@ -50,8 +50,9 @@
                                     <td style="vertical-align: middle;">{{ $con->con_email }}</td>
                                     <td style="vertical-align: middle;">{{ $con->con_status }}</td>
                                     <td style="vertical-align: middle;">
-                                        <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
-                                            data-toggle="modal" data-target="#viewConcernModal-{{ $con->con_id }}">
+                                        <a class="btn btn-danger btn-sm activate-btn" href="javascript:void(0)"
+                                            data-toggle="modal"
+                                            data-target="#{{ $con->con_status == 'Completed' ? 'completedConcernModal' : 'viewConcernModal' }}-{{ $con->con_id }}">
                                             <span class="fa fa-eye"></span> View
                                         </a>
                                     </td>
@@ -109,6 +110,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <hr>
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
@@ -133,6 +135,83 @@
                                                         <button type="submit" class="btn btn-danger"><span
                                                                 class="fa fa-save"></span> Update</button>
                                                     </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="completedConcernModal-{{ $con->con_id }}" tabindex="-1"
+                                        role="dialog" aria-labelledby="completedConcernModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-md" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="completedConcernModalLabel">Contact
+                                                        Information [{{ $con->con_status }}]
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="con_name">Name:</label>
+                                                                <p>{{ $con->con_name }}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="con_date_created">Date Submitted:</label>
+                                                                <p>{{ \Carbon\Carbon::parse($con->con_date_created)->format('F j, Y | g:i A') }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="con_number">Contact Number:</label>
+                                                                <p>{{ $con->con_number }}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="con_email">Email:</label>
+                                                                <p>{{ $con->con_email }}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label for="con_message">Message:</label>
+                                                                <p class="text-justify">{{ $con->con_message }}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="con_processed_by">Processed By:</label>
+                                                                <p class="text-justify">{{ $con->usr_last_name }},
+                                                                    {{ $con->usr_first_name }} {{ $con->usr_middle_name }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="con_modified_by">Date Processed:</label>
+                                                                <p class="text-justify">
+                                                                    {{ \Carbon\Carbon::parse($con->con_date_created)->format('F j, Y | g:i A') }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal"><span class="fa fa-close"></span>
+                                                        Close</button>
                                                 </div>
                                             </div>
                                         </div>

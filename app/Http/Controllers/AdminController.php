@@ -98,7 +98,14 @@ class AdminController extends Controller
     public function messages()
     {
         $messages = DB::table('contact')
-            ->where('con_active', 1)
+            ->leftJoin('users', 'contact.con_modified_by', '=', 'users.usr_id') // Join users table
+            ->where('contact.con_active', 1)
+            ->select(
+                'contact.*',
+                'users.usr_last_name',
+                'users.usr_first_name',
+                'users.usr_middle_name'
+            ) // Select required columns
             ->get();
 
         return view('admin.messages', compact('messages'));
