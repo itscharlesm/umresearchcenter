@@ -204,7 +204,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Sidebar -->
                         <div class="tab-pane fade" id="agenda">
                             <div class="section-title">
                                 <h2>Research Agenda</h2>
@@ -279,6 +278,20 @@
                             <div class="text-center">
                                 <img src="{{ asset('images/about/priority.png') }}" alt="logo"
                                     style="height: 395px; width: 430px;">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="programs">
+                            <div class="section-title">
+                                <h2>Research Programs</h2>
+                                <p class="font-weight-light text-justify">
+                                    Programs.
+                                </p>
+                            </div>
+                            <div class="section-title">
+                                <h2>Research Fundings</h2>
+                                <p class="font-weight-light text-justify">
+                                    Fundings.
+                                </p>
                             </div>
                         </div>
                     </div>
