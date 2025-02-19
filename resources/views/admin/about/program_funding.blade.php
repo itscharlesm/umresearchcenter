@@ -97,7 +97,20 @@
                     ['color', ['color']],
                     ['para', ['ul', 'ol', 'paragraph']],
                     ['height', ['height']]
-                ]
+                ],
+                callbacks: {
+                    onBlur: function(e) {
+                        $('.summernote').each(function() {
+                            let editor = $(this);
+                            let content = editor.summernote('code');
+                            content = content.replace(/<ul>/g,
+                                '<ul style="list-style-type: disc;">');
+                            content = content.replace(/<ol>/g,
+                                '<ol style="list-style-type: decimal;">');
+                            editor.summernote('code', content);
+                        });
+                    }
+                }
             });
         });
     </script>

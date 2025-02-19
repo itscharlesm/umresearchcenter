@@ -65,8 +65,11 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="fa fa-close"></span> Close</button>
-                                                        <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span> Update</button>
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal"><span class="fa fa-close"></span>
+                                                            Close</button>
+                                                        <button type="submit" class="btn btn-danger"><span
+                                                                class="fa fa-save"></span> Update</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -90,7 +93,20 @@
                     ['color', ['color']],
                     ['para', ['ul', 'ol', 'paragraph']],
                     ['height', ['height']]
-                ]
+                ],
+                callbacks: {
+                    onBlur: function(e) {
+                        $('.summernote').each(function() {
+                            let editor = $(this);
+                            let content = editor.summernote('code');
+                            content = content.replace(/<ul>/g,
+                                '<ul style="list-style-type: disc;">');
+                            content = content.replace(/<ol>/g,
+                                '<ol style="list-style-type: decimal;">');
+                            editor.summernote('code', content);
+                        });
+                    }
+                }
             });
         });
     </script>

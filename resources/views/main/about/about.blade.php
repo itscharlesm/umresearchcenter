@@ -31,7 +31,9 @@
                         <div class="tab-pane fade show active" id="about">
                             <div class="section-title">
                                 <h2>About RPC</h2>
-                                {!! $rpc_description !!}
+                                <div>
+                                    {!! $rpc_description !!}
+                                </div>
                             </div>
                             <div class="accordion w-100" id="accordionExample">
                                 <div class="card">
@@ -47,7 +49,9 @@
                                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                         data-parent="#accordionExample">
                                         <div class="card-body">
-                                            {!! $vmgo_vision !!}
+                                            <div>
+                                                {!! $vmgo_vision !!}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -64,7 +68,9 @@
                                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                         data-parent="#accordionExample">
                                         <div class="card-body">
-                                            {!! $vmgo_mission !!}
+                                            <div>
+                                                {!! $vmgo_mission !!}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +87,9 @@
                                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                         data-parent="#accordionExample">
                                         <div class="card-body">
-                                            {!! $vmgo_goals !!}
+                                            <div>
+                                                {!! $vmgo_goals !!}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +106,9 @@
                                     <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
                                         data-parent="#accordionExample">
                                         <div class="card-body">
-                                            {!! $vmgo_objectives !!}
+                                            <div>
+                                                {!! $vmgo_objectives !!}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
