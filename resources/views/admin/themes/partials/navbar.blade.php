@@ -24,6 +24,9 @@
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <span class="dropdown-item dropdown-header">User Options</span>
                 <div class="dropdown-divider"></div>
+                <a href="javascipt:void(0)" data-toggle="modal" data-target="#userInfoModal" class="dropdown-item">
+                    <i class="fas fa-cog mr-2"></i> Update Account
+                </a>
                 <a href="javascipt:void(0)" data-toggle="modal" data-target="#userPasswordModal" class="dropdown-item">
                     <i class="fas fa-key mr-2"></i> Change Password
                 </a>

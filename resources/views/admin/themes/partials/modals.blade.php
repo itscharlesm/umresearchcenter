@@ -12,11 +12,6 @@
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="usr_email">E-Mail *</label>
-                        <input class="form-control" type="email" name="usr_email" id="usr_email" placeholder="E-mail"
-                            value="{{ session('usr_email') }}" required />
-                    </div>
-                    <div class="form-group">
                         <label for="usr_last_name">Last Name *</label>
                         <input class="form-control" type="text" name="usr_last_name" id="usr_last_name"
                             placeholder="Last Name" value="{{ session('usr_last_name') }}" required />
@@ -30,6 +25,11 @@
                         <label for="usr_middle_name">Middle Name</label>
                         <input class="form-control" type="text" name="usr_middle_name" id="usr_middle_name"
                             placeholder="Middle Name" value="{{ session('usr_middle_name') }}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="usr_email">E-Mail *</label>
+                        <input class="form-control" type="email" name="usr_email" id="usr_email" placeholder="E-mail"
+                            value="{{ session('usr_email') }}" required />
                     </div>
                 </div>
                 <div class="modal-footer">

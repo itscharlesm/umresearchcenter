@@ -82,18 +82,18 @@ class UserController extends Controller
     public function update(Request $request)
     {
         $usr_uuid = $request->usr_uuid;
-        $usr_email = $request->usr_email;
         $usr_first_name = $request->usr_first_name;
         $usr_middle_name = $request->usr_middle_name;
         $usr_last_name = $request->usr_last_name;
+        $usr_email = $request->usr_email;
 
         DB::table('users')
             ->where('usr_uuid', '=', $usr_uuid)
             ->update([
-                'usr_email' => $usr_email,
                 'usr_first_name' => $usr_first_name,
                 'usr_middle_name' => $usr_middle_name,
                 'usr_last_name' => $usr_last_name,
+                'usr_email' => $usr_email,
                 'usr_date_modified' => Carbon::now()
             ]);
 
