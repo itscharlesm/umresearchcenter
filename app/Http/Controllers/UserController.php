@@ -48,12 +48,16 @@ class UserController extends Controller
 
         DB::beginTransaction();
         try {
+            $firstName = ucfirst(strtolower($request->usr_first_name));
+            $middleName = ucfirst(strtolower($request->usr_middle_name));
+            $lastName = ucfirst(strtolower($request->usr_last_name));
+
             $userId = DB::table('users')->insertGetId([
                 'usr_uuid' => generateuuid(),
                 'usr_type' => 3,
-                'usr_first_name' => $request->usr_first_name,
-                'usr_middle_name' => $request->usr_middle_name,
-                'usr_last_name' => $request->usr_last_name,
+                'usr_first_name' => $firstName,
+                'usr_middle_name' => $middleName,
+                'usr_last_name' => $lastName,
                 'usr_email' => $request->usr_email,
                 'usr_password' => md5($request->usr_password),
                 'usr_date_created' => Carbon::now(),
