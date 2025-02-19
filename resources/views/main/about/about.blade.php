@@ -117,18 +117,9 @@
                         <div class="tab-pane fade" id="agenda">
                             <div class="section-title">
                                 <h2>Research Agenda</h2>
-                                <p class="font-weight-light text-justify">
-                                    In light of the emerging directions under the new Institutional Strategic Plan for
-                                    2017-2022,
-                                    the Research and Publication Center developed its new agenda framework to address the
-                                    third key
-                                    result area “Excellence in Research”. The research excellence indicators include:
-                                    international
-                                    research reputation, production of high quality research outputs which have demonstrable
-                                    and
-                                    measurable impacts, sustained support from external funders, and a supportive research
-                                    environment for both faculty and students.
-                                </p>
+                                <div>
+                                    {!! $agpr_agenda !!}
+                                </div>
                             </div>
                             <div class="section-title">
                                 <h2>Delivering Research Excellence</h2>
@@ -177,13 +168,9 @@
                             </div>
                             <div class="section-title">
                                 <h2>Research Priority Areas</h2>
-                                <p class="font-weight-light text-justify">
-                                    Based on the evaluation of UM’s Sustainable Development Agenda Framework (2012-2017) and
-                                    aligned with the Harmonized National Research and Development Agenda (HNRDA) of the DOST
-                                    and the research priority clusters of the National Higher Education Research Agenda
-                                    (NHERA), UM shall focus on the following interdisciplinary research themes for the next
-                                    five years:
-                                </p>
+                                <div>
+                                    {!! $agpr_priority !!}
+                                </div>
                             </div>
                             <div class="text-center">
                                 <img src="{{ asset('images/about/priority.png') }}" alt="logo"
