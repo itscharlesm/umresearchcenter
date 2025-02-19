@@ -78,6 +78,9 @@ Route::get('/institute/biodiversity', [InstituteController::class, 'biodiversity
 Route::get('/institute/economy', [InstituteController::class, 'economy']);
 Route::get('/institute/social', [InstituteController::class, 'social']);
 
+// Institute Admin
+Route::get('/admin/institute/popular', [InstituteController::class, 'admin_popular']);
+
 // Center
 Route::get('/center/nanotechnology', [CenterController::class, 'nanotechnology']);
 Route::get('/center/coleoptera', [CenterController::class, 'coleoptera']);

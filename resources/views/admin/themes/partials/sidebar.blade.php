@@ -108,6 +108,60 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item {{ request()->is('admin/institute*') ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ request()->is('admin/institute*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-balance-scale"></i>
+                            <p>
+                                Manage Institute
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\InstituteController@admin_popular') }}"
+                                    class="nav-link {{ request()->is('admin/institute/popular') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>PO</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\AboutController@admin_vmgo') }}"
+                                    class="nav-link {{ request()->is('admin/about/vmgo') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>ETGIS</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\AboutController@admin_agenda_priority') }}"
+                                    class="nav-link {{ request()->is('admin/about/agenda-priority') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>BES</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\AboutController@admin_program_funding') }}"
+                                    class="nav-link {{ request()->is('admin/about/program-funding') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>EES</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\AboutController@admin_program_funding') }}"
+                                    class="nav-link {{ request()->is('admin/about/program-funding') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>SWHDS</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 @endif
 
                 {{-- Signout --}}
