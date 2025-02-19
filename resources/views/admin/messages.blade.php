@@ -51,10 +51,80 @@
                                     <td style="vertical-align: middle;">{{ $con->con_status }}</td>
                                     <td style="vertical-align: middle;">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
-                                            data-toggle="modal" data-target="#updateDescriptionModal-">
+                                            data-toggle="modal" data-target="#viewConcernModal-{{ $con->con_id }}">
                                             <span class="fa fa-eye"></span> View
                                         </a>
                                     </td>
+                                    <div class="modal fade" id="viewConcernModal-{{ $con->con_id }}" tabindex="-1"
+                                        role="dialog" aria-labelledby="viewConcernModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-md" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="viewConcernModalLabel">Contact Information</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action=""
+                                                        method="POST">
+                                                        @csrf
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="con_name">Name:</label>
+                                                                    <p>{{ $con->con_name }}</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="con_date_created">Date Submitted:</label>
+                                                                    <p>{{ \Carbon\Carbon::parse($con->con_date_created)->format('F j, Y | g:i A') }}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="con_number">Contact Number:</label>
+                                                                    <p>{{ $con->con_number }}</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="con_email">Email:</label>
+                                                                    <p>{{ $con->con_email }}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="con_message">Message:</label>
+                                                                    <p class="text-justify">{{ $con->con_message }}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="con_status">Status:</label>
+                                                                    <select class="form-control" name="con_status">
+                                                                        <option value="Pending" {{ $con->con_status == 'Pending' ? 'selected' : '' }}>Pending</option>
+                                                                        <option value="Ongoing" {{ $con->con_status == 'Ongoing' ? 'selected' : '' }}>Ongoing</option>
+                                                                        <option value="Completed" {{ $con->con_status == 'Completed' ? 'selected' : '' }}>Completed</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="fa fa-close"></span> Close</button>
+                                                        <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span> Update</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </tr>
                             @endforeach
                         </tbody>
