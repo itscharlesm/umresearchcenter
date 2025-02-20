@@ -58,7 +58,7 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <form
-                                                        action="{{ url('admin/institute/emerging/update/' . $bien->bien_id) }}"
+                                                        action="{{ url('admin/institute/biodiversity/update/' . $bien->bien_id) }}"
                                                         method="POST">
                                                         @csrf
                                                         <div class="row">

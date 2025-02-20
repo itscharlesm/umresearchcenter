@@ -106,4 +106,27 @@ class InstituteController extends Controller
 
         return view('admin.institute.biodiversity', compact('bien_description'));
     }
+
+    public function admin_biodiversity_update(Request $request, $bien_id)
+    {
+        // Validate the request
+        $request->validate([
+            'bien_description' => 'required|string',
+        ]);
+
+        // Update the user role in the database
+        DB::table('biodiversity_environment')
+            ->where('bien_id', $bien_id)
+            ->update([
+                'bien_description' => $request->bien_description,
+                'bien_date_modified' => Carbon::now(),
+                'bien_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }
