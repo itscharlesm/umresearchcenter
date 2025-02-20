@@ -5,14 +5,14 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">INSTITUTE OF BIODIVERSITY AND ENVIRONMENT STUDIES</h1>
+                    <h1 class="m-0">INSTITUTE OF ECONOMY AND ENTERPRISE STUDIES</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
                         <li class="breadcrumb-item active">Institutes</li>
-                        <li class="breadcrumb-item active">Biodiversity and Environment Studies</li>
+                        <li class="breadcrumb-item active">Economy and Enterprise Studies</li>
                     </ol>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <form
-                                                        action="{{ url('admin/institute/biodiversity/update/' . $eco->eco_id) }}"
+                                                        action="{{ url('admin/institute/economy/update/' . $eco->eco_id) }}"
                                                         method="POST">
                                                         @csrf
                                                         <div class="row">

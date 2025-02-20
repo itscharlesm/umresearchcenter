@@ -139,7 +139,7 @@ class InstituteController extends Controller
         return view('admin.institute.economy', compact('eco_description'));
     }
 
-    public function admin_admin_economy_update(Request $request, $eco_id)
+    public function admin_economy_update(Request $request, $eco_id)
     {
         // Validate the request
         $request->validate([
