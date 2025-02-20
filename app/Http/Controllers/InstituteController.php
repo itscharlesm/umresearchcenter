@@ -129,4 +129,36 @@ class InstituteController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_economy()
+    {
+        $eco_description = DB::table('institute_economy')
+            ->where('eco_active', 1)
+            ->get();
+
+        return view('admin.institute.economy', compact('eco_description'));
+    }
+
+    public function admin_admin_economy_update(Request $request, $eco_id)
+    {
+        // Validate the request
+        $request->validate([
+            'eco_description' => 'required|string',
+        ]);
+
+        // Update the user role in the database
+        DB::table('institute_economy')
+            ->where('eco_id', $eco_id)
+            ->update([
+                'eco_description' => $request->eco_description,
+                'eco_date_modified' => Carbon::now(),
+                'eco_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }
