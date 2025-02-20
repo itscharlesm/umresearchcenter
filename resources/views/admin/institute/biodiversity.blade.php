@@ -33,17 +33,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($bien_description as $bien)
+                            @foreach ($bio_description as $bio)
                                 <tr style="vertical-align: middle;">
-                                    <td style="vertical-align: middle;">{!! $bien->bien_description !!}</td>
+                                    <td style="vertical-align: middle;">{!! $bio->bio_description !!}</td>
                                     <td style="vertical-align: middle;">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
                                             data-toggle="modal"
-                                            data-target="#updateDescriptionModal-{{ $bien->bien_id }}">
+                                            data-target="#updateDescriptionModal-{{ $bio->bio_id }}">
                                             <span class="fa fa-edit"></span> Update
                                         </a>
                                     </td>
-                                    <div class="modal fade" id="updateDescriptionModal-{{ $bien->bien_id }}"
+                                    <div class="modal fade" id="updateDescriptionModal-{{ $bio->bio_id }}"
                                         tabindex="-1" role="dialog" aria-labelledby="updateDescriptionModalLabel"
                                         aria-hidden="true">
                                         <div class="modal-dialog modal-lg" role="document">
@@ -58,14 +58,14 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <form
-                                                        action="{{ url('admin/institute/biodiversity/update/' . $bien->bien_id) }}"
+                                                        action="{{ url('admin/institute/biodiversity/update/' . $bio->bio_id) }}"
                                                         method="POST">
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
-                                                                    <label for="bien_description">Description:</label>
-                                                                    <textarea class="form-control summernote" name="bien_description">{!! $bien->bien_description !!}</textarea>
+                                                                    <label for="bio_description">Description:</label>
+                                                                    <textarea class="form-control summernote" name="bio_description">{!! $bio->bio_description !!}</textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
