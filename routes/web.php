@@ -88,7 +88,7 @@ Route::post('/admin/institute/biodiversity/update/{bio_id}', [InstituteControlle
 Route::get('/admin/institute/economy', [InstituteController::class, 'admin_economy']);
 Route::post('/admin/institute/economy/update/{eco_id}', [InstituteController::class, 'admin_economy_update']);
 Route::get('/admin/institute/social', [InstituteController::class, 'admin_social']);
-Route::post('/admin/institute/social/update/{eco_id}', [InstituteController::class, 'admin_social_update']);
+Route::post('/admin/institute/social/update/{soc_id}', [InstituteController::class, 'admin_social_update']);
 
 // Center
 Route::get('/center/nanotechnology', [CenterController::class, 'nanotechnology']);
