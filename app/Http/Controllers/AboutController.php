@@ -12,7 +12,7 @@ class AboutController extends Controller
     public function about_us()
     {
         // Fetch the single active row from the rpc table
-        $rpc = DB::table('rpc')->where('rpc_active', 1)->first();
+        $rpc = DB::table('about_rpc')->where('rpc_active', 1)->first();
 
         // Fetch the single active row from the vmgo table
         $vmgo = DB::table('vmgo')->where('vmgo_active', 1)->first();
@@ -75,7 +75,7 @@ class AboutController extends Controller
 
     public function admin_rpc()
     {
-        $rpc_description = DB::table('rpc')
+        $rpc_description = DB::table('about_rpc')
             ->where('rpc_active', 1)
             ->get();
 
@@ -90,7 +90,7 @@ class AboutController extends Controller
         ]);
 
         // Update the user role in the database
-        DB::table('rpc')
+        DB::table('about_rpc')
             ->where('rpc_id', $rpc_id)
             ->update([
                 'rpc_description' => $request->rpc_description,
