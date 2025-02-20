@@ -33,17 +33,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($etgis_description as $etgis)
+                            @foreach ($eme_description as $eme)
                                 <tr style="vertical-align: middle;">
-                                    <td style="vertical-align: middle;">{!! $etgis->etgis_description !!}</td>
+                                    <td style="vertical-align: middle;">{!! $eme->eme_description !!}</td>
                                     <td style="vertical-align: middle;">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
                                             data-toggle="modal"
-                                            data-target="#updateDescriptionModal-{{ $etgis->etgis_id }}">
+                                            data-target="#updateDescriptionModal-{{ $eme->eme_id }}">
                                             <span class="fa fa-edit"></span> Update
                                         </a>
                                     </td>
-                                    <div class="modal fade" id="updateDescriptionModal-{{ $etgis->etgis_id }}"
+                                    <div class="modal fade" id="updateDescriptionModal-{{ $eme->eme_id }}"
                                         tabindex="-1" role="dialog" aria-labelledby="updateDescriptionModalLabel"
                                         aria-hidden="true">
                                         <div class="modal-dialog modal-lg" role="document">
@@ -58,14 +58,14 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <form
-                                                        action="{{ url('admin/institute/emerging/update/' . $etgis->etgis_id) }}"
+                                                        action="{{ url('admin/institute/emerging/update/' . $eme->eme_id) }}"
                                                         method="POST">
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
-                                                                    <label for="etgis_description">Description:</label>
-                                                                    <textarea class="form-control summernote" name="etgis_description">{!! $etgis->etgis_description !!}</textarea>
+                                                                    <label for="eme_description">Description:</label>
+                                                                    <textarea class="form-control summernote" name="eme_description">{!! $eme->eme_description !!}</textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
