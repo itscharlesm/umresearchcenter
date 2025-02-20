@@ -97,4 +97,13 @@ class InstituteController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_biodiversity()
+    {
+        $bien_description = DB::table('biodiversity_environment')
+            ->where('bien_active', 1)
+            ->get();
+
+        return view('admin.institute.biodiversity', compact('bien_description'));
+    }
 }

@@ -136,8 +136,8 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ action('App\Http\Controllers\AboutController@admin_agenda_priority') }}"
-                                    class="nav-link {{ request()->is('admin/about/agenda-priority') ? 'active' : '' }}">
+                                <a href="{{ action('App\Http\Controllers\InstituteController@admin_biodiversity') }}"
+                                    class="nav-link {{ request()->is('admin/institute/biodiversity') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>BES</p>
                                 </a>
