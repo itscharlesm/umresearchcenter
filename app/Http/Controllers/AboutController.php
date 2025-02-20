@@ -15,7 +15,7 @@ class AboutController extends Controller
         $rpc = DB::table('about_rpc')->where('rpc_active', 1)->first();
 
         // Fetch the single active row from the vmgo table
-        $vmgo = DB::table('vmgo')->where('vmgo_active', 1)->first();
+        $vmgo = DB::table('about_vmgo')->where('vmgo_active', 1)->first();
 
         // Fetch the single active row from the agenda_priority table
         $agpr = DB::table('agenda_priority')->where('agpr_active', 1)->first();
@@ -107,7 +107,7 @@ class AboutController extends Controller
 
     public function admin_vmgo()
     {
-        $vmgo_descriptions = DB::table('vmgo')
+        $vmgo_descriptions = DB::table('about_vmgo')
             ->where('vmgo_active', 1)
             ->get();
 
@@ -125,7 +125,7 @@ class AboutController extends Controller
         ]);
 
         // Update the user role in the database
-        DB::table('vmgo')
+        DB::table('about_vmgo')
             ->where('vmgo_id', $vmgo_id)
             ->update([
                 'vmgo_vision' => $request->vmgo_vision,
