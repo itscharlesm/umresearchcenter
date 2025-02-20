@@ -5,14 +5,14 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">INSTITUTE OF EMERGING TECHNOLOGIES AND GREEN INNOVATION STUDIES</h1>
+                    <h1 class="m-0">INSTITUTE OF BIODIVERSITY AND ENVIRONMENT STUDIES</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
                         <li class="breadcrumb-item active">Institutes</li>
-                        <li class="breadcrumb-item active">Emerging Technologies and Green Innovation</li>
+                        <li class="breadcrumb-item active">Biodiversity and Environment Studies</li>
                     </ol>
                 </div>
             </div>
