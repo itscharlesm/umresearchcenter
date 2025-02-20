@@ -21,7 +21,7 @@ class AboutController extends Controller
         $agpr = DB::table('about_agenda_priority')->where('agpr_active', 1)->first();
 
         // Fetch the single active row from the program_funding table
-        $prfu = DB::table('program_funding')->where('prfu_active', 1)->first();
+        $prfu = DB::table('about_program_funding')->where('prfu_active', 1)->first();
 
         // Pass the rpc_description, vmgo_vision, and vmgo_mission to the view
         return view('main.about.about', [
@@ -179,7 +179,7 @@ class AboutController extends Controller
 
     public function admin_program_funding()
     {
-        $prfu_descriptions = DB::table('program_funding')
+        $prfu_descriptions = DB::table('about_program_funding')
             ->where('prfu_active', 1)
             ->get();
 
@@ -195,7 +195,7 @@ class AboutController extends Controller
         ]);
 
         // Update the user role in the database
-        DB::table('program_funding')
+        DB::table('about_program_funding')
             ->where('prfu_id', $prfu_id)
             ->update([
                 'prfu_program' => $request->prfu_program,
