@@ -34,16 +34,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($po_description as $po)
+                            @foreach ($pop_description as $pop)
                                 <tr style="vertical-align: middle;">
-                                    <td style="vertical-align: middle;">{!! $po->po_description !!}</td>
+                                    <td style="vertical-align: middle;">{!! $pop->pop_description !!}</td>
                                     <td style="vertical-align: middle;">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
-                                            data-toggle="modal" data-target="#updateDescriptionModal-{{ $po->po_id }}">
+                                            data-toggle="modal" data-target="#updateDescriptionModal-{{ $pop->pop_id }}">
                                             <span class="fa fa-edit"></span> Update
                                         </a>
                                     </td>
-                                    <div class="modal fade" id="updateDescriptionModal-{{ $po->po_id }}" tabindex="-1"
+                                    <div class="modal fade" id="updateDescriptionModal-{{ $pop->pop_id }}" tabindex="-1"
                                         role="dialog" aria-labelledby="updateDescriptionModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
@@ -55,14 +55,14 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{ url('admin/institute/popular/update/' . $po->po_id) }}"
+                                                    <form action="{{ url('admin/institute/popular/update/' . $pop->pop_id) }}"
                                                         method="POST">
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
-                                                                    <label for="po_description">Description:</label>
-                                                                    <textarea class="form-control summernote" name="po_description">{!! $po->po_description !!}</textarea>
+                                                                    <label for="pop_description">Description:</label>
+                                                                    <textarea class="form-control summernote" name="pop_description">{!! $pop->pop_description !!}</textarea>
                                                                 </div>
                                                             </div>
                                                         </div>

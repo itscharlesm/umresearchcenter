@@ -36,27 +36,27 @@ class InstituteController extends Controller
 
     public function admin_popular()
     {
-        $po_description = DB::table('popular_opinion')
-            ->where('po_active', 1)
+        $pop_description = DB::table('institute_popular')
+            ->where('pop_active', 1)
             ->get();
 
-        return view('admin.institute.popular', compact('po_description'));
+        return view('admin.institute.popular', compact('pop_description'));
     }
 
-    public function admin_popular_update(Request $request, $po_id)
+    public function admin_popular_update(Request $request, $pop_id)
     {
         // Validate the request
         $request->validate([
-            'po_description' => 'required|string',
+            'pop_description' => 'required|string',
         ]);
 
         // Update the user role in the database
-        DB::table('popular_opinion')
-            ->where('po_id', $po_id)
+        DB::table('institute_popular')
+            ->where('pop_id', $pop_id)
             ->update([
-                'po_description' => $request->po_description,
-                'po_date_modified' => Carbon::now(),
-                'po_modified_by' => session('usr_id'),
+                'pop_description' => $request->pop_description,
+                'pop_date_modified' => Carbon::now(),
+                'pop_modified_by' => session('usr_id'),
             ]);
 
         // Flash success message
