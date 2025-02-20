@@ -161,4 +161,36 @@ class InstituteController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_social()
+    {
+        $soc_description = DB::table('institute_social')
+            ->where('soc_active', 1)
+            ->get();
+
+        return view('admin.institute.social', compact('soc_description'));
+    }
+
+    public function admin_social_update(Request $request, $soc_id)
+    {
+        // Validate the request
+        $request->validate([
+            'soc_description' => 'required|string',
+        ]);
+
+        // Update the user role in the database
+        DB::table('institute_social')
+            ->where('soc_id', $soc_id)
+            ->update([
+                'soc_description' => $request->soc_description,
+                'soc_date_modified' => Carbon::now(),
+                'soc_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }
