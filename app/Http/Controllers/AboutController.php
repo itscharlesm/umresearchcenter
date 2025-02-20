@@ -18,7 +18,7 @@ class AboutController extends Controller
         $vmgo = DB::table('about_vmgo')->where('vmgo_active', 1)->first();
 
         // Fetch the single active row from the agenda_priority table
-        $agpr = DB::table('agenda_priority')->where('agpr_active', 1)->first();
+        $agpr = DB::table('about_agenda_priority')->where('agpr_active', 1)->first();
 
         // Fetch the single active row from the program_funding table
         $prfu = DB::table('program_funding')->where('prfu_active', 1)->first();
@@ -145,7 +145,7 @@ class AboutController extends Controller
 
     public function admin_agenda_priority()
     {
-        $agpr_descriptions = DB::table('agenda_priority')
+        $agpr_descriptions = DB::table('about_agenda_priority')
             ->where('agpr_active', 1)
             ->get();
 
@@ -161,7 +161,7 @@ class AboutController extends Controller
         ]);
 
         // Update the user role in the database
-        DB::table('agenda_priority')
+        DB::table('about_agenda_priority')
             ->where('agpr_id', $agpr_id)
             ->update([
                 'agpr_agenda' => $request->agpr_agenda,
