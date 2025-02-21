@@ -54,7 +54,13 @@ class InstituteController extends Controller
 
     public function social()
     {
-        return view('main.institute.social', );
+        $social = DB::table('institute_social')
+            ->where('soc_active', 1)
+            ->first();
+
+        return view('main.institute.social', [
+            'soc_description' => $social->soc_description ?? ''
+        ]);
     }
 
     public function admin_popular()

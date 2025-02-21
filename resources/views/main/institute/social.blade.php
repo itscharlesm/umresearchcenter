@@ -18,17 +18,9 @@
                 <!-- Attachments -->
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <p class="font-weight-light text-justify">
-                            The Institute OF Social Welfare and Human Development(ISWHD) takes the lead in advancing studies
-                            and analyses on human welfare, institution and social protection, gender and development,
-                            governance and community life. It endeavors to generate information that are relevant and useful
-                            for policy creation, action planning and social practices. It assumes the pivotal role to bring
-                            together the government, socio-civic groups and private, interested societies to discuss matters
-                            crucial to human protection, institutional sustainability, welfare goals, improvement of life
-                            and social equity. It shall take center stage current debates and discourses that may impact the
-                            quality and dignity of public life. For more information, please email
-                            <em><strong>iswhd@umindanao.edu.ph</strong></em>
-                        </p>
+                        <div>
+                            {!! $soc_description !!}
+                        </div>
                     </div>
                 </div>
             </div>
