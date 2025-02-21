@@ -18,17 +18,9 @@
                 <!-- Attachments -->
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <p class="font-weight-light text-justify">
-                            The University of Mindanao Institute for Biodiversity and Environment (UMIBE) is one of the
-                            research institutes of the University of Mindanao Research and Publication Center (UMRPC) based
-                            in Matina Campus, Davao City Philippines that focuses on conducting basic and applied researches
-                            in the field of natural science. Since its establishment in 2017, UMIBE has been involved in
-                            various research and conservation activities in the region with both local and international
-                            grants. The institute is manned with highly skilled and qualified team members and experts in
-                            the fields of Taxonomy, Ecology, Environmental Education, Environmental Science, and
-                            Conservation Science. For more information please email at
-                            <em><strong>mnd_medina@umindanao.edu.ph</strong></em>
-                        </p>
+                        <div>
+                            {!! $bio_description !!}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -32,7 +32,13 @@ class InstituteController extends Controller
 
     public function biodiversity()
     {
-        return view('main.institute.biodiversity', );
+        $biodiversity = DB::table('institute_biodiversity')
+            ->where('bio_active', 1)
+            ->first();
+
+        return view('main.institute.biodiversity', [
+            'bio_description' => $biodiversity->bio_description ?? ''
+        ]);
     }
 
     public function economy()
