@@ -95,6 +95,7 @@ Route::post('/admin/institute/social/update/{soc_id}', [InstituteController::cla
 // Center
 Route::get('/center/nanotechnology', [CenterController::class, 'nanotechnology']);
 Route::get('/center/coleoptera', [CenterController::class, 'coleoptera']);
+Route::get('/center/policy', [CenterController::class, 'policy']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);

@@ -16,4 +16,9 @@ class CenterController extends Controller
     {
         return view('main.center.coleoptera', );
     }
+
+    public function policy()
+    {
+        return view('main.center.policy', );
+    }
 }
