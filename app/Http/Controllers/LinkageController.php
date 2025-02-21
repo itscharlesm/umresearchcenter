@@ -11,7 +11,14 @@ class LinkageController extends Controller
 {
     public function linkages()
     {
-        return view('main.linkage.linkages', );
+        $linkages = DB::table('linkages')
+            ->where('link_active', 1)
+            ->first();
+
+        return view('main.linkage.linkages', [
+            'link_local' => $linkages->link_local ?? '',
+            'link_international' => $linkages->link_international
+        ]);
     }
 
     public function admin_linkages()
