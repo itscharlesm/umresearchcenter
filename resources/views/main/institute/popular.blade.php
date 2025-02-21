@@ -18,16 +18,9 @@
                 <!-- Attachments -->
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <p class="font-weight-light text-justify">
-                            The Institute for Popular Opinion (IPO) is the pioneering institute in Davao that makes use of
-                            the academe as a reliable and impartial source of information on public opinion. IPO provides
-                            timely, relevant and scientifically-drawn survey results on relevant issues that are of interest
-                            to the people of Davao City. IPO has earned for the University a reputable research track record
-                            as its survey results were utilized by various media outfits to advance social issues. IPO is
-                            now recognized as the first and the only academic-based social weather station in Davao
-                            City.<em><strong>
-                                    For more information, please email malen_arquiza@umindanao.edu.ph</strong></em>
-                        </p>
+                        <div>
+                            {!! $pop_description !!}
+                        </div>
                     </div>
                 </div>
             </div>

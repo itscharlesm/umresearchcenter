@@ -11,7 +11,13 @@ class InstituteController extends Controller
 {
     public function popular()
     {
-        return view('main.institute.popular', );
+        $popular = DB::table('institute_popular')
+            ->where('pop_active', 1)
+            ->first();
+
+        return view('main.institute.popular', [
+            'pop_description' => $popular->pop_description ?? '',
+        ]);
     }
 
     public function emerging()
