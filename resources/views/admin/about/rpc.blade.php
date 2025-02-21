@@ -31,7 +31,7 @@
                                 <div class="col-md-12">
                                     <div class="card mb-3 shadow-sm border rounded">
                                         <div class="card-header bg-light text-white">
-                                            <h5 class="mb-0">RPC Description</h5>
+                                            <h5 class="mb-0">Description:</h5>
                                         </div>
                                         <div class="card-body">
                                             <p class="card-text">{!! $rpc->rpc_description !!}</p>
