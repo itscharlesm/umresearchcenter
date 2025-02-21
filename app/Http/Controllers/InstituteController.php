@@ -16,13 +16,18 @@ class InstituteController extends Controller
             ->first();
 
         return view('main.institute.popular', [
-            'pop_description' => $popular->pop_description ?? '',
+            'pop_description' => $popular->pop_description ?? ''
         ]);
     }
 
     public function emerging()
     {
-        return view('main.institute.emerging', );
+        $emerging = DB::table('institute_emerging')
+            ->where('eme_active', 1)
+            ->first();
+        return view('main.institute.emerging', [
+            'eme_description' => $emerging->eme_description ?? ''
+        ]);
     }
 
     public function biodiversity()
