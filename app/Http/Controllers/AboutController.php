@@ -89,7 +89,7 @@ class AboutController extends Controller
             'rpc_description' => 'required|string',
         ]);
 
-        // Update the user role in the database
+        // Update the data in the database
         DB::table('about_rpc')
             ->where('rpc_id', $rpc_id)
             ->update([
@@ -124,7 +124,7 @@ class AboutController extends Controller
             'vmgo_objectives' => 'nullable|string'
         ]);
 
-        // Update the user role in the database
+        // Update the data in the database
         DB::table('about_vmgo')
             ->where('vmgo_id', $vmgo_id)
             ->update([
@@ -160,7 +160,7 @@ class AboutController extends Controller
             'agpr_priority' => 'nullable|string'
         ]);
 
-        // Update the user role in the database
+        // Update the data in the database
         DB::table('about_agenda_priority')
             ->where('agpr_id', $agpr_id)
             ->update([
@@ -194,7 +194,7 @@ class AboutController extends Controller
             'prfu_funding' => 'nullable|string'
         ]);
 
-        // Update the user role in the database
+        // Update the data in the database
         DB::table('about_program_funding')
             ->where('prfu_id', $prfu_id)
             ->update([

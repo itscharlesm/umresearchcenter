@@ -79,7 +79,7 @@ class InstituteController extends Controller
             'pop_description' => 'required|string',
         ]);
 
-        // Update the user role in the database
+        // Update the data in the database
         DB::table('institute_popular')
             ->where('pop_id', $pop_id)
             ->update([
@@ -111,7 +111,7 @@ class InstituteController extends Controller
             'eme_description' => 'required|string',
         ]);
 
-        // Update the user role in the database
+        // Update the data in the database
         DB::table('institute_emerging')
             ->where('eme_id', $eme_id)
             ->update([
@@ -143,7 +143,7 @@ class InstituteController extends Controller
             'bio_description' => 'required|string',
         ]);
 
-        // Update the user role in the database
+        // Update the data in the database
         DB::table('institute_biodiversity')
             ->where('bio_id', $bio_id)
             ->update([
@@ -175,7 +175,7 @@ class InstituteController extends Controller
             'eco_description' => 'required|string',
         ]);
 
-        // Update the user role in the database
+        // Update the data in the database
         DB::table('institute_economy')
             ->where('eco_id', $eco_id)
             ->update([
@@ -207,7 +207,7 @@ class InstituteController extends Controller
             'soc_description' => 'required|string',
         ]);
 
-        // Update the user role in the database
+        // Update the data in the database
         DB::table('institute_social')
             ->where('soc_id', $soc_id)
             ->update([

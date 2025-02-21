@@ -57,7 +57,7 @@ class AdminController extends Controller
             'usr_type' => 'required|exists:roles,usr_type',
         ]);
 
-        // Update the user role in the database
+        // Update the data in the database
         DB::table('users')
             ->where('usr_id', $usr_id)
             ->update([

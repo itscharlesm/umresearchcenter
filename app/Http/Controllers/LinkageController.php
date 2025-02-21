@@ -37,7 +37,7 @@ class LinkageController extends Controller
             'link_local' => 'required|string',
         ]);
 
-        // Update the user role in the database
+        // Update the data in the database
         DB::table('linkages')
             ->where('link_id', $link_id)
             ->update([
@@ -60,7 +60,7 @@ class LinkageController extends Controller
             'link_international' => 'required|string',
         ]);
 
-        // Update the user role in the database
+        // Update the data in the database
         DB::table('linkages')
             ->where('link_id', $link_id)
             ->update([
