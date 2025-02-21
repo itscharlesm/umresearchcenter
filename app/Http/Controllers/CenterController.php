@@ -31,4 +31,27 @@ class CenterController extends Controller
             ->get();
         return view('admin.center.nanotechnology', compact('nanotechnology'));
     }
+
+    public function admin_nanotechnology_update(Request $request, $nan_id)
+    {
+        // Validate the request
+        $request->validate([
+            'nan_description' => 'required|string',
+        ]);
+
+        // Update the data in the database
+        DB::table('center_nanotechnology')
+            ->where('nan_id', $nan_id)
+            ->update([
+                'nan_description' => $request->nan_description,
+                'nan_date_modified' => Carbon::now(),
+                'nan_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }

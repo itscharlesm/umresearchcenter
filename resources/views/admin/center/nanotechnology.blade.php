@@ -5,15 +5,16 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">INSTITUTE OF SOCIAL WELFARE AND HUMAN DEVELOPMENT STUDIES</h1>
+                    <h1 class="m-0">CENTER OF GREEN NANOTECHNOLOGY INNOVATIONS FOR ENVIRONMENT SOLUTIONS (CGNIES)</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
                         </li>
-                        <li class="breadcrumb-item active">Institutes</li>
-                        <li class="breadcrumb-item active">Social Welfare and Human Development Studies</li>
+                        <li class="breadcrumb-item active">Centers</li>
+                        <li class="breadcrumb-item active">Nanotechnology Innovations for Environmental Solutions (CGNIES)
+                        </li>
                     </ol>
                 </div>
             </div>
@@ -51,13 +52,13 @@
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Update Local and National Linkages</h5>
+                                            <h5 class="modal-title">Update Description</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{ url('admin/institute/social/update/' . $nan->nan_id) }}"
+                                            <form action="{{ url('admin/center/nanotechnology/update/' . $nan->nan_id) }}"
                                                 method="POST">
                                                 @csrf
                                                 <div class="form-group">

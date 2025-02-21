@@ -99,6 +99,7 @@ Route::get('/center/policy', [CenterController::class, 'policy']);
 
 // Admin Center
 Route::get('/admin/center/nanotechnology', [CenterController::class, 'admin_nanotechnology']);
+Route::post('/admin/center/nanotechnology/update/{nan_id}', [CenterController::class, 'admin_nanotechnology_update']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);
