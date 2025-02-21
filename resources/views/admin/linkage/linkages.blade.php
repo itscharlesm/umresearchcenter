@@ -77,7 +77,8 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="" method="POST">
+                                                <form action="{{ url('admin/linkages/update/local/' . $link->link_id) }}"
+                                                    method="POST">
                                                     @csrf
                                                     <div class="form-group">
                                                         <label for="link_local">Local and National Linkages:</label>
@@ -108,7 +109,9 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="" method="POST">
+                                                <form
+                                                    action="{{ url('admin/linkages/update/international/' . $link->link_id) }}"
+                                                    method="POST">
                                                     @csrf
                                                     <div class="form-group">
                                                         <label for="link_international">International Linkages:</label>

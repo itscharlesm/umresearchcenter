@@ -102,6 +102,8 @@ Route::get('/linkages', [LinkageController::class, 'linkages']);
 
 // Admin Linkages
 Route::get('/admin/linkages', [LinkageController::class, 'admin_linkages']);
+Route::post('/admin/linkages/update/local/{link_id}', [LinkageController::class, 'admin_linkages_local']);
+Route::post('/admin/linkages/update/international/{link_id}', [LinkageController::class, 'admin_linkages_international']);
 
 // Download
 Route::get('/downloads', [DownloadController::class, 'downloads']);
