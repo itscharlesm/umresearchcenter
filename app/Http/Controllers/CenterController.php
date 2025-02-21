@@ -87,4 +87,36 @@ class CenterController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_policy()
+    {
+        $policy = DB::table('center_policy')
+            ->where('pol_active', 1)
+            ->get();
+            
+        return view('admin.center.policy', compact('policy'));
+    }
+
+    public function admin_policy_update(Request $request, $pol_id)
+    {
+        // Validate the request
+        $request->validate([
+            'pol_description' => 'required|string',
+        ]);
+
+        // Update the data in the database
+        DB::table('center_policy')
+            ->where('pol_id', $pol_id)
+            ->update([
+                'pol_description' => $request->pol_description,
+                'pol_date_modified' => Carbon::now(),
+                'pol_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }

@@ -125,8 +125,8 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ action('App\Http\Controllers\CenterController@admin_coleoptera') }}"
-                                    class="nav-link {{ request()->is('admin/center/nanotechnology') ? 'active' : '' }}">
+                                <a href="{{ action('App\Http\Controllers\CenterController@admin_policy') }}"
+                                    class="nav-link {{ request()->is('admin/center/policy') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Public Policy</p>
                                 </a>
