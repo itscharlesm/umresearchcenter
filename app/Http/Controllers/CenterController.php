@@ -29,6 +29,7 @@ class CenterController extends Controller
         $nanotechnology = DB::table('center_nanotechnology')
             ->where('nan_active', 1)
             ->get();
+
         return view('admin.center.nanotechnology', compact('nanotechnology'));
     }
 
@@ -53,5 +54,14 @@ class CenterController extends Controller
 
         // Redirect back
         return redirect()->back();
+    }
+
+    public function admin_coleoptera()
+    {
+        $coleoptera = DB::table('center_coleoptera')
+            ->where('col_active', 1)
+            ->get();
+            
+        return view('admin.center.coleoptera', compact('coleoptera'));
     }
 }

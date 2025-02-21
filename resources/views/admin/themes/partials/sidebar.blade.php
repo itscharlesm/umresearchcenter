@@ -116,8 +116,8 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ action('App\Http\Controllers\InstituteController@admin_emerging') }}"
-                                    class="nav-link {{ request()->is('admin/institute/emerging') ? 'active' : '' }}">
+                                <a href="{{ action('App\Http\Controllers\CenterController@admin_coleoptera') }}"
+                                    class="nav-link {{ request()->is('admin/center/coleoptera') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Coleoptera</p>
                                 </a>
@@ -125,8 +125,8 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ action('App\Http\Controllers\InstituteController@admin_biodiversity') }}"
-                                    class="nav-link {{ request()->is('admin/institute/biodiversity') ? 'active' : '' }}">
+                                <a href="{{ action('App\Http\Controllers\CenterController@admin_coleoptera') }}"
+                                    class="nav-link {{ request()->is('admin/center/nanotechnology') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Public Policy</p>
                                 </a>
