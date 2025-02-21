@@ -13,6 +13,7 @@
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
                         </li>
                         <li class="breadcrumb-item active">Carousel</li>
+                        <li class="breadcrumb-item active">Images</li>
                     </ol>
                 </div>
             </div>
@@ -36,7 +37,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($messages as $con)
+                            @foreach ($carousel as $cour)
                                 <tr style="text-align: center; vertical-align: middle;">
                                     <td style="vertical-align: middle;"></td>
                                     <td style="vertical-align: middle;">

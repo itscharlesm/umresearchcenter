@@ -44,8 +44,8 @@
 
                 {{-- Carousel --}}
                 <li class="nav-item">
-                    <a href="{{ action('App\Http\Controllers\AdminController@messages') }}"
-                        class="nav-link {{ request()->is('admin/messages') ? 'active' : '' }}">
+                    <a href="{{ action('App\Http\Controllers\AdminController@carousel') }}"
+                        class="nav-link {{ request()->is('admin/carousel') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-image"></i>
                         <p>Carousel</p>
                     </a>

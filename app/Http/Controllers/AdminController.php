@@ -136,6 +136,10 @@ class AdminController extends Controller
 
     public function carousel()
     {
-        return view('admin.carousel');
+        $carousel = DB::table('carousel')
+            ->where('cour_active', 1)
+            ->get();
+
+        return view('admin.carousel', compact('carousel'));
     }
 }
