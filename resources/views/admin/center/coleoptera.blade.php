@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">CENTER OF GREEN NANOTECHNOLOGY INNOVATIONS FOR ENVIRONMENT SOLUTIONS (CGNIES)</h1>
+                    <h1 class="m-0">COLEOPTERA RESEARCH CENTER</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -13,8 +13,7 @@
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
                         </li>
                         <li class="breadcrumb-item active">Centers</li>
-                        <li class="breadcrumb-item active">Nanotechnology Innovations for Environmental Solutions (CGNIES)
-                        </li>
+                        <li class="breadcrumb-item active">Coleoptera Research Center</li>
                     </ol>
                 </div>
             </div>
@@ -28,26 +27,26 @@
             <div class="card">
                 <div class="card-body overflow-auto">
                     <div class="row">
-                        @foreach ($nanotechnology as $nan)
+                        @foreach ($coleoptera as $col)
                             <div class="col-md-12">
                                 <div class="card mb-3 shadow-sm border rounded">
                                     <div class="card-header bg-light text-white">
                                         <h5 class="mb-0">Description:</h5>
                                     </div>
                                     <div class="card-body">
-                                        <p class="card-text">{!! $nan->nan_description !!}</p>
+                                        <p class="card-text">{!! $col->col_description !!}</p>
                                     </div>
                                     <div class="card-footer bg-light text-right">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
-                                            data-toggle="modal" data-target="#updateDescriptionModal-{{ $nan->nan_id }}">
+                                            data-toggle="modal" data-target="#updateDescriptionModal-{{ $col->col_id }}">
                                             <span class="fa fa-edit"></span> Update
                                         </a>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Modal for Nanotechnology -->
-                            <div class="modal fade" id="updateDescriptionModal-{{ $nan->nan_id }}" tabindex="-1"
+                            <!-- Modal for Coleoptera -->
+                            <div class="modal fade" id="updateDescriptionModal-{{ $col->col_id }}" tabindex="-1"
                                 role="dialog" aria-labelledby="updateDescriptionModal" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
@@ -58,12 +57,12 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{ url('admin/center/nanotechnology/update/' . $nan->nan_id) }}"
+                                            <form action="{{ url('admin/center/coleoptera/update/' . $col->col_id) }}"
                                                 method="POST">
                                                 @csrf
                                                 <div class="form-group">
-                                                    <label for="nan_description">Description:</label>
-                                                    <textarea class="form-control summernote" name="nan_description">{!! $nan->nan_description !!}</textarea>
+                                                    <label for="col_description">Description:</label>
+                                                    <textarea class="form-control summernote" name="col_description">{!! $col->col_description !!}</textarea>
                                                 </div>
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                     <span class="fa fa-close"></span> Close

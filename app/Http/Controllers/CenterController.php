@@ -64,4 +64,27 @@ class CenterController extends Controller
             
         return view('admin.center.coleoptera', compact('coleoptera'));
     }
+
+    public function admin_coleoptera_update(Request $request, $col_id)
+    {
+        // Validate the request
+        $request->validate([
+            'col_description' => 'required|string',
+        ]);
+
+        // Update the data in the database
+        DB::table('center_coleoptera')
+            ->where('col_id', $col_id)
+            ->update([
+                'col_description' => $request->col_description,
+                'col_date_modified' => Carbon::now(),
+                'col_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }
