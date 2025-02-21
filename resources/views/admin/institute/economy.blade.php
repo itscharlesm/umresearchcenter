@@ -26,64 +26,57 @@
             @include('layouts.partials.alerts')
             <div class="card">
                 <div class="card-body overflow-auto">
-                    <table class="table table-hover table-striped table-sm responsive">
-                        <thead>
-                            <tr>
-                                <th style="text-align: center; vertical-align: middle">Description</th>
-                                <th style="text-align: center; vertical-align: middle; width: 100px">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($eco_description as $eco)
-                                <tr style="vertical-align: middle;">
-                                    <td style="vertical-align: middle;">{!! $eco->eco_description !!}</td>
-                                    <td style="vertical-align: middle;">
+                    <div class="row">
+                        @foreach ($eco_description as $eco)
+                            <div class="col-md-12">
+                                <div class="card mb-3 shadow-sm border rounded">
+                                    <div class="card-header bg-light text-white">
+                                        <h5 class="mb-0">Description:</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">{!! $eco->eco_description !!}</p>
+                                    </div>
+                                    <div class="card-footer bg-light text-right">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
-                                            data-toggle="modal"
-                                            data-target="#updateDescriptionModal-{{ $eco->eco_id }}">
+                                            data-toggle="modal" data-target="#updateDescriptionModal-{{ $eco->eco_id }}">
                                             <span class="fa fa-edit"></span> Update
                                         </a>
-                                    </td>
-                                    <div class="modal fade" id="updateDescriptionModal-{{ $eco->eco_id }}"
-                                        tabindex="-1" role="dialog" aria-labelledby="updateDescriptionModalLabel"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="updateDescriptionModalLabel">Update
-                                                        Description</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modal for Economy -->
+                            <div class="modal fade" id="updateDescriptionModal-{{ $eco->eco_id }}" tabindex="-1"
+                                role="dialog" aria-labelledby="updateDescriptionModal" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Update Local and National Linkages</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="{{ url('admin/institute/economy/update/' . $eco->eco_id) }}"
+                                                method="POST">
+                                                @csrf
+                                                <div class="form-group">
+                                                    <label for="eco_description">Description:</label>
+                                                    <textarea class="form-control summernote" name="eco_description">{!! $eco->eco_description !!}</textarea>
                                                 </div>
-                                                <div class="modal-body">
-                                                    <form
-                                                        action="{{ url('admin/institute/economy/update/' . $eco->eco_id) }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="form-group">
-                                                                    <label for="eco_description">Description:</label>
-                                                                    <textarea class="form-control summernote" name="eco_description">{!! $eco->eco_description !!}</textarea>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal"><span class="fa fa-close"></span>
-                                                            Close</button>
-                                                        <button type="submit" class="btn btn-danger"><span
-                                                                class="fa fa-save"></span> Update</button>
-                                                    </form>
-                                                </div>
-                                            </div>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    <span class="fa fa-close"></span> Close
+                                                </button>
+                                                <button type="submit" class="btn btn-danger">
+                                                    <span class="fa fa-save"></span> Update
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
