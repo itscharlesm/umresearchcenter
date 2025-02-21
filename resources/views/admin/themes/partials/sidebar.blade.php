@@ -151,6 +151,13 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ action('App\Http\Controllers\LinkageController@admin_linkages') }}"
+                            class="nav-link {{ request()->is('admin/linkages') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-link"></i>
+                            <p>Manage Linkages</p>
+                        </a>
+                    </li>
                     <li class="nav-item {{ request()->is('admin/users*') ? 'menu-open' : '' }}">
                         <a href="#" class="nav-link {{ request()->is('admin/users*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-users"></i>

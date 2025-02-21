@@ -100,6 +100,9 @@ Route::get('/center/policy', [CenterController::class, 'policy']);
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);
 
+// Admin Linkages
+Route::get('/admin/linkages', [LinkageController::class, 'admin_linkages']);
+
 // Download
 Route::get('/downloads', [DownloadController::class, 'downloads']);
 
