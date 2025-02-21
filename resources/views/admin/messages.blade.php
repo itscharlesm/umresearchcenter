@@ -11,8 +11,8 @@
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
-                        <li class="breadcrumb-item active">Messages</li>
                         </li>
+                        <li class="breadcrumb-item active">Messages</li>
                     </ol>
                 </div>
             </div>
@@ -25,7 +25,7 @@
             @include('layouts.partials.alerts')
             <div class="card">
                 <div class="card-header bg-warning">
-                    List of users
+                    List of concerns
                 </div>
                 <div class="card-body overflow-auto">
                     <table id="studentTable" class="table table-hover table-striped table-sm responsive">

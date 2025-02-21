@@ -45,6 +45,7 @@ Route::post('/admin/users/update/role/{usr_id}', [AdminController::class, 'updat
 Route::post('admin/users/update/password/{usr_id}', [AdminController::class, 'reset_password']);
 Route::get('/admin/messages', [AdminController::class, 'messages']);
 Route::post('/admin/messages/concern/update/{con_id}', [AdminController::class, 'messages_update']);
+Route::get('/admin/carousel', [AdminController::class, 'carousel']);
 
 // User
 Route::post('admin/register-user', [UserController::class, 'registerUser']);

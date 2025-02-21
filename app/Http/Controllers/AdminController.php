@@ -133,4 +133,9 @@ class AdminController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function carousel()
+    {
+        return view('admin.carousel');
+    }
 }

@@ -5,15 +5,14 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">INSTITUTE OF EMERGING TECHNOLOGIES AND GREEN INNOVATION STUDIES</h1>
+                    <h1 class="m-0">Carousel</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
                         </li>
-                        <li class="breadcrumb-item active">Institutes</li>
-                        <li class="breadcrumb-item active">Emerging Technologies and Green Innovation</li>
+                        <li class="breadcrumb-item active">Carousel</li>
                     </ol>
                 </div>
             </div>
@@ -25,32 +24,35 @@
         <div class="container-fluid">
             @include('layouts.partials.alerts')
             <div class="card">
+                <div class="card-header bg-warning">
+                    List of images in the homepage
+                </div>
                 <div class="card-body overflow-auto">
                     <table class="table table-hover table-striped table-sm responsive">
                         <thead>
                             <tr>
-                                <th style="text-align: center; vertical-align: middle">Description</th>
+                                <th style="text-align: center; vertical-align: middle">Image</th>
                                 <th style="text-align: center; vertical-align: middle; width: 100px">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($eme_description as $eme)
-                                <tr style="vertical-align: middle;">
-                                    <td style="vertical-align: middle;">{!! $eme->eme_description !!}</td>
+                            @foreach ($messages as $con)
+                                <tr style="text-align: center; vertical-align: middle;">
+                                    <td style="vertical-align: middle;"></td>
                                     <td style="vertical-align: middle;">
-                                        <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
+                                        <a class="btn btn-danger btn-sm activate-btn" href="javascript:void(0)"
                                             data-toggle="modal"
-                                            data-target="#updateDescriptionModal-{{ $eme->eme_id }}">
-                                            <span class="fa fa-edit"></span> Update
+                                            data-target="#updateImageModalLabel">
+                                            <span class="fa fa-eye"></span> View
                                         </a>
                                     </td>
-                                    <div class="modal fade" id="updateDescriptionModal-{{ $eme->eme_id }}"
-                                        tabindex="-1" role="dialog" aria-labelledby="updateDescriptionModalLabel"
+                                    <div class="modal fade" id="updateImageModal"
+                                        tabindex="-1" role="dialog" aria-labelledby="updateImageModalLabel"
                                         aria-hidden="true">
                                         <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="updateDescriptionModalLabel">Update
+                                                    <h5 class="modal-title" id="updateImageModalLabel">Update
                                                         Description</h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
@@ -59,14 +61,13 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <form
-                                                        action="{{ url('admin/institute/emerging/update/' . $eme->eme_id) }}"
+                                                        action=""
                                                         method="POST">
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
-                                                                    <label for="eme_description">Description:</label>
-                                                                    <textarea class="form-control summernote" name="eme_description">{!! $eme->eme_description !!}</textarea>
+                                                                    <label for="cour_image">Image:</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -88,31 +89,4 @@
             </div>
         </div>
     </section>
-    <script>
-        $(document).ready(function() {
-            $('.summernote').summernote({
-                height: 200,
-                styleWithSpan: false, // Ensures proper list styling
-                toolbar: [
-                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                    ['font', ['strikethrough', 'superscript', 'subscript']],
-                    ['color', ['color']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['height', ['height']]
-                ],
-                callbacks: {
-                    onInit: function() {
-                        // Ensure lists have correct styles on initialization
-                        $('.note-editable').find('ul').css('list-style-type', 'disc');
-                        $('.note-editable').find('ol').css('list-style-type', 'decimal');
-                    },
-                    onBlur: function(e) {
-                        // Apply styles only to existing lists instead of resetting content
-                        $('.note-editable').find('ul').css('list-style-type', 'disc');
-                        $('.note-editable').find('ol').css('list-style-type', 'decimal');
-                    }
-                }
-            });
-        });
-    </script>
 @endsection

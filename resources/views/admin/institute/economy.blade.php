@@ -11,6 +11,7 @@
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
+                        </li>
                         <li class="breadcrumb-item active">Institutes</li>
                         <li class="breadcrumb-item active">Economy and Enterprise Studies</li>
                     </ol>
