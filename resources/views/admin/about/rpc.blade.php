@@ -25,60 +25,60 @@
             @include('layouts.partials.alerts')
             <div class="card">
                 <div class="card-body overflow-auto">
-                    <table class="table table-hover table-striped table-sm responsive">
-                        <thead>
-                            <tr>
-                                <th style="text-align: center; vertical-align: middle">Description</th>
-                                <th style="text-align: center; vertical-align: middle; width: 100px">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <div class="card-body overflow-auto">
+                        <div class="row">
                             @foreach ($rpc_description as $rpc)
-                                <tr style="vertical-align: middle;">
-                                    <td style="vertical-align: middle;">{!! $rpc->rpc_description !!}</td>
-                                    <td style="vertical-align: middle;">
-                                        <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
-                                            data-toggle="modal" data-target="#updateDescriptionModal-{{ $rpc->rpc_id }}">
-                                            <span class="fa fa-edit"></span> Update
-                                        </a>
-                                    </td>
-                                    <div class="modal fade" id="updateDescriptionModal-{{ $rpc->rpc_id }}" tabindex="-1"
-                                        role="dialog" aria-labelledby="updateDescriptionModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="updateDescriptionModalLabel">Update RPC</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
+                                <div class="col-md-12">
+                                    <div class="card mb-3 shadow-sm border rounded">
+                                        <div class="card-header bg-light text-white">
+                                            <h5 class="mb-0">RPC Description</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">{!! $rpc->rpc_description !!}</p>
+                                        </div>
+                                        <div class="card-footer bg-light text-right">
+                                            <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
+                                                data-toggle="modal" data-target="#updateDescriptionModal-{{ $rpc->rpc_id }}">
+                                                <span class="fa fa-edit"></span> Update
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Modal for Local and National Linkages -->
+                                <div class="modal fade" id="updateDescriptionModal-{{ $rpc->rpc_id }}" tabindex="-1"
+                                    role="dialog" aria-labelledby="updateDescriptionModal" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Update Local and National Linkages</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="{{ url('admin/about/rpc/update/' . $rpc->rpc_id) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    <div class="form-group">
+                                                        <label for="rpc_description">Description:</label>
+                                                        <textarea class="form-control summernote" name="rpc_description">{!! $rpc->rpc_description !!}</textarea>
+                                                    </div>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                        <span class="fa fa-close"></span> Close
                                                     </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form action="{{ url('admin/about/rpc/update/' . $rpc->rpc_id) }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="form-group">
-                                                                    <label for="rpc_description">Description:</label>
-                                                                    <textarea class="form-control summernote" name="rpc_description">{!! $rpc->rpc_description !!}</textarea>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal"><span class="fa fa-close"></span>
-                                                            Close</button>
-                                                        <button type="submit" class="btn btn-danger"><span
-                                                                class="fa fa-save"></span> Update</button>
-                                                    </form>
-                                                </div>
+                                                    <button type="submit" class="btn btn-danger">
+                                                        <span class="fa fa-save"></span> Update
+                                                    </button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
-                                </tr>
+                                </div>
                             @endforeach
-                        </tbody>
-                    </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
