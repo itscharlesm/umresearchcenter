@@ -97,6 +97,42 @@
                             <p>Manage Carousel</p>
                         </a>
                     </li>
+                    <li class="nav-item {{ request()->is('admin/center*') ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ request()->is('admin/center*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-building"></i>
+                            <p>
+                                Manage Center
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\CenterController@admin_nanotechnology') }}"
+                                    class="nav-link {{ request()->is('admin/center/nanotechnology') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Nanotechnology</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\InstituteController@admin_emerging') }}"
+                                    class="nav-link {{ request()->is('admin/institute/emerging') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Coleoptera</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\InstituteController@admin_biodiversity') }}"
+                                    class="nav-link {{ request()->is('admin/institute/biodiversity') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Public Policy</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item {{ request()->is('admin/institute*') ? 'menu-open' : '' }}">
                         <a href="#" class="nav-link {{ request()->is('admin/institute*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-balance-scale"></i>
@@ -155,14 +191,14 @@
                         <a href="{{ action('App\Http\Controllers\LinkageController@admin_linkages') }}"
                             class="nav-link {{ request()->is('admin/linkages') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-link"></i>
-                            <p>Manage Linkages</p>
+                            <p>Manage Linkage</p>
                         </a>
                     </li>
                     <li class="nav-item {{ request()->is('admin/users*') ? 'menu-open' : '' }}">
                         <a href="#" class="nav-link {{ request()->is('admin/users*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
-                                Manage Users
+                                Manage User
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>

@@ -97,6 +97,9 @@ Route::get('/center/nanotechnology', [CenterController::class, 'nanotechnology']
 Route::get('/center/coleoptera', [CenterController::class, 'coleoptera']);
 Route::get('/center/policy', [CenterController::class, 'policy']);
 
+// Admin Center
+Route::get('/admin/center/nanotechnology', [CenterController::class, 'admin_nanotechnology']);
+
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);
 
