@@ -34,22 +34,27 @@
                             @foreach ($carousel as $index => $cour)
                                 <div class="col-md-4 mb-4 d-flex justify-content-center">
                                     <div class="card" style="width: 18rem;">
-                                        <img src="{{ asset('images/carousel/' . $cour->cour_image) }}" class="card-img-top" alt="Image">
+                                        <img src="{{ asset('images/carousel/' . $cour->cour_image) }}" class="card-img-top"
+                                            alt="Image">
                                         <div class="card-body text-center">
-                                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#updateImageModal{{ $index }}">
+                                            <button class="btn btn-danger btn-sm" data-toggle="modal"
+                                                data-target="#updateImageModal-{{ $cour->cour_id }}">
                                                 <span class="fa fa-edit"></span> Update
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-                
+
                                 <!-- Modal for updating image -->
-                                <div class="modal fade" id="updateImageModal{{ $index }}" tabindex="-1" role="dialog" aria-labelledby="updateImageModalLabel{{ $index }}" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal fade" id="updateImageModal-{{ $cour->cour_id }}" tabindex="-1"
+                                    role="dialog" aria-labelledby="updateImageModalLabel-{{ $cour->cour_id }}"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-md" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title">Update Image</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
@@ -57,8 +62,18 @@
                                                 <form action="" method="POST">
                                                     @csrf
                                                     <div class="form-group">
-                                                        <label for="cour_image">Select New Image:</label>
-                                                        <input type="file" class="form-control" name="cour_image">
+                                                        <div class="custom-file">
+                                                            <label for="cour_image">Select New Image</label>
+                                                            <input type="file" class="custom-file-input"
+                                                                id="customFile{{ $cour->cour_id }}" name="cour_image"/>
+                                                            <label class="custom-file-label" for="customFile{{ $cour->cour_id }}">
+                                                                {{ $cour->cour_image ? $cour->cour_image : 'Choose file' }}
+                                                            </label>
+                                                        </div>
+                                                        <small id="fileHelp" class="form-text text-muted">Please upload a
+                                                            valid image file in jpg or
+                                                            png
+                                                            format. Size of image should not be more than 3MB.</small>
                                                     </div>
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                         <span class="fa fa-close"></span> Close
@@ -71,15 +86,22 @@
                                         </div>
                                     </div>
                                 </div>
-                
-                                @if (($index + 1) % 3 == 0) 
-                                    </div><div class="row">
-                                @endif
+                                @if (($index + 1) % 3 == 0)
+                        </div>
+                        <div class="row">
+                            @endif
                             @endforeach
                         </div>
                     </div>
-                </div>                                
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
 @endsection

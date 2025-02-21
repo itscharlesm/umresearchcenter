@@ -29,7 +29,7 @@
                         <div class="timeline">
                             <div class="time-label">
                                 <span class="bg-warning"><i class="fa fa-bullhorn"></i> Announcements</span>
-                                @if (session('usr_type') == 1)
+                                @if (session('usr_type') != 3)
                                     <a class="btn btn-warning float-right" href="javascript:void(0)" data-toggle="modal"
                                         data-target="#newAnnouncementModal"><i class="fa fa-comment"></i> Compose</a>
                                 @endif
@@ -57,7 +57,7 @@
                                                 <p>{{ $announcement->ann_content }}</p>
                                             @endif
                                         </div>
-                                        @if (session('usr_type') != 2)
+                                        @if (session('usr_type') != 3)
                                             <div class="timeline-footer">
                                                 <a class="btn btn-danger btn-sm"
                                                     href="{{ action('App\Http\Controllers\AnnouncementController@delete', [$announcement->ann_uuid]) }}"><i
