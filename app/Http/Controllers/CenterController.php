@@ -11,7 +11,13 @@ class CenterController extends Controller
 {
     public function nanotechnology()
     {
-        return view('main.center.nanotechnology', );
+        $nanotechnology = DB::table('center_nanotechnology')
+        ->where('nan_active', 1)
+        ->first();
+
+        return view('main.center.nanotechnology', [
+            'nan_description' => $nanotechnology->nan_description ?? ''
+        ]);
     }
 
     public function coleoptera()

@@ -23,9 +23,9 @@
                 <div class="col-lg-12">
                     <div class="section-title">
                         <h2>Center of Green Nanotechnology Innovations for Environmental Solutions (CGNIES)</h2>
-                        <p class="font-weight-light text-justify">
-                            BACKEND
-                        </p>
+                        <div>
+                            {!! $nan_description !!}
+                        </div>
                     </div>
                 </div>
             </div>
