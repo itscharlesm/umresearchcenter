@@ -33,7 +33,13 @@ class CenterController extends Controller
 
     public function policy()
     {
-        return view('main.center.policy', );
+        $policy = DB::table('center_policy')
+            ->where('pol_active', 1)
+            ->first();
+
+        return view('main.center.policy', [
+            'pol_description' => $policy->pol_description ?? ''
+        ]);
     }
 
     public function admin_nanotechnology()

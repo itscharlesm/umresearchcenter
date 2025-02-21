@@ -23,9 +23,9 @@
                 <div class="col-lg-12">
                     <div class="section-title">
                         <h2>UM Public Policy Center</h2>
-                        <p class="font-weight-light text-justify">
-                            BACKEND
-                        </p>
+                        <div>
+                            {!! $pol_description !!}
+                        </div>
                     </div>
                 </div>
             </div>
