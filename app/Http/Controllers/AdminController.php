@@ -142,4 +142,41 @@ class AdminController extends Controller
 
         return view('admin.carousel', compact('carousel'));
     }
+
+    public function carousel_update(Request $request, $cour_id)
+    {
+        $request->validate([
+            'cour_image' => 'required|image|mimes:jpeg,jpg,png',
+        ]);        
+
+        $cour_image = $request->file('cour_image');
+
+        if ($cour_image) {
+            // Generate unique file name
+            $file_uuid = generateuuid();
+            $fileName = $file_uuid . '.' . $cour_image->getClientOriginalExtension();
+
+            // Define upload path
+            $uploadPath = public_path('images/carousel');
+
+            // Move the new file to the designated folder
+            $cour_image->move($uploadPath, $fileName);
+
+            // Update the database with the new image name
+            $updateStatus = DB::table('carousel')->where('cour_id', $cour_id)->update([
+                'cour_image' => $fileName,
+                'cour_date_modified' => Carbon::now(),
+                'cour_modified_by' => session('usr_id'),
+            ]);
+
+            // Debugging: Check if update query actually runs
+            if (!$updateStatus) {
+                session()->flash('errorMessage', 'Failed to update image in database.');
+                return redirect()->back();
+            }
+        }
+
+        session()->flash('successMessage', 'Image updated successfully.');
+        return redirect()->back();
+    }
 }

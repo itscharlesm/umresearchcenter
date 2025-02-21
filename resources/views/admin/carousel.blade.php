@@ -59,14 +59,17 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="" method="POST">
+                                                <form action="{{ url('admin/carousel/update/' . $cour->cour_id) }}"
+                                                    method="POST" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="form-group">
                                                         <div class="custom-file">
                                                             <label for="cour_image">Select New Image</label>
                                                             <input type="file" class="custom-file-input"
-                                                                id="customFile{{ $cour->cour_id }}" name="cour_image"/>
-                                                            <label class="custom-file-label" for="customFile{{ $cour->cour_id }}">
+                                                                id="customFile{{ $cour->cour_id }}" name="cour_image"
+                                                                accept=".jpeg, .jpg, .png" />
+                                                            <label class="custom-file-label"
+                                                                for="customFile{{ $cour->cour_id }}">
                                                                 {{ $cour->cour_image ? $cour->cour_image : 'Choose file' }}
                                                             </label>
                                                         </div>
