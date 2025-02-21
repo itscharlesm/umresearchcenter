@@ -46,7 +46,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Modal for Local and National Linkages -->
+                                <!-- Modal for Popular -->
                                 <div class="modal fade" id="updateDescriptionModal-{{ $pop->pop_id }}" tabindex="-1"
                                     role="dialog" aria-labelledby="updateDescriptionModal" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
