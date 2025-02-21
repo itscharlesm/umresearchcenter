@@ -43,7 +43,13 @@ class InstituteController extends Controller
 
     public function economy()
     {
-        return view('main.institute.economy', );
+        $economy = DB::table('institute_economy')
+            ->where('eco_active', 1)
+            ->first();
+
+        return view('main.institute.economy', [
+            'eco_description' => $economy->eco_description ?? ''
+        ]);
     }
 
     public function social()

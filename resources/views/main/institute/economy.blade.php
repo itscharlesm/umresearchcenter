@@ -18,12 +18,9 @@
                 <!-- Attachments -->
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <p class="font-weight-light text-justify">
-                            This institute produces feasibility studies, business and marketing plans for firms. It is
-                            responsible for crafting policy papers that has relation to economy, business policies,
-                            development perspectives, and investment analysis. For more information, please email
-                            <em><strong>iees@umindanao.edu.ph</strong></em>
-                        </p>
+                        <div>
+                            {!! $eco_description !!}
+                        </div>
                     </div>
                 </div>
             </div>
