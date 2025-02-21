@@ -12,17 +12,16 @@
             <x-breadcrumb :items="[
                 ['label' => 'Home', 'url' => url('/'), 'active' => false],
                 ['label' => 'Centers', 'url' => '#', 'active' => true],
-                ['label' => 'Coleoptera', 'url' => '#', 'active' => true,
-                ],
+                ['label' => 'Coleoptera', 'url' => '#', 'active' => true],
             ]" />
             <div class="row">
                 <!-- Attachments -->
                 <div class="col-lg-12">
                     <div class="section-title">
                         <h2>Coleoptera Research Center</h2>
-                        <p class="font-weight-light text-justify">
-                            BACKEND
-                        </p>
+                        <div>
+                            {!! $col_description !!}
+                        </div>
                     </div>
                 </div>
             </div>

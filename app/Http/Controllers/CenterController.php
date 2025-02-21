@@ -12,8 +12,8 @@ class CenterController extends Controller
     public function nanotechnology()
     {
         $nanotechnology = DB::table('center_nanotechnology')
-        ->where('nan_active', 1)
-        ->first();
+            ->where('nan_active', 1)
+            ->first();
 
         return view('main.center.nanotechnology', [
             'nan_description' => $nanotechnology->nan_description ?? ''
@@ -22,7 +22,13 @@ class CenterController extends Controller
 
     public function coleoptera()
     {
-        return view('main.center.coleoptera', );
+        $coleoptera = DB::table('center_coleoptera')
+            ->where('col_active', 1)
+            ->first();
+
+        return view('main.center.coleoptera', [
+            'col_description' => $coleoptera->col_description ?? ''
+        ]);
     }
 
     public function policy()
@@ -67,7 +73,7 @@ class CenterController extends Controller
         $coleoptera = DB::table('center_coleoptera')
             ->where('col_active', 1)
             ->get();
-            
+
         return view('admin.center.coleoptera', compact('coleoptera'));
     }
 
@@ -99,7 +105,7 @@ class CenterController extends Controller
         $policy = DB::table('center_policy')
             ->where('pol_active', 1)
             ->get();
-            
+
         return view('admin.center.policy', compact('policy'));
     }
 
