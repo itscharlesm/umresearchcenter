@@ -29,64 +29,56 @@
                     List of images in the homepage
                 </div>
                 <div class="card-body overflow-auto">
-                    <table class="table table-hover table-striped table-sm responsive">
-                        <thead>
-                            <tr>
-                                <th style="text-align: center; vertical-align: middle">Image</th>
-                                <th style="text-align: center; vertical-align: middle; width: 100px">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($carousel as $cour)
-                                <tr style="text-align: center; vertical-align: middle;">
-                                    <td style="vertical-align: middle;"></td>
-                                    <td style="vertical-align: middle;">
-                                        <a class="btn btn-danger btn-sm activate-btn" href="javascript:void(0)"
-                                            data-toggle="modal"
-                                            data-target="#updateImageModalLabel">
-                                            <span class="fa fa-eye"></span> View
-                                        </a>
-                                    </td>
-                                    <div class="modal fade" id="updateImageModal"
-                                        tabindex="-1" role="dialog" aria-labelledby="updateImageModalLabel"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="updateImageModalLabel">Update
-                                                        Description</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
+                    <div class="container">
+                        <div class="row">
+                            @foreach ($carousel as $index => $cour)
+                                <div class="col-md-4 mb-4 d-flex justify-content-center">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="{{ asset('images/carousel/' . $cour->cour_image) }}" class="card-img-top" alt="Image">
+                                        <div class="card-body text-center">
+                                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#updateImageModal{{ $index }}">
+                                                <span class="fa fa-edit"></span> Update
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- Modal for updating image -->
+                                <div class="modal fade" id="updateImageModal{{ $index }}" tabindex="-1" role="dialog" aria-labelledby="updateImageModalLabel{{ $index }}" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Update Image</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="" method="POST">
+                                                    @csrf
+                                                    <div class="form-group">
+                                                        <label for="cour_image">Select New Image:</label>
+                                                        <input type="file" class="form-control" name="cour_image">
+                                                    </div>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                        <span class="fa fa-close"></span> Close
                                                     </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form
-                                                        action=""
-                                                        method="POST">
-                                                        @csrf
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="form-group">
-                                                                    <label for="cour_image">Image:</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal"><span class="fa fa-close"></span>
-                                                            Close</button>
-                                                        <button type="submit" class="btn btn-danger"><span
-                                                                class="fa fa-save"></span> Update</button>
-                                                    </form>
-                                                </div>
+                                                    <button type="submit" class="btn btn-danger">
+                                                        <span class="fa fa-save"></span> Update
+                                                    </button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
-                                </tr>
+                                </div>
+                
+                                @if (($index + 1) % 3 == 0) 
+                                    </div><div class="row">
+                                @endif
                             @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                        </div>
+                    </div>
+                </div>                                
             </div>
         </div>
     </section>
