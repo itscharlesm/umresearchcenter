@@ -103,6 +103,7 @@ Route::post('/admin/center/nanotechnology/update/{nan_id}', [CenterController::c
 Route::get('/admin/center/coleoptera', [CenterController::class, 'admin_coleoptera']);
 Route::post('/admin/center/coleoptera/update/{col_id}', [CenterController::class, 'admin_coleoptera_update']);
 Route::get('/admin/center/policy', [CenterController::class, 'admin_policy']);
+Route::post('/admin/center/policy/update/{col_id}', [CenterController::class, 'admin_policy_update']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);
