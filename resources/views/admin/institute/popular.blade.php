@@ -26,59 +26,56 @@
             @include('layouts.partials.alerts')
             <div class="card">
                 <div class="card-body overflow-auto">
-                    <div class="card-body overflow-auto">
-                        <div class="row">
-                            @foreach ($pop_description as $pop)
-                                <div class="col-md-12">
-                                    <div class="card mb-3 shadow-sm border rounded">
-                                        <div class="card-header bg-light text-white">
-                                            <h5 class="mb-0">Description:</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <p class="card-text">{!! $pop->pop_description !!}</p>
-                                        </div>
-                                        <div class="card-footer bg-light text-right">
-                                            <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
-                                                data-toggle="modal" data-target="#updateDescriptionModal-{{ $pop->pop_id }}">
-                                                <span class="fa fa-edit"></span> Update
-                                            </a>
-                                        </div>
+                    <div class="row">
+                        @foreach ($pop_description as $pop)
+                            <div class="col-md-12">
+                                <div class="card mb-3 shadow-sm border rounded">
+                                    <div class="card-header bg-light text-white">
+                                        <h5 class="mb-0">Description:</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">{!! $pop->pop_description !!}</p>
+                                    </div>
+                                    <div class="card-footer bg-light text-right">
+                                        <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
+                                            data-toggle="modal" data-target="#updateDescriptionModal-{{ $pop->pop_id }}">
+                                            <span class="fa fa-edit"></span> Update
+                                        </a>
                                     </div>
                                 </div>
+                            </div>
 
-                                <!-- Modal for Popular -->
-                                <div class="modal fade" id="updateDescriptionModal-{{ $pop->pop_id }}" tabindex="-1"
-                                    role="dialog" aria-labelledby="updateDescriptionModal" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Update Local and National Linkages</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
+                            <!-- Modal for Popular -->
+                            <div class="modal fade" id="updateDescriptionModal-{{ $pop->pop_id }}" tabindex="-1"
+                                role="dialog" aria-labelledby="updateDescriptionModal" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Update Local and National Linkages</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="{{ url('admin/institute/popular/update/' . $pop->pop_id) }}"
+                                                method="POST">
+                                                @csrf
+                                                <div class="form-group">
+                                                    <label for="pop_description">Description:</label>
+                                                    <textarea class="form-control summernote" name="pop_description">{!! $pop->pop_description !!}</textarea>
+                                                </div>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    <span class="fa fa-close"></span> Close
                                                 </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form action="{{ url('admin/institute/popular/update/' . $pop->pop_id) }}"
-                                                    method="POST">
-                                                    @csrf
-                                                    <div class="form-group">
-                                                        <label for="pop_description">Description:</label>
-                                                        <textarea class="form-control summernote" name="pop_description">{!! $pop->pop_description !!}</textarea>
-                                                    </div>
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                                        <span class="fa fa-close"></span> Close
-                                                    </button>
-                                                    <button type="submit" class="btn btn-danger">
-                                                        <span class="fa fa-save"></span> Update
-                                                    </button>
-                                                </form>
-                                            </div>
+                                                <button type="submit" class="btn btn-danger">
+                                                    <span class="fa fa-save"></span> Update
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
