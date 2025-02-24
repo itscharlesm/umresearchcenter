@@ -187,6 +187,69 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item {{ request()->is('admin/journal*') ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ request()->is('admin/journal*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-journal-whills"></i>
+                            <p>
+                                Manage Journal
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\JournalController@admin_multidisciplinary') }}"
+                                    class="nav-link {{ request()->is('admin/journal/multidisciplinary') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>UMIMRJ</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\JournalController@admin_multidisciplinary') }}"
+                                    class="nav-link {{ request()->is('admin/journal/multidisciplinary') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>JETI</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\JournalController@admin_multidisciplinary') }}"
+                                    class="nav-link {{ request()->is('admin/journal/multidisciplinary') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>JEES</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\JournalController@admin_multidisciplinary') }}"
+                                    class="nav-link {{ request()->is('admin/journal/multidisciplinary') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>JTC</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\JournalController@admin_multidisciplinary') }}"
+                                    class="nav-link {{ request()->is('admin/journal/multidisciplinary') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>JSWHDS</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\JournalController@admin_multidisciplinary') }}"
+                                    class="nav-link {{ request()->is('admin/journal/multidisciplinary') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>College Journals</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a href="{{ action('App\Http\Controllers\LinkageController@admin_linkages') }}"
                             class="nav-link {{ request()->is('admin/linkages') ? 'active' : '' }}">

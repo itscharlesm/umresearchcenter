@@ -114,6 +114,9 @@ Route::get('/journal/tropical', [JournalController::class, 'tropical']);
 Route::get('/journal/social', [JournalController::class, 'social']);
 Route::get('/journal/college-journals', [JournalController::class, 'journals']);
 
+// Admin Journal
+Route::get('/admin/journal/multidisciplinary', [JournalController::class, 'admin_multidisciplinary']);
+
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);
 

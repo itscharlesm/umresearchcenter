@@ -38,4 +38,13 @@ class JournalController extends Controller
     {
         return view('main.journal.journals');
     }
+
+    public function admin_multidisciplinary()
+    {
+        $multidisciplinary = DB::table('journal_multidisciplinary')
+            ->where('mul_active', 1)
+            ->get();
+
+        return view('admin.journal.multidisciplinary', compact('multidisciplinary'));
+    }
 }
