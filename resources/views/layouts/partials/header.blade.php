@@ -141,11 +141,11 @@
                                         href="{{ url('/journal/economy') }}">JEES</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('center/policy') ? 'active' : '' }}"
-                                        href="{{ url('/center/policy') }}">JTC</a>
+                                    <a class="dropdown-item {{ request()->is('journal/tropical') ? 'active' : '' }}"
+                                        href="{{ url('/journal/tropical') }}">JTC</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('center/policy') ? 'active' : '' }}"
+                                    <a class="dropdown-item {{ request()->is('center/tropical') ? 'active' : '' }}"
                                         href="{{ url('/center/policy') }}">JSWHDS</a>
                                 </li>
                                 <li>
