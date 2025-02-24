@@ -47,4 +47,27 @@ class JournalController extends Controller
 
         return view('admin.journal.multidisciplinary', compact('multidisciplinary'));
     }
+
+    public function admin_multidisciplinary_update(Request $request, $mul_id)
+    {
+        // Validate the request
+        $request->validate([
+            'mul_description' => 'required|string',
+        ]);
+
+        // Update the data in the database
+        DB::table('journal_multidisciplinary')
+            ->where('mul_id', $mul_id)
+            ->update([
+                'mul_description' => $request->mul_description,
+                'mul_date_modified' => Carbon::now(),
+                'mul_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }
