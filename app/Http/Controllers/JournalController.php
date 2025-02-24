@@ -70,4 +70,36 @@ class JournalController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_emerging()
+    {
+        $emerging = DB::table('journal_emerging')
+            ->where('eme_active', 1)
+            ->get();
+
+        return view('admin.journal.emerging', compact('emerging'));
+    }
+
+    public function admin_emerging_update(Request $request, $eme_id)
+    {
+        // Validate the request
+        $request->validate([
+            'eme_description' => 'required|string',
+        ]);
+
+        // Update the data in the database
+        DB::table('journal_emerging')
+            ->where('eme_id', $eme_id)
+            ->update([
+                'eme_description' => $request->eme_description,
+                'eme_date_modified' => Carbon::now(),
+                'eme_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }
