@@ -20,7 +20,7 @@
                     <div class="section-title">
                         <h2>Journal of Economy and Enterprise Studies (JEES)</h2>
                         <div>
-                            
+                            {!! $eco_description !!}
                         </div>
                     </div>
                 </div>

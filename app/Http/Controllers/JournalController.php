@@ -33,7 +33,13 @@ class JournalController extends Controller
 
     public function economy()
     {
-        return view('main.journal.economy');
+        $economy = DB::table('journal_economy')
+            ->where('eco_active', 1)
+            ->first();
+
+        return view('main.journal.economy', [
+            'eco_description' => $economy->eco_description ?? ''
+        ]);
     }
 
     public function tropical()
