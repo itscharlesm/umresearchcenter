@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">UNIVERSITY OF MINDANAO INTERNATIONAL MULTIDISCIPLINARY RESEARCH JOURNAL (UMIMRJ)</h1>
+                    <h1 class="m-0">JOURNAL OF EMERGING TECHNOLOGIES AND INNOVATIONS (JETI)</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -13,7 +13,7 @@
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
                         </li>
                         <li class="breadcrumb-item active">Journals</li>
-                        <li class="breadcrumb-item active">UMIMRJ</li>
+                        <li class="breadcrumb-item active">JETI</li>
                     </ol>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <form
-                                                action="{{ url('admin/journal/multidisciplinary/update/' . $eme->eme_id) }}"
+                                                action="{{ url('admin/journal/emerging/update/' . $eme->eme_id) }}"
                                                 method="POST">
                                                 @csrf
                                                 <div class="form-group">
