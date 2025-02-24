@@ -11,6 +11,7 @@ use App\Http\Controllers\LinkageController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\CenterController;
 use App\Http\Controllers\JournalController;
+use App\Http\Controllers\ConferenceController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\CommunityEngagementController;
@@ -125,6 +126,13 @@ Route::get('/admin/journal/tropical', [JournalController::class, 'admin_tropical
 Route::post('/admin/journal/tropical/update/{eme_id}', [JournalController::class, 'admin_tropical_update']);
 Route::get('/admin/journal/social', [JournalController::class, 'admin_social']);
 Route::post('/admin/journal/social/update/{eme_id}', [JournalController::class, 'admin_social_update']);
+
+// Conference
+Route::get('/conference/policy', [ConferenceController::class, 'policy']);
+Route::get('/conference/ietgi', [ConferenceController::class, 'ietgi']);
+Route::get('/conference/ibe', [ConferenceController::class, 'ibe']);
+Route::get('/conference/economy', [ConferenceController::class, 'economy']);
+Route::get('/conference/social', [ConferenceController::class, 'social']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);

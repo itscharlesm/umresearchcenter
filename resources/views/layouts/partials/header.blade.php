@@ -155,33 +155,33 @@
                             </ul>
                         </li>
                         {{-- Conferences --}}
-                        <li class="nav-item dropdown view {{ request()->is('journal/*') ? 'active' : '' }}">
+                        <li class="nav-item dropdown view {{ request()->is('conference/*') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Journals
+                                Conferences
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('journal/multidisciplinary') ? 'active' : '' }}"
-                                        href="{{ url('/journal/multidisciplinary') }}">
+                                    <a class="dropdown-item {{ request()->is('conference/policy') ? 'active' : '' }}"
+                                        href="{{ url('/conference/policy') }}">
                                         Public Policy Conference
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('journal/emerging') ? 'active' : '' }}"
-                                        href="{{ url('/journal/emerging') }}">Conference by IETGI</a>
+                                    <a class="dropdown-item {{ request()->is('conference/ietgi') ? 'active' : '' }}"
+                                        href="{{ url('/conference/ietgi') }}">Conference by IETGI</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('journal/economy') ? 'active' : '' }}"
-                                        href="{{ url('/journal/economy') }}">Conference by IBE</a>
+                                    <a class="dropdown-item {{ request()->is('conference/ibe') ? 'active' : '' }}"
+                                        href="{{ url('/conference/ibe') }}">Conference by IBE</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('journal/tropical') ? 'active' : '' }}"
-                                        href="{{ url('/journal/tropical') }}">RCEES</a>
+                                    <a class="dropdown-item {{ request()->is('conference/economy') ? 'active' : '' }}"
+                                        href="{{ url('/conference/economy') }}">RCEES</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('journal/social') ? 'active' : '' }}"
-                                        href="{{ url('/journal/social') }}">RCSWHDS</a>
+                                    <a class="dropdown-item {{ request()->is('conference/social') ? 'active' : '' }}"
+                                        href="{{ url('/conference/social') }}">RCSWHDS</a>
                                 </li>
                             </ul>
                         </li>
