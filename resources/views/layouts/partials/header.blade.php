@@ -106,7 +106,7 @@
                                 <li>
                                     <a class="dropdown-item {{ request()->is('center/nanotechnology') ? 'active' : '' }}"
                                         href="{{ url('/center/nanotechnology') }}">
-                                        Green Nanotechnology Innovations for Environmental Solutions (CGNIES)
+                                        CGNIES
                                     </a>
                                 </li>
                                 <li>
@@ -116,6 +116,41 @@
                                 <li>
                                     <a class="dropdown-item {{ request()->is('center/policy') ? 'active' : '' }}"
                                         href="{{ url('/center/policy') }}">UM Public Policy Center</a>
+                                </li>
+                            </ul>
+                        </li>
+                        {{-- Journals --}}
+                        <li class="nav-item dropdown view {{ request()->is('journal/*') ? 'active' : '' }}">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Journals
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item {{ request()->is('journal/multidisciplinary') ? 'active' : '' }}"
+                                        href="{{ url('/journal/multidisciplinary') }}">
+                                        UMIMRJ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item {{ request()->is('center/coleoptera') ? 'active' : '' }}"
+                                        href="{{ url('/center/coleoptera') }}">JETI</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item {{ request()->is('center/policy') ? 'active' : '' }}"
+                                        href="{{ url('/center/policy') }}">JEES</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item {{ request()->is('center/policy') ? 'active' : '' }}"
+                                        href="{{ url('/center/policy') }}">JTC</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item {{ request()->is('center/policy') ? 'active' : '' }}"
+                                        href="{{ url('/center/policy') }}">JSWHDS</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item {{ request()->is('center/policy') ? 'active' : '' }}"
+                                        href="{{ url('/center/policy') }}">College Journals</a>
                                 </li>
                             </ul>
                         </li>
