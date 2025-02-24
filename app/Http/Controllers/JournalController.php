@@ -33,4 +33,9 @@ class JournalController extends Controller
     {
         return view('main.journal.social');
     }
+
+    public function journals()
+    {
+        return view('main.journal.journals');
+    }
 }

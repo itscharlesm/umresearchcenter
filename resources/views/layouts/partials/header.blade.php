@@ -149,8 +149,8 @@
                                         href="{{ url('/journal/social') }}">JSWHDS</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('center/policy') ? 'active' : '' }}"
-                                        href="{{ url('/center/policy') }}">College Journals</a>
+                                    <a class="dropdown-item {{ request()->is('journal/college-journals') ? 'active' : '' }}"
+                                        href="{{ url('/journal/college-journals') }}">College Journals</a>
                                 </li>
                             </ul>
                         </li>

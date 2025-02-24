@@ -112,6 +112,7 @@ Route::get('/journal/emerging', [JournalController::class, 'emerging']);
 Route::get('/journal/economy', [JournalController::class, 'economy']);
 Route::get('/journal/tropical', [JournalController::class, 'tropical']);
 Route::get('/journal/social', [JournalController::class, 'social']);
+Route::get('/journal/college-journals', [JournalController::class, 'journals']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);
