@@ -20,7 +20,7 @@
                     <div class="section-title">
                         <h2>Journal of Tropical Coleopterology (JTC)</h2>
                         <div>
-                            
+                            {!! $tro_description !!}
                         </div>
                     </div>
                 </div>

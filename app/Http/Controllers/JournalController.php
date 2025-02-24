@@ -44,7 +44,13 @@ class JournalController extends Controller
 
     public function tropical()
     {
-        return view('main.journal.tropical');
+        $tropical = DB::table('journal_tropical')
+            ->where('tro_active', 1)
+            ->first();
+
+        return view('main.journal.tropical', [
+            'tro_description' => $tropical->tro_description ?? ''
+        ]);
     }
 
     public function social()
