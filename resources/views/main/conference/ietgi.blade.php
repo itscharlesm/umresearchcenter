@@ -6,21 +6,21 @@
             <!-- Title -->
             <div class="content-header text-center" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="100"
                 data-aos-once="false" style="margin-top: 100px;">
-                <x-content-header title="PUBLIC POLICY CONFERENCE" />
+                <x-content-header title="CONFERENCE BY IETGI" />
             </div>
             <!-- Breadcrumb -->
             <x-breadcrumb :items="[
                 ['label' => 'Home', 'url' => url('/'), 'active' => false],
                 ['label' => 'Conference', 'url' => '#', 'active' => true],
-                ['label' => 'Public Policy', 'url' => '#', 'active' => true],
+                ['label' => 'IETGI', 'url' => '#', 'active' => true],
             ]" />
             <div class="row">
                 <!-- Attachments -->
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Public Policy Conference</h2>
+                        <h2>Conference by IETGI</h2>
                         <div>
-                            {!! $ppc_description !!}
+                            {!! $ietgi_description !!}
                         </div>
                     </div>
                 </div>
