@@ -123,6 +123,8 @@ Route::get('/admin/journal/economy', [JournalController::class, 'admin_economy']
 Route::post('/admin/journal/economy/update/{eme_id}', [JournalController::class, 'admin_economy_update']);
 Route::get('/admin/journal/tropical', [JournalController::class, 'admin_tropical']);
 Route::post('/admin/journal/tropical/update/{eme_id}', [JournalController::class, 'admin_tropical_update']);
+Route::get('/admin/journal/social', [JournalController::class, 'admin_social']);
+Route::post('/admin/journal/social/update/{eme_id}', [JournalController::class, 'admin_social_update']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);
