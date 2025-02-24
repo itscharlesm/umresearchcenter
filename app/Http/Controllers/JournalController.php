@@ -18,4 +18,9 @@ class JournalController extends Controller
     {
         return view('main.journal.emerging');
     }
+
+    public function economy()
+    {
+        return view('main.journal.economy');
+    }
 }
