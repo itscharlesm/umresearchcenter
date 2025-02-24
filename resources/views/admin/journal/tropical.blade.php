@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">JOURNAL OF ECONOMY AND ENTERPRISE STUDIES (JEES)</h1>
+                    <h1 class="m-0">JOURNAL OF TROPICAL COLEOPTEROLOGY (JTC)</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -13,7 +13,7 @@
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
                         </li>
                         <li class="breadcrumb-item active">Journals</li>
-                        <li class="breadcrumb-item active">JEES</li>
+                        <li class="breadcrumb-item active">JTC</li>
                     </ol>
                 </div>
             </div>
