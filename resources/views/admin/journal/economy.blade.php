@@ -27,18 +27,18 @@
             <div class="card">
                 <div class="card-body overflow-auto">
                     <div class="row">
-                        @foreach ($emerging as $eme)
+                        @foreach ($economy as $eco)
                             <div class="col-md-12">
                                 <div class="card mb-3 shadow-sm border rounded">
                                     <div class="card-header bg-light text-white">
                                         <h5 class="mb-0">Description:</h5>
                                     </div>
                                     <div class="card-body">
-                                        <p class="card-text">{!! $eme->eme_description !!}</p>
+                                        <p class="card-text">{!! $eco->eco_description !!}</p>
                                     </div>
                                     <div class="card-footer bg-light text-right">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
-                                            data-toggle="modal" data-target="#updateDescriptionModal-{{ $eme->eme_id }}">
+                                            data-toggle="modal" data-target="#updateDescriptionModal-{{ $eco->eco_id }}">
                                             <span class="fa fa-edit"></span> Update
                                         </a>
                                     </div>
@@ -46,7 +46,7 @@
                             </div>
 
                             <!-- Modal for Policy -->
-                            <div class="modal fade" id="updateDescriptionModal-{{ $eme->eme_id }}" tabindex="-1"
+                            <div class="modal fade" id="updateDescriptionModal-{{ $eco->eco_id }}" tabindex="-1"
                                 role="dialog" aria-labelledby="updateDescriptionModal" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
@@ -57,12 +57,12 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{ url('admin/journal/emerging/update/' . $eme->eme_id) }}"
+                                            <form action="{{ url('admin/journal/economy/update/' . $eco->eco_id) }}"
                                                 method="POST">
                                                 @csrf
                                                 <div class="form-group">
-                                                    <label for="eme_description">Description:</label>
-                                                    <textarea class="form-control summernote" name="eme_description">{!! $eme->eme_description !!}</textarea>
+                                                    <label for="eco_description">Description:</label>
+                                                    <textarea class="form-control summernote" name="eco_description">{!! $eco->eco_description !!}</textarea>
                                                 </div>
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                     <span class="fa fa-close"></span> Close

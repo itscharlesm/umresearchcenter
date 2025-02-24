@@ -215,8 +215,8 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ action('App\Http\Controllers\JournalController@admin_multidisciplinary') }}"
-                                    class="nav-link {{ request()->is('admin/journal/multidisciplinary') ? 'active' : '' }}">
+                                <a href="{{ action('App\Http\Controllers\JournalController@admin_economy') }}"
+                                    class="nav-link {{ request()->is('admin/journal/economy') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>JEES</p>
                                 </a>
