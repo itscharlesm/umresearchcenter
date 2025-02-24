@@ -22,7 +22,13 @@ class JournalController extends Controller
 
     public function emerging()
     {
-        return view('main.journal.emerging');
+        $emerging = DB::table('journal_emerging')
+            ->where('eme_active', 1)
+            ->first();
+
+        return view('main.journal.emerging', [
+            'eme_description' => $emerging->eme_description ?? ''
+        ]);
     }
 
     public function economy()

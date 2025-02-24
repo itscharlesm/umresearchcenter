@@ -20,7 +20,7 @@
                     <div class="section-title">
                         <h2>Journal of Emerging Technologies and Innovations (JETI)</h2>
                         <div>
-                            
+                            {!! $eme_description !!}
                         </div>
                     </div>
                 </div>
