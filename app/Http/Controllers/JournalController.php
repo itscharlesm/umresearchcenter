@@ -28,4 +28,9 @@ class JournalController extends Controller
     {
         return view('main.journal.tropical');
     }
+
+    public function social()
+    {
+        return view('main.journal.social');
+    }
 }

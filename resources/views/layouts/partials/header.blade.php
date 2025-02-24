@@ -145,8 +145,8 @@
                                         href="{{ url('/journal/tropical') }}">JTC</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('center/tropical') ? 'active' : '' }}"
-                                        href="{{ url('/center/policy') }}">JSWHDS</a>
+                                    <a class="dropdown-item {{ request()->is('journal/social') ? 'active' : '' }}"
+                                        href="{{ url('/journal/social') }}">JSWHDS</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item {{ request()->is('center/policy') ? 'active' : '' }}"
