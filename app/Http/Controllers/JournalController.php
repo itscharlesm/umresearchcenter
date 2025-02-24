@@ -55,7 +55,13 @@ class JournalController extends Controller
 
     public function social()
     {
-        return view('main.journal.social');
+        $social = DB::table('journal_social')
+            ->where('soc_active', 1)
+            ->first();
+
+        return view('main.journal.social', [
+            'soc_description' => $social->soc_description ?? ''
+        ]);
     }
 
     public function journals()

@@ -20,7 +20,7 @@
                     <div class="section-title">
                         <h2>Journal of Social Welfare and Human Development Studies (JSWHDS) - upcoming...</h2>
                         <div>
-                            
+                            {!! $soc_description !!}
                         </div>
                     </div>
                 </div>
