@@ -121,6 +121,8 @@ Route::get('/admin/journal/emerging', [JournalController::class, 'admin_emerging
 Route::post('/admin/journal/emerging/update/{eme_id}', [JournalController::class, 'admin_emerging_update']);
 Route::get('/admin/journal/economy', [JournalController::class, 'admin_economy']);
 Route::post('/admin/journal/economy/update/{eme_id}', [JournalController::class, 'admin_economy_update']);
+Route::get('/admin/journal/tropical', [JournalController::class, 'admin_tropical']);
+Route::post('/admin/journal/tropical/update/{eme_id}', [JournalController::class, 'admin_tropical_update']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);

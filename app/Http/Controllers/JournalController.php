@@ -134,4 +134,36 @@ class JournalController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_tropical()
+    {
+        $tropical = DB::table('journal_tropical')
+            ->where('tro_active', 1)
+            ->get();
+
+        return view('admin.journal.tropical', compact('tropical'));
+    }
+
+    public function admin_tropical_update(Request $request, $tro_id)
+    {
+        // Validate the request
+        $request->validate([
+            'tro_description' => 'required|string',
+        ]);
+
+        // Update the data in the database
+        DB::table('journal_tropical')
+            ->where('tro_id', $tro_id)
+            ->update([
+                'tro_description' => $request->tro_description,
+                'tro_date_modified' => Carbon::now(),
+                'tro_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }
