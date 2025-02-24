@@ -20,7 +20,7 @@
                     <div class="section-title">
                         <h2>University of Mindanao International Multidisciplinary Research Journal (UMIMRJ)</h2>
                         <div>
-                            
+                            {!! $mul_description !!}
                         </div>
                     </div>
                 </div>

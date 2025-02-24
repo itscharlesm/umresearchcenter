@@ -11,7 +11,13 @@ class JournalController extends Controller
 {
     public function multidisciplinary()
     {
-        return view('main.journal.multidisciplinary');
+        $multidisciplinary = DB::table('journal_multidisciplinary')
+            ->where('mul_active', 1)
+            ->first();
+
+        return view('main.journal.multidisciplinary', [
+            'mul_description' => $multidisciplinary->mul_description ?? ''
+        ]);
     }
 
     public function emerging()
