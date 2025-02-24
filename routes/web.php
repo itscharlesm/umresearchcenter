@@ -108,6 +108,7 @@ Route::post('/admin/center/policy/update/{col_id}', [CenterController::class, 'a
 
 // Journal
 Route::get('/journal/multidisciplinary', [JournalController::class, 'multidisciplinary']);
+Route::get('/journal/emerging', [JournalController::class, 'emerging']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);

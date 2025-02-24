@@ -13,4 +13,9 @@ class JournalController extends Controller
     {
         return view('main.journal.multidisciplinary');
     }
+
+    public function emerging()
+    {
+        return view('main.journal.emerging');
+    }
 }
