@@ -161,6 +161,12 @@
                                     png
                                     format. Size of image should not be more than 3MB.</small>
                             </div>
+                            <div class="image-container"
+                                style="width: 100%; height: 400px; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+                                <img src="{{ asset('images/news/' . $news_description->news_image) }}"
+                                    alt="carousel-item-1" class="img-fluid"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal"><span
