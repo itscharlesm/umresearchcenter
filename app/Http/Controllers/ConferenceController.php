@@ -63,4 +63,13 @@ class ConferenceController extends Controller
             'soc_description' => $social->soc_description ?? ''
         ]);
     }
+
+    public function admin_policy()
+    {
+        $policy = DB::table('conference_policy')
+            ->where('ppc_active', 1)
+            ->get();
+
+        return view('admin.conference.policy', compact('policy'));
+    }
 }

@@ -134,6 +134,9 @@ Route::get('/conference/ibe', [ConferenceController::class, 'ibe']);
 Route::get('/conference/economy', [ConferenceController::class, 'economy']);
 Route::get('/conference/social', [ConferenceController::class, 'social']);
 
+// Admin Conference
+Route::get('/admin/conference/policy', [ConferenceController::class, 'admin_policy']);
+
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);
 

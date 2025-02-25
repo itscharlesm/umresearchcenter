@@ -133,6 +133,24 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item {{ request()->is('admin/about*') ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ request()->is('admin/about*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-award"></i>
+                            <p>
+                                Manage Conference
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\ConferenceController@admin_policy') }}"
+                                    class="nav-link {{ request()->is('admin/conference/policy') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>RPC</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item {{ request()->is('admin/institute*') ? 'menu-open' : '' }}">
                         <a href="#" class="nav-link {{ request()->is('admin/institute*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-balance-scale"></i>
