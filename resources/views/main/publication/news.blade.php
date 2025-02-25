@@ -23,6 +23,16 @@
                             <br>
                             <div class="card mx-auto" style="max-width: 800px;">
                                 <div class="card-body">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <img class="rounded-circle" src="{{ asset('images/logo/um-logo.png') }}"
+                                            alt="user image" width="40" height="40">
+                                        <div class="ml-2">
+                                            <span class="font-weight-bold d-block">UM Research and Publication Center</span>
+                                            <span
+                                                class="text-muted small">{{ \Carbon\Carbon::parse($news_description->news_date_created)->diffForHumans() }}</span>
+                                        </div>
+                                    </div>
+                                    <br>
                                     <h3 class="timeline-header">{{ $news_description->news_title }}</h3>
                                     <div class="timeline-body">
                                         @if ($news_description->news_image != '')

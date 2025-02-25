@@ -15,7 +15,7 @@ class PublicationController extends Controller
         $news_descriptions = DB::table('publication_news')
             ->where('news_active', 1)
             ->orderBy('news_date_created', 'DESC')
-            ->get();
+            ->paginate(20);
 
         return view('main.publication.news', compact('news_descriptions'));
     }
