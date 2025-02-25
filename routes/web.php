@@ -149,6 +149,9 @@ Route::post('/admin/conference/social/update/{soc_id}', [ConferenceController::c
 
 // Admin Publication
 Route::get('/admin/publications/news', [PublicationController::class, 'admin_news']);
+Route::post('/admin/publications/news/create', [ConferenceController::class, 'admin_news_create']);
+Route::post('/admin/publications/news/update/{news_id}', [ConferenceController::class, 'admin_news_update']);
+Route::post('/admin/publications/news/delete/{news_id}', [ConferenceController::class, 'admin_news_delete']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);

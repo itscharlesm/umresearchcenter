@@ -29,10 +29,8 @@
                     <div class="timeline">
                         <div class="time-label">
                             <span class="bg-warning"><i class="fa fa-bullhorn"></i> News</span>
-                            @if (session('usr_type') != 3)
-                                <a class="btn btn-warning float-right" href="javascript:void(0)" data-toggle="modal"
-                                    data-target="#newAnnouncementModal"><i class="fa fa-comment"></i> Compose</a>
-                            @endif
+                            <a class="btn btn-warning float-right" href="javascript:void(0)" data-toggle="modal"
+                                data-target="#createNewsModal"><i class="fa fa-comment"></i> Compose</a>
                         </div>
                         @foreach ($news_descriptions as $news_description)
                             <div>
@@ -59,7 +57,7 @@
                                     @if (session('usr_type') != 3)
                                         <div class="timeline-footer">
                                             <a class="btn btn-danger btn-sm"
-                                                href="{{ action('App\Http\Controllers\AnnouncementController@delete', [$news_description->news_uuid]) }}"><i
+                                                href="{{ url('admin/publications/news/update/' . $news_description->news_id) }}"><i
                                                     class="fa fa-trash"></i> Delete</a>
                                         </div>
                                     @endif
@@ -73,18 +71,17 @@
     </section>
 
     {{-- Modal for Creating New Announcement --}}
-    <div class="modal fade" id="newAnnouncementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="createNewsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create New Announcement</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Create News</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{ action('App\Http\Controllers\AnnouncementController@save') }}" method="POST"
-                    enctype="multipart/form-data">
+                <form action="{{ url('admin/publications/news/create') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
@@ -94,12 +91,13 @@
                         </div>
                         <div class="form-group">
                             <label for="news_content">Message Content <span style="color:red;">*</span></label>
-                            <textarea class="form-control" id="news_content" name="news_content" rows="4"></textarea>
+                            <textarea class="form-control summernote" id="news_content" name="news_content"></textarea>
                         </div>
                         <div class="form-group">
                             <div class="custom-file">
                                 <label for="news_image">Image</label>
-                                <input type="file" class="custom-file-input" id="customFile" name="news_image" />
+                                <input type="file" class="custom-file-input" id="customFile" name="news_image"
+                                    accept=".jpg, .jpeg, .png" />
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                             <small id="fileHelp" class="form-text text-muted">Please upload a valid image file in jpg or
@@ -121,6 +119,34 @@
         $(".custom-file-input").on("change", function() {
             var fileName = $(this).val().split("\\").pop();
             $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('.summernote').summernote({
+                height: 200,
+                styleWithSpan: false, // Ensures proper list styling
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']]
+                ],
+                callbacks: {
+                    onInit: function() {
+                        // Ensure lists have correct styles on initialization
+                        $('.note-editable').find('ul').css('list-style-type', 'disc');
+                        $('.note-editable').find('ol').css('list-style-type', 'decimal');
+                    },
+                    onBlur: function(e) {
+                        // Apply styles only to existing lists instead of resetting content
+                        $('.note-editable').find('ul').css('list-style-type', 'disc');
+                        $('.note-editable').find('ol').css('list-style-type', 'decimal');
+                    }
+                }
+            });
         });
     </script>
 @endsection

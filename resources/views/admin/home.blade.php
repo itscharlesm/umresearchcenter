@@ -130,7 +130,7 @@
                         <div class="form-group">
                             <div class="custom-file">
                                 <label for="ann_image">Image</label>
-                                <input type="file" class="custom-file-input" id="customFile" name="ann_image" />
+                                <input type="file" class="custom-file-input" id="customFile" name="ann_image" accept=".jpg, .jpeg, .png"/>
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                             <small id="fileHelp" class="form-text text-muted">Please upload a valid image file in jpg or
