@@ -39,7 +39,8 @@ class AnnouncementController extends Controller
                         'ann_content' => $request->ann_content,
                         'ann_image' => $fileName,
                         'ann_date_created' => \Carbon\Carbon::now(),
-                        'ann_created_by' => session('usr_id')
+                        'ann_created_by' => session('usr_id'),
+                        'ann_active' => 1
                     ]);
         } else {
             DB::table('announcements')
@@ -49,7 +50,8 @@ class AnnouncementController extends Controller
                         'ann_content' => $request->ann_content,
                         'ann_image' => null, // Assuming no image is uploaded
                         'ann_date_created' => \Carbon\Carbon::now(),
-                        'ann_created_by' => session('usr_id')
+                        'ann_created_by' => session('usr_id'),
+                        'ann_active' => 1
                     ]);
         }
 

@@ -34,7 +34,7 @@
                         </div>
                         @foreach ($news_descriptions as $news_description)
                             <div>
-                                <i class="fas fa-newspaper bg-yellow"></i>
+                                <i class="fas fa-newspaper bg-red"></i>
                                 <div class="timeline-item">
                                     <span class="time"><i class="fas fa-clock"></i>
                                         {{ \Carbon\Carbon::parse($news_description->news_date_created)->diffForHumans() }}</span>
@@ -46,12 +46,13 @@
                                                     <img src="{{ asset('images/news/' . $news_description->news_image) }}"
                                                         alt="" style="width:100%">
                                                 </a>
+                                                <hr>
                                                 <div class="caption">
-                                                    <p>{{ $news_description->news_content }}</p>
+                                                    <p>{!! $news_description->news_content !!}</p>
                                                 </div>
                                             </div>
                                         @else
-                                            <p>{{ $news_description->news_content }}</p>
+                                            <p>{!! $news_description->news_content !!}</p>
                                         @endif
                                     </div>
                                     @if (session('usr_type') != 3)
@@ -70,7 +71,7 @@
         </div>
     </section>
 
-    {{-- Modal for Creating New Announcement --}}
+    {{-- Modal for Creating News --}}
     <div class="modal fade" id="createNewsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">

@@ -36,7 +36,7 @@
                             </div>
                             @foreach ($announcements as $announcement)
                                 <div>
-                                    <i class="fas fa-newspaper bg-yellow"></i>
+                                    <i class="fas fa-newspaper bg-red"></i>
                                     <div class="timeline-item">
                                         <span class="time"><i class="fas fa-clock"></i>
                                             {{ \Carbon\Carbon::parse($announcement->ann_date_created)->diffForHumans() }}</span>
@@ -50,6 +50,7 @@
                                                             alt="" style="width:100%">
                                                     </a>
                                                     <div class="caption">
+                                                        <hr>
                                                         <p>{{ $announcement->ann_content }}</p>
                                                     </div>
                                                 </div>
