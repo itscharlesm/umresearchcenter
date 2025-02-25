@@ -45,7 +45,7 @@
                                 </div>
                             </div>
 
-                            <!-- Modal for Policy -->
+                            <!-- Modal for Emerging -->
                             <div class="modal fade" id="updateDescriptionModal-{{ $eme->eme_id }}" tabindex="-1"
                                 role="dialog" aria-labelledby="updateDescriptionModal" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">

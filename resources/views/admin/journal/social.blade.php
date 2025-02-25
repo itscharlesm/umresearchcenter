@@ -45,7 +45,7 @@
                                 </div>
                             </div>
 
-                            <!-- Modal for Policy -->
+                            <!-- Modal for Social -->
                             <div class="modal fade" id="updateDescriptionModal-{{ $soc->soc_id }}" tabindex="-1"
                                 role="dialog" aria-labelledby="updateDescriptionModal" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
