@@ -302,6 +302,24 @@
                             <p>Manage Linkage</p>
                         </a>
                     </li>
+                    <li class="nav-item {{ request()->is('admin/publications*') ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ request()->is('admin/publications*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-share"></i>
+                            <p>
+                                Manage Publications
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\PublicationController@admin_news') }}"
+                                    class="nav-link {{ request()->is('admin/publications/news') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>News</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item {{ request()->is('admin/users*') ? 'menu-open' : '' }}">
                         <a href="#" class="nav-link {{ request()->is('admin/users*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-users"></i>

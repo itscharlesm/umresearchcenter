@@ -12,6 +12,7 @@ use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\CenterController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\ConferenceController;
+use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\CommunityEngagementController;
@@ -145,6 +146,9 @@ Route::get('/admin/conference/economy', [ConferenceController::class, 'admin_eco
 Route::post('/admin/conference/economy/update/{eco_id}', [ConferenceController::class, 'admin_economy_update']);
 Route::get('/admin/conference/social', [ConferenceController::class, 'admin_social']);
 Route::post('/admin/conference/social/update/{soc_id}', [ConferenceController::class, 'admin_social_update']);
+
+// Admin Publication
+Route::get('/admin/publications/news', [PublicationController::class, 'admin_news']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);
