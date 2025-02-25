@@ -56,6 +56,11 @@
                                         @endif
                                     </div>
                                     <div class="timeline-footer">
+                                        <a class="btn btn-secondary btn-sm activate-btn" href="javascript:void(0)"
+                                            data-toggle="modal"
+                                            data-target="#updateNewsModal-{{ $news_description->news_id }}">
+                                            <span class="fa fa-edit"></span> Update
+                                        </a>
                                         <form
                                             action="{{ url('admin/publications/news/delete/' . $news_description->news_id) }}"
                                             method="POST" style="display:inline;">
@@ -75,12 +80,12 @@
     </section>
 
     {{-- Modal for Creating News --}}
-    <div class="modal fade" id="createNewsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="createNewsModal" tabindex="-1" role="dialog" aria-labelledby="createNewsModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create News</h5>
+                    <h5 class="modal-title" id="createNewsModalLabel">Create News</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -98,8 +103,8 @@
                             <textarea class="form-control summernote" id="news_content" name="news_content"></textarea>
                         </div>
                         <div class="form-group">
+                            <label for="news_image">Image</label>
                             <div class="custom-file">
-                                <label for="news_image">Image</label>
                                 <input type="file" class="custom-file-input" id="customFile" name="news_image"
                                     accept=".jpg, .jpeg, .png" />
                                 <label class="custom-file-label" for="customFile">Choose file</label>
@@ -118,6 +123,55 @@
             </div>
         </div>
     </div>
+
+    @foreach ($news_descriptions as $news_description)
+        {{-- Modal for Updated News --}}
+        <div class="modal fade" id="updateNewsModal-{{ $news_description->news_id }}" tabindex="-1" role="dialog"
+            aria-labelledby="updateNewsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateNewsModalLabel">Update News</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="{{ url('admin/publications/news/create') }}" method="POST"
+                        enctype="multipart/form-data">
+                        @csrf
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="news_title">Title <span style="color:red;">*</span></label>
+                                <input type="text" class="form-control" id="news_title" name="news_title"
+                                    placeholder="Title" value="{{ $news_description->news_title }}" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="news_content">Message Content <span style="color:red;">*</span></label>
+                                <textarea class="form-control summernote" id="news_content" name="news_content">{{ $news_description->news_content }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="news_image">Image</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile" name="news_image"
+                                        accept=".jpg, .jpeg, .png" />
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
+                                <small id="fileHelp" class="form-text text-muted">Please upload a valid image file in jpg
+                                    or
+                                    png
+                                    format. Size of image should not be more than 3MB.</small>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><span
+                                    class="fa fa-close"></span> Close</button>
+                            <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span> Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    @endforeach
 
     <script>
         $(".custom-file-input").on("change", function() {
