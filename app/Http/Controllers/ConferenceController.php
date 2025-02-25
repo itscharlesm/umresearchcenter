@@ -168,4 +168,27 @@ class ConferenceController extends Controller
 
         return view('admin.conference.economy', compact('economy'));
     }
+
+    public function admin_economy_update(Request $request, $eco_id)
+    {
+        // Validate the request
+        $request->validate([
+            'eco_description' => 'required|string',
+        ]);
+
+        // Update the data in the database
+        DB::table('conference_economy')
+            ->where('eco_id', $eco_id)
+            ->update([
+                'eco_description' => $request->eco_description,
+                'eco_date_modified' => Carbon::now(),
+                'eco_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }
