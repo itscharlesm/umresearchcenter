@@ -161,10 +161,10 @@
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ action('App\Http\Controllers\ConferenceController@admin_ibe') }}"
-                                    class="nav-link {{ request()->is('admin/conference/ibe') ? 'active' : '' }}">
+                                <a href="{{ action('App\Http\Controllers\ConferenceController@admin_economy') }}"
+                                    class="nav-link {{ request()->is('admin/conference/economy') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Conference by IBE</p>
+                                    <p>RCEES</p>
                                 </a>
                             </li>
                         </ul>
