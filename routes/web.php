@@ -144,6 +144,7 @@ Route::post('/admin/conference/ibe/update/{ibe_id}', [ConferenceController::clas
 Route::get('/admin/conference/economy', [ConferenceController::class, 'admin_economy']);
 Route::post('/admin/conference/economy/update/{eco_id}', [ConferenceController::class, 'admin_economy_update']);
 Route::get('/admin/conference/social', [ConferenceController::class, 'admin_social']);
+Route::post('/admin/conference/social/update/{soc_id}', [ConferenceController::class, 'admin_social_update']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);

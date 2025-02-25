@@ -200,4 +200,27 @@ class ConferenceController extends Controller
 
         return view('admin.conference.social', compact('social'));
     }
+
+    public function admin_social_update(Request $request, $soc_id)
+    {
+        // Validate the request
+        $request->validate([
+            'soc_description' => 'required|string',
+        ]);
+
+        // Update the data in the database
+        DB::table('conference_social')
+            ->where('soc_id', $soc_id)
+            ->update([
+                'soc_description' => $request->soc_description,
+                'soc_date_modified' => Carbon::now(),
+                'soc_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }
