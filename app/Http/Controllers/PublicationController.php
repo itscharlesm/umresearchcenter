@@ -10,6 +10,16 @@ use DB;
 
 class PublicationController extends Controller
 {
+    public function news()
+    {
+        $news_descriptions = DB::table('publication_news')
+            ->where('news_active', 1)
+            ->orderBy('news_date_created', 'DESC')
+            ->get();
+
+        return view('main.publication.news', compact('news_descriptions'));
+    }
+
     public function admin_news()
     {
         $news_descriptions = DB::table('publication_news')

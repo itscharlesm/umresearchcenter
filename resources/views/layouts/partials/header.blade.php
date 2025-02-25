@@ -188,15 +188,15 @@
                         </ul>
                     </li>
                     {{-- Publication --}}
-                    <li class="nav-item dropdown view {{ request()->is('conference/*') ? 'active' : '' }}">
+                    <li class="nav-item dropdown view {{ request()->is('publications/*') ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Publications and Releases
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                                <a class="dropdown-item {{ request()->is('conference/policy') ? 'active' : '' }}"
-                                    href="{{ url('/conference/policy') }}">
+                                <a class="dropdown-item {{ request()->is('publications/news') ? 'active' : '' }}"
+                                    href="{{ url('/publications/news') }}">
                                     News
                                 </a>
                             </li>

@@ -147,6 +147,9 @@ Route::post('/admin/conference/economy/update/{eco_id}', [ConferenceController::
 Route::get('/admin/conference/social', [ConferenceController::class, 'admin_social']);
 Route::post('/admin/conference/social/update/{soc_id}', [ConferenceController::class, 'admin_social_update']);
 
+// Publication
+Route::get('/publications/news', [PublicationController::class, 'news']);
+
 // Admin Publication
 Route::get('/admin/publications/news', [PublicationController::class, 'admin_news']);
 Route::post('/admin/publications/news/create', [PublicationController::class, 'admin_news_create']);
