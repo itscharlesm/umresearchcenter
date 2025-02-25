@@ -95,4 +95,13 @@ class ConferenceController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_ietgi()
+    {
+        $ietgi_description = DB::table('conference_ietgi')
+            ->where('ietgi_active', 1)
+            ->get();
+
+        return view('admin.conference.ietgi', compact('ietgi_description'));
+    }
 }

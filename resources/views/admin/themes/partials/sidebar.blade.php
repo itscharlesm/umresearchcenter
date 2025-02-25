@@ -146,7 +146,16 @@
                                 <a href="{{ action('App\Http\Controllers\ConferenceController@admin_policy') }}"
                                     class="nav-link {{ request()->is('admin/conference/policy') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>RPC</p>
+                                    <p>Public Policy Conference</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\ConferenceController@admin_ietgi') }}"
+                                    class="nav-link {{ request()->is('admin/conference/ietgi') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Conference by IETGI</p>
                                 </a>
                             </li>
                         </ul>
