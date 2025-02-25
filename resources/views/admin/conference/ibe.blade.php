@@ -27,27 +27,27 @@
             <div class="card">
                 <div class="card-body overflow-auto">
                     <div class="row">
-                        @foreach ($ietgi_description as $ietgi)
+                        @foreach ($ibe_description as $ibe)
                             <div class="col-md-12">
                                 <div class="card mb-3 shadow-sm border rounded">
                                     <div class="card-header bg-light text-white">
                                         <h5 class="mb-0">Description:</h5>
                                     </div>
                                     <div class="card-body">
-                                        <p class="card-text">{!! $ietgi->ietgi_description !!}</p>
+                                        <p class="card-text">{!! $ibe->ibe_description !!}</p>
                                     </div>
                                     <div class="card-footer bg-light text-right">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
                                             data-toggle="modal"
-                                            data-target="#updateDescriptionModal-{{ $ietgi->ietgi_id }}">
+                                            data-target="#updateDescriptionModal-{{ $ibe->ibe_id }}">
                                             <span class="fa fa-edit"></span> Update
                                         </a>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Modal for IETGI -->
-                            <div class="modal fade" id="updateDescriptionModal-{{ $ietgi->ietgi_id }}" tabindex="-1"
+                            <!-- Modal for IBE -->
+                            <div class="modal fade" id="updateDescriptionModal-{{ $ibe->ibe_id }}" tabindex="-1"
                                 role="dialog" aria-labelledby="updateDescriptionModal" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
@@ -58,12 +58,12 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{ url('admin/conference/ietgi/update/' . $ietgi->ietgi_id) }}"
+                                            <form action="{{ url('admin/conference/ibe/update/' . $ibe->ibe_id) }}"
                                                 method="POST">
                                                 @csrf
                                                 <div class="form-group">
-                                                    <label for="ietgi_description">Description:</label>
-                                                    <textarea class="form-control summernote" name="ietgi_description">{!! $ietgi->ietgi_description !!}</textarea>
+                                                    <label for="ibe_description">Description:</label>
+                                                    <textarea class="form-control summernote" name="ibe_description">{!! $ibe->ibe_description !!}</textarea>
                                                 </div>
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                     <span class="fa fa-close"></span> Close

@@ -159,6 +159,15 @@
                                 </a>
                             </li>
                         </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\ConferenceController@admin_ibe') }}"
+                                    class="nav-link {{ request()->is('admin/conference/ibe') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Conference by IBE</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item {{ request()->is('admin/institute*') ? 'menu-open' : '' }}">
                         <a href="#" class="nav-link {{ request()->is('admin/institute*') ? 'active' : '' }}">

@@ -139,6 +139,7 @@ Route::get('/admin/conference/policy', [ConferenceController::class, 'admin_poli
 Route::post('/admin/conference/policy/update/{ppc_id}', [ConferenceController::class, 'admin_policy_update']);
 Route::get('/admin/conference/ietgi', [ConferenceController::class, 'admin_ietgi']);
 Route::post('/admin/conference/ietgi/update/{ietgi_id}', [ConferenceController::class, 'admin_ietgi_update']);
+Route::get('/admin/conference/ibe', [ConferenceController::class, 'admin_ibe']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);

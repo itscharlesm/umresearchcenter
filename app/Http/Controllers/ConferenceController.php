@@ -127,4 +127,13 @@ class ConferenceController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_ibe()
+    {
+        $ibe_description = DB::table('conference_ibe')
+            ->where('ibe_active', 1)
+            ->get();
+
+        return view('admin.conference.ibe', compact('ibe_description'));
+    }
 }
