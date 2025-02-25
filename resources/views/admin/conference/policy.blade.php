@@ -57,7 +57,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{ url('admin/journal/policy/update/' . $ppc->ppc_id) }}"
+                                            <form action="{{ url('admin/conference/policy/update/' . $ppc->ppc_id) }}"
                                                 method="POST">
                                                 @csrf
                                                 <div class="form-group">

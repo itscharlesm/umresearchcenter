@@ -72,4 +72,27 @@ class ConferenceController extends Controller
 
         return view('admin.conference.policy', compact('policy'));
     }
+
+    public function admin_policy_update(Request $request, $ppc_id)
+    {
+        // Validate the request
+        $request->validate([
+            'ppc_description' => 'required|string',
+        ]);
+
+        // Update the data in the database
+        DB::table('conference_policy')
+            ->where('ppc_id', $ppc_id)
+            ->update([
+                'ppc_description' => $request->ppc_description,
+                'ppc_date_modified' => Carbon::now(),
+                'ppc_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }

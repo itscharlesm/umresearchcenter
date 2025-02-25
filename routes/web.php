@@ -136,6 +136,7 @@ Route::get('/conference/social', [ConferenceController::class, 'social']);
 
 // Admin Conference
 Route::get('/admin/conference/policy', [ConferenceController::class, 'admin_policy']);
+Route::post('/admin/conference/policy/update/{ppc_id}', [ConferenceController::class, 'admin_policy_update']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);
