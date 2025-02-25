@@ -69,13 +69,58 @@ class PublicationController extends Controller
         return redirect()->back();
     }
 
+    public function admin_news_update(Request $request, $news_id)
+    {
+        $news = DB::table('publication_news')->where('news_id', $news_id)->first();
+
+        if (!$news) {
+            session()->flash('errorMessage', 'News not found.');
+            return redirect()->back();
+        }
+
+        $news_image = $request->file('news_image');
+        $fileName = $news->news_image; // Keep the existing image by default
+
+        if (isset($news_image)) {
+            $validator = Validator::make($request->all(), [
+                'news_image' => 'image|mimes:jpeg,jpg,png|max:3072',
+            ]);
+
+            if ($validator->fails()) {
+                session()->flash('errorMessage', 'Invalid image attachment. Attached image is either more than 3MB or does not conform with allowed file types.');
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            // Generate unique file name
+            $file_uuid = generateuuid();
+            $fileName = $file_uuid . '.' . $news_image->getClientOriginalExtension();
+
+            // Move new image to the 'images/news' folder
+            $news_image->move(public_path('images/news'), $fileName);
+        }
+
+        // Update news entry
+        DB::table('publication_news')
+            ->where('news_id', $news_id)
+            ->update([
+                'news_title' => $request->news_title,
+                'news_content' => $request->news_content,
+                'news_image' => $fileName, // Only update if a new image is uploaded
+                'news_date_modified' => Carbon::now(),
+                'news_modified_by' => session('usr_id')
+            ]);
+
+        session()->flash('successMessage', 'News has been successfully updated.');
+        return redirect()->back();
+    }
+
     public function admin_news_delete($news_id)
     {
         DB::table('publication_news')
             ->where('news_id', '=', $news_id)
             ->update([
-                    'news_active' => '0'
-                ]);
+                'news_active' => '0'
+            ]);
 
         session()->flash('successMessage', 'News has been successfully deleted.');
         return redirect()->back();

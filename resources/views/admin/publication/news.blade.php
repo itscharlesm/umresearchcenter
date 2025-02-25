@@ -136,7 +136,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{ url('admin/publications/news/create') }}" method="POST"
+                    <form action="{{ url('admin/publications/news/update/' . $news_description->news_id) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
