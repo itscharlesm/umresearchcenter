@@ -191,4 +191,13 @@ class ConferenceController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_social()
+    {
+        $social = DB::table('conference_social')
+            ->where('soc_active', 1)
+            ->get();
+
+        return view('admin.conference.social', compact('social'));
+    }
 }

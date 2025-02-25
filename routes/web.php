@@ -143,6 +143,7 @@ Route::get('/admin/conference/ibe', [ConferenceController::class, 'admin_ibe']);
 Route::post('/admin/conference/ibe/update/{ibe_id}', [ConferenceController::class, 'admin_ibe_update']);
 Route::get('/admin/conference/economy', [ConferenceController::class, 'admin_economy']);
 Route::post('/admin/conference/economy/update/{eco_id}', [ConferenceController::class, 'admin_economy_update']);
+Route::get('/admin/conference/social', [ConferenceController::class, 'admin_social']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);
