@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">News</h1>
+                    <h1 class="m-0">Manage News</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -25,41 +25,41 @@
         <div class="container-fluid">
             @include('layouts.partials.alerts')
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="timeline">
                         <div class="time-label">
-                            <span class="bg-warning"><i class="fa fa-bullhorn"></i> Announcements</span>
+                            <span class="bg-warning"><i class="fa fa-bullhorn"></i> News</span>
                             @if (session('usr_type') != 3)
                                 <a class="btn btn-warning float-right" href="javascript:void(0)" data-toggle="modal"
                                     data-target="#newAnnouncementModal"><i class="fa fa-comment"></i> Compose</a>
                             @endif
                         </div>
-                        @foreach ($announcements as $announcement)
+                        @foreach ($news_descriptions as $news_description)
                             <div>
                                 <i class="fas fa-newspaper bg-yellow"></i>
                                 <div class="timeline-item">
                                     <span class="time"><i class="fas fa-clock"></i>
-                                        {{ \Carbon\Carbon::parse($announcement->ann_date_created)->diffForHumans() }}</span>
-                                    <h3 class="timeline-header">{{ $announcement->ann_title }}</h3>
+                                        {{ \Carbon\Carbon::parse($news_description->news_date_created)->diffForHumans() }}</span>
+                                    <h3 class="timeline-header">{{ $news_description->news_title }}</h3>
                                     <div class="timeline-body">
-                                        @if ($announcement->ann_image != '')
+                                        @if ($news_description->news_image != '')
                                             <div class="thumbnail">
-                                                <a href="{{ asset('images/announcements/' . $announcement->ann_image) }}">
-                                                    <img src="{{ asset('images/announcements/' . $announcement->ann_image) }}"
+                                                <a href="{{ asset('images/news/' . $news_description->news_image) }}">
+                                                    <img src="{{ asset('images/news/' . $news_description->news_image) }}"
                                                         alt="" style="width:100%">
                                                 </a>
                                                 <div class="caption">
-                                                    <p>{{ $announcement->ann_content }}</p>
+                                                    <p>{{ $news_description->news_content }}</p>
                                                 </div>
                                             </div>
                                         @else
-                                            <p>{{ $announcement->ann_content }}</p>
+                                            <p>{{ $news_description->news_content }}</p>
                                         @endif
                                     </div>
                                     @if (session('usr_type') != 3)
                                         <div class="timeline-footer">
                                             <a class="btn btn-danger btn-sm"
-                                                href="{{ action('App\Http\Controllers\AnnouncementController@delete', [$announcement->ann_uuid]) }}"><i
+                                                href="{{ action('App\Http\Controllers\AnnouncementController@delete', [$news_description->news_uuid]) }}"><i
                                                     class="fa fa-trash"></i> Delete</a>
                                         </div>
                                     @endif
@@ -88,18 +88,18 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="ann_title">Title <span style="color:red;">*</span></label>
-                            <input type="text" class="form-control" id="ann_title" name="ann_title" placeholder="Title"
+                            <label for="news_title">Title <span style="color:red;">*</span></label>
+                            <input type="text" class="form-control" id="news_title" name="news_title" placeholder="Title"
                                 required />
                         </div>
                         <div class="form-group">
-                            <label for="ann_content">Message Content <span style="color:red;">*</span></label>
-                            <textarea class="form-control" id="ann_content" name="ann_content" rows="4"></textarea>
+                            <label for="news_content">Message Content <span style="color:red;">*</span></label>
+                            <textarea class="form-control" id="news_content" name="news_content" rows="4"></textarea>
                         </div>
                         <div class="form-group">
                             <div class="custom-file">
-                                <label for="ann_image">Image</label>
-                                <input type="file" class="custom-file-input" id="customFile" name="ann_image" />
+                                <label for="news_image">Image</label>
+                                <input type="file" class="custom-file-input" id="customFile" name="news_image" />
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                             <small id="fileHelp" class="form-text text-muted">Please upload a valid image file in jpg or
