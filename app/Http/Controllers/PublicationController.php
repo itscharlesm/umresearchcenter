@@ -65,7 +65,19 @@ class PublicationController extends Controller
                 ]);
         }
 
-        session()->flash('successMessage', 'Announcement has been successfully posted.');
+        session()->flash('successMessage', 'News has been successfully posted.');
+        return redirect()->back();
+    }
+
+    public function admin_news_delete($news_id)
+    {
+        DB::table('publication_news')
+            ->where('news_id', '=', $news_id)
+            ->update([
+                    'news_active' => '0'
+                ]);
+
+        session()->flash('successMessage', 'News has been successfully deleted.');
         return redirect()->back();
     }
 }

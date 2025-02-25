@@ -55,13 +55,16 @@
                                             <p>{!! $news_description->news_content !!}</p>
                                         @endif
                                     </div>
-                                    @if (session('usr_type') != 3)
-                                        <div class="timeline-footer">
-                                            <a class="btn btn-danger btn-sm"
-                                                href="{{ url('admin/publications/news/update/' . $news_description->news_id) }}"><i
-                                                    class="fa fa-trash"></i> Delete</a>
-                                        </div>
-                                    @endif
+                                    <div class="timeline-footer">
+                                        <form
+                                            action="{{ url('admin/publications/news/delete/' . $news_description->news_id) }}"
+                                            method="POST" style="display:inline;">
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-trash"></i> Delete
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
