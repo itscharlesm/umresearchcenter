@@ -104,4 +104,27 @@ class ConferenceController extends Controller
 
         return view('admin.conference.ietgi', compact('ietgi_description'));
     }
+
+    public function admin_ietgi_update(Request $request, $ietgi_id)
+    {
+        // Validate the request
+        $request->validate([
+            'ietgi_description' => 'required|string',
+        ]);
+
+        // Update the data in the database
+        DB::table('conference_ietgi')
+            ->where('ietgi_id', $ietgi_id)
+            ->update([
+                'ietgi_description' => $request->ietgi_description,
+                'ietgi_date_modified' => Carbon::now(),
+                'ietgi_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }
