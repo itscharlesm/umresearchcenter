@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">CONFERENCE BY IETGI</h1>
+                    <h1 class="m-0">CONFERENCE BY IBE</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -13,7 +13,7 @@
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
                         </li>
                         <li class="breadcrumb-item active">Conferences</li>
-                        <li class="breadcrumb-item active">IETGI</li>
+                        <li class="breadcrumb-item active">IBE</li>
                     </ol>
                 </div>
             </div>
@@ -38,8 +38,7 @@
                                     </div>
                                     <div class="card-footer bg-light text-right">
                                         <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)"
-                                            data-toggle="modal"
-                                            data-target="#updateDescriptionModal-{{ $ibe->ibe_id }}">
+                                            data-toggle="modal" data-target="#updateDescriptionModal-{{ $ibe->ibe_id }}">
                                             <span class="fa fa-edit"></span> Update
                                         </a>
                                     </div>

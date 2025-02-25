@@ -136,4 +136,27 @@ class ConferenceController extends Controller
 
         return view('admin.conference.ibe', compact('ibe_description'));
     }
+
+    public function admin_ibe_update(Request $request, $ibe_id)
+    {
+        // Validate the request
+        $request->validate([
+            'ibe_description' => 'required|string',
+        ]);
+
+        // Update the data in the database
+        DB::table('conference_ibe')
+            ->where('ibe_id', $ibe_id)
+            ->update([
+                'ibe_description' => $request->ibe_description,
+                'ibe_date_modified' => Carbon::now(),
+                'ibe_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }
