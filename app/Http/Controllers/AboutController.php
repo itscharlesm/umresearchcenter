@@ -210,4 +210,13 @@ class AboutController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_team()
+    {
+        $team_descriptions = DB::table('about_team')
+            ->where('team_active', 1)
+            ->get();
+
+        return view('admin.about.team', compact('team_descriptions'));
+    }
 }

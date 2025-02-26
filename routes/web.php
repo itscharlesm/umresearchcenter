@@ -75,6 +75,7 @@ Route::get('/admin/about/agenda-priority', [AboutController::class, 'admin_agend
 Route::post('/admin/about/agenda-priority/update/{agpr_id}', [AboutController::class, 'admin_agenda_priority_update']);
 Route::get('/admin/about/program-funding', [AboutController::class, 'admin_program_funding']);
 Route::post('/admin/about/program-funding/update/{prfu_id}', [AboutController::class, 'admin_program_funding_update']);
+Route::get('/admin/about/team', [AboutController::class, 'admin_team']);
 
 // Institute
 Route::get('/institute/popular', [InstituteController::class, 'popular']);
