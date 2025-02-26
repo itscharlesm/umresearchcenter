@@ -33,7 +33,7 @@
                                         </div>
                                     </div>
                                     <br>
-                                    <h3 class="timeline-header">{{ $news_description->news_title }}</h3>
+                                    <h3 class="timeline-header text-justify">{{ $news_description->news_title }}</h3>
                                     <div class="timeline-body">
                                         @if ($news_description->news_image != '')
                                             <div class="thumbnail">
@@ -43,22 +43,22 @@
                                                 </a>
                                                 <hr>
                                                 <div class="caption">
-                                                    @if (strlen(preg_replace('/\s+/', '', strip_tags($news_description->news_content))) > 500)
-                                                        <p>{!! substr($news_description->news_content, 0, 500) !!}...</p>
+                                                    @if (strlen(preg_replace('/\s+/', '', strip_tags($news_description->news_content))) > 1000)
+                                                        <p>{!! substr($news_description->news_content, 0, 1000) !!}...</p>
                                                     @else
                                                         <p>{!! $news_description->news_content !!}</p>
                                                     @endif
                                                 </div>
                                             </div>
                                         @else
-                                            @if (strlen(preg_replace('/\s+/', '', strip_tags($news_description->news_content))) > 500)
-                                                <p>{!! substr($news_description->news_content, 0, 500) !!}...</p>
+                                            @if (strlen(preg_replace('/\s+/', '', strip_tags($news_description->news_content))) > 1000)
+                                                <p>{!! substr($news_description->news_content, 0, 1000) !!}...</p>
                                             @else
                                                 <p>{!! $news_description->news_content !!}</p>
                                             @endif
                                         @endif
                                     </div>
-                                    @if (strlen(preg_replace('/\s+/', '', strip_tags($news_description->news_content))) > 500)
+                                    @if (strlen(preg_replace('/\s+/', '', strip_tags($news_description->news_content))) > 1000)
                                         <a class="btn btn-primary" href="javascript:void(0)" data-toggle="modal"
                                             data-target="#newsModal-{{ $news_description->news_id }}">
                                             Read More
@@ -72,13 +72,25 @@
                                 <div class="modal-dialog modal-xl" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="newsModalLabel">{{ $news_description->news_title }}
-                                            </h5>
+                                            <h5 class="modal-title" id="newsModalLabel">Read the Full News</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="rounded-circle" src="{{ asset('images/logo/um-logo.png') }}"
+                                                    alt="user image" width="40" height="40">
+                                                <div class="ml-2">
+                                                    <span class="font-weight-bold d-block">UM Research and Publication
+                                                        Center</span>
+                                                    <span
+                                                        class="text-muted small">{{ \Carbon\Carbon::parse($news_description->news_date_created)->diffForHumans() }}</span>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <h3 class="timeline-header text-justify">{{ $news_description->news_title }}
+                                            </h3>
                                             @if ($news_description->news_image != '')
                                                 <div class="text-center">
                                                     <img src="{{ asset('images/news/' . $news_description->news_image) }}"
