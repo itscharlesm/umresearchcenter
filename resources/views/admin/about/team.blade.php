@@ -12,6 +12,7 @@
                         <li class="breadcrumb-item">
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
                         </li>
+                        <li class="breadcrumb-item active">About</li>
                         <li class="breadcrumb-item active">Teams</li>
                     </ol>
                 </div>
