@@ -49,13 +49,23 @@
                                             {{ $team_description->team_email }}
                                         </p>
                                     </div>
+                                    <a class="btn btn-warning btn-xs activate-btn" href="javascript:void(0)"
+                                        data-toggle="modal" data-target="#updateTeamModal">
+                                        <span class="fa fa-plus"></span> Update
+                                    </a>
                                 </div>
                             </div>
                         @endforeach
                     </div>
                 </div>
+                <div class="card-footer bg-light text-right">
+                    <a class="btn btn-warning btn-sm activate-btn" href="javascript:void(0)" data-toggle="modal"
+                        data-target="#addTeamModal">
+                        <span class="fa fa-plus"></span> Add a Team
+                    </a>
+                </div>
             </div>
-            
+
         </div>
     </section>
 
