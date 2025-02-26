@@ -18,10 +18,10 @@
                 <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0" data-aos="zoom-in-left" data-aos-duration="1000"
                     data-aos-delay="100" data-aos-once="false">
                     <div class="card border-0 rounded-0 hover-shadow">
-                        <div class="card-img position-relative">
+                        <div class="card-img position-relative d-flex justify-content-center">
                             <img class="card-img-top rounded-0" src="{{ asset('images/about/image-maria.jpg') }}"
                                 alt="event thumb" style="width: 255px; height: 250px; object-fit: cover;">
-                        </div>
+                        </div>                        
                         <div class="card-body text-center"
                             style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
                             <p class="font-weight-bold" style="font-size: 13px; margin: 0;">Maria Linda B. Arquiza, Ed.D.
@@ -40,7 +40,7 @@
                 <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0" data-aos="zoom-in-left" data-aos-duration="1000"
                     data-aos-delay="100" data-aos-once="false">
                     <div class="card border-0 rounded-0 hover-shadow">
-                        <div class="card-img position-relative">
+                        <div class="card-img position-relative d-flex justify-content-center">
                             <img class="card-img-top rounded-0" src="{{ asset('images/about/image-milton.jpg') }}"
                                 alt="event thumb" style="width: 255px; height: 250px; object-fit: cover;">
                         </div>
@@ -63,7 +63,7 @@
                 <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0" data-aos="zoom-in-left" data-aos-duration="1000"
                     data-aos-delay="100" data-aos-once="false">
                     <div class="card border-0 rounded-0 hover-shadow">
-                        <div class="card-img position-relative">
+                        <div class="card-img position-relative d-flex justify-content-center">
                             <img class="card-img-top rounded-0" src="{{ asset('images/about/image-joel.jpg') }}"
                                 alt="event thumb" style="width: 255px; height: 250px; object-fit: cover;">
                         </div>
@@ -84,7 +84,7 @@
                 <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0" data-aos="zoom-in-left" data-aos-duration="1000"
                     data-aos-delay="100" data-aos-once="false">
                     <div class="card border-0 rounded-0 hover-shadow">
-                        <div class="card-img position-relative">
+                        <div class="card-img position-relative d-flex justify-content-center">
                             <img class="card-img-top rounded-0" src="{{ asset('images/about/image-chosel.jpg') }}"
                                 alt="event thumb" style="width: 255px; height: 250px; object-fit: cover;">
                         </div>
@@ -106,7 +106,7 @@
                 <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0" data-aos="zoom-in-left" data-aos-duration="1000"
                     data-aos-delay="100" data-aos-once="false">
                     <div class="card border-0 rounded-0 hover-shadow">
-                        <div class="card-img position-relative">
+                        <div class="card-img position-relative d-flex justify-content-center">
                             <img class="card-img-top rounded-0" src="{{ asset('images/about/image-john.jpg') }}"
                                 alt="event thumb" style="width: 255px; height: 250px; object-fit: cover;">
                         </div>
@@ -128,7 +128,7 @@
                 <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0" data-aos="zoom-in-left" data-aos-duration="1000"
                     data-aos-delay="100" data-aos-once="false">
                     <div class="card border-0 rounded-0 hover-shadow">
-                        <div class="card-img position-relative">
+                        <div class="card-img position-relative d-flex justify-content-center">
                             <img class="card-img-top rounded-0" src="{{ asset('images/about/image-analyn.jpg') }}"
                                 alt="event thumb" style="width: 255px; height: 250px; object-fit: cover;">
                         </div>
@@ -149,7 +149,7 @@
                 <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0" data-aos="zoom-in-left" data-aos-duration="1000"
                     data-aos-delay="100" data-aos-once="false">
                     <div class="card border-0 rounded-0 hover-shadow">
-                        <div class="card-img position-relative">
+                        <div class="card-img position-relative d-flex justify-content-center">
                             <img class="card-img-top rounded-0" src="{{ asset('images/about/image-efrhain.jpg') }}"
                                 alt="event thumb" style="width: 255px; height: 250px; object-fit: cover;">
                         </div>
@@ -170,7 +170,7 @@
                 <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0" data-aos="zoom-in-left" data-aos-duration="1000"
                     data-aos-delay="100" data-aos-once="false">
                     <div class="card border-0 rounded-0 hover-shadow">
-                        <div class="card-img position-relative">
+                        <div class="card-img position-relative d-flex justify-content-center">
                             <img class="card-img-top rounded-0" src="{{ asset('images/about/image-melissa.jpg') }}"
                                 alt="event thumb" style="width: 255px; height: 250px; object-fit: cover;">
                         </div>
@@ -191,7 +191,7 @@
                 <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0" data-aos="zoom-in-left" data-aos-duration="1000"
                     data-aos-delay="100" data-aos-once="false">
                     <div class="card border-0 rounded-0 hover-shadow">
-                        <div class="card-img position-relative">
+                        <div class="card-img position-relative d-flex justify-content-center">
                             <img class="card-img-top rounded-0" src="{{ asset('images/about/image-jomari.jpg') }}"
                                 alt="event thumb" style="width: 255px; height: 250px; object-fit: cover;">
                         </div>
@@ -212,7 +212,7 @@
                 <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0" data-aos="zoom-in-left" data-aos-duration="1000"
                     data-aos-delay="100" data-aos-once="false">
                     <div class="card border-0 rounded-0 hover-shadow">
-                        <div class="card-img position-relative">
+                        <div class="card-img position-relative d-flex justify-content-center">
                             <img class="card-img-top rounded-0" src="{{ asset('images/about/image-vanesa.jpg') }}"
                                 alt="event thumb" style="width: 255px; height: 250px; object-fit: cover;">
                         </div>
@@ -234,7 +234,7 @@
                 <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0" data-aos="zoom-in-left" data-aos-duration="1000"
                     data-aos-delay="100" data-aos-once="false">
                     <div class="card border-0 rounded-0 hover-shadow">
-                        <div class="card-img position-relative">
+                        <div class="card-img position-relative d-flex justify-content-center">
                             <img class="card-img-top rounded-0" src="{{ asset('images/about/image-francis.jpg') }}"
                                 alt="event thumb" style="width: 255px; height: 250px; object-fit: cover;">
                         </div>
@@ -255,7 +255,7 @@
                 <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0" data-aos="zoom-in-left" data-aos-duration="1000"
                     data-aos-delay="100" data-aos-once="false">
                     <div class="card border-0 rounded-0 hover-shadow">
-                        <div class="card-img position-relative">
+                        <div class="card-img position-relative d-flex justify-content-center">
                             <img class="card-img-top rounded-0" src="{{ asset('images/about/image-karen.jpg') }}"
                                 alt="event thumb" style="width: 255px; height: 250px; object-fit: cover;">
                         </div>
