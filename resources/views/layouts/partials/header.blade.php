@@ -6,7 +6,7 @@
                 <div class="col-lg-4 text-center text-lg-left">
                     <ul class="list-inline d-inline">
                         <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color"
-                                href="https://www.facebook.com/umrpc/"><i class="ti-facebook"></i></a></li>
+                                href="https://www.facebook.com/umrpc/" target="_blank"><i class="ti-facebook"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-lg-8 text-center text-lg-right">
