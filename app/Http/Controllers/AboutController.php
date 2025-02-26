@@ -219,4 +219,18 @@ class AboutController extends Controller
 
         return view('admin.about.team', compact('team_descriptions'));
     }
+
+    public function admin_team_delete($team_id)
+    {
+        DB::table('about_team')
+            ->where('team_id', '=', $team_id)
+            ->update([
+                'team_active' => '0',
+                'team_date_modified' => Carbon::now(),
+                'team_modified_by' => session('usr_id')
+            ]);
+
+        session()->flash('successMessage', 'User part in the team has been successfully removed.');
+        return redirect()->back();
+    }
 }

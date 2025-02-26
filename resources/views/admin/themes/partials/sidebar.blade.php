@@ -142,8 +142,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item {{ request()->is('admin/about*') ? 'menu-open' : '' }}">
-                        <a href="#" class="nav-link {{ request()->is('admin/about*') ? 'active' : '' }}">
+                    <li class="nav-item {{ request()->is('admin/conference*') ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ request()->is('admin/conference*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-award"></i>
                             <p>
                                 Manage Conference
@@ -312,7 +312,8 @@
                         </a>
                     </li>
                     <li class="nav-item {{ request()->is('admin/publications*') ? 'menu-open' : '' }}">
-                        <a href="#" class="nav-link {{ request()->is('admin/publications*') ? 'active' : '' }}">
+                        <a href="#"
+                            class="nav-link {{ request()->is('admin/publications*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-share"></i>
                             <p>
                                 Manage Publications

@@ -50,7 +50,7 @@
                                         </p>
                                     </div>
                                     <a class="btn btn-warning btn-xs activate-btn" href="javascript:void(0)"
-                                        data-toggle="modal" data-target="#updateTeamModal">
+                                        data-toggle="modal" data-target="#updateTeamModal-{{ $team_description->team_id }}">
                                         <span class="fa fa-plus"></span> Update
                                     </a>
                                 </div>
@@ -65,9 +65,77 @@
                     </a>
                 </div>
             </div>
-
         </div>
     </section>
+
+    {{-- Modal for Updated News --}}
+    @foreach ($team_descriptions as $team_description)
+        <div class="modal fade" id="updateTeamModal-{{ $team_description->team_id }}" tabindex="-1" role="dialog"
+            aria-labelledby="updateNewsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-between align-items-center">
+                        <h5 class="modal-title" id="updateNewsModalLabel">Update Information</h5>
+                        <div class="d-flex align-items-center">
+                            <form action="{{ url('admin/about/team/delete/' . $team_description->team_id) }}" method="POST"
+                                enctype="multipart/form-data" class="mr-2">
+                                @csrf
+                                <button type="submit" class="btn btn-warning btn-sm"><span
+                                        class="fa fa-trash"></span></button>
+                            </form>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <form action="{{ url('admin/publications/news/update/' . $team_description->team_id) }}" method="POST"
+                        enctype="multipart/form-data">
+                        @csrf
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="team_name">Title <span style="color:red;">*</span></label>
+                                <input type="text" class="form-control" id="team_name" name="team_name"
+                                    placeholder="Title" value="{{ $team_description->team_name }}" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="team_position">Title <span style="color:red;">*</span></label>
+                                <input type="text" class="form-control" id="team_position" name="team_position"
+                                    placeholder="Title" value="{{ $team_description->team_position }}" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="team_email">Title <span style="color:red;">*</span></label>
+                                <input type="text" class="form-control" id="team_email" name="team_email"
+                                    placeholder="Title" value="{{ $team_description->team_email }}" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="news_image">Image</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile" name="news_image"
+                                        accept=".jpg, .jpeg, .png" />
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
+                                <small id="fileHelp" class="form-text text-muted">Please upload a valid image file in jpg
+                                    or
+                                    png
+                                    format. Size of image should not be more than 3MB.</small>
+                            </div>
+                            <div class="image-container"
+                                style="width: 100%; height: 400px; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+                                <img src="{{ asset('images/about/team/' . $team_description->team_image) }}"
+                                    alt="carousel-item-1" class="img-fluid"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><span
+                                    class="fa fa-close"></span> Close</button>
+                            <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span> Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    @endforeach
 
     <script>
         $(document).ready(function() {

@@ -129,7 +129,9 @@ class PublicationController extends Controller
         DB::table('publication_news')
             ->where('news_id', '=', $news_id)
             ->update([
-                'news_active' => '0'
+                'news_active' => '0',
+                'news_date_modified' => Carbon::now(),
+                'news_modified_by' => session('usr_id')
             ]);
 
         session()->flash('successMessage', 'News has been successfully deleted.');

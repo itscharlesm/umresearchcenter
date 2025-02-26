@@ -124,8 +124,8 @@
         </div>
     </div>
 
+    {{-- Modal for Updated News --}}
     @foreach ($news_descriptions as $news_description)
-        {{-- Modal for Updated News --}}
         <div class="modal fade" id="updateNewsModal-{{ $news_description->news_id }}" tabindex="-1" role="dialog"
             aria-labelledby="updateNewsModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
@@ -136,8 +136,8 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{ url('admin/publications/news/update/' . $news_description->news_id) }}" method="POST"
-                        enctype="multipart/form-data">
+                    <form action="{{ url('admin/publications/news/update/' . $news_description->news_id) }}"
+                        method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
                             <div class="form-group">
