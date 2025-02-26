@@ -30,9 +30,7 @@
                              Multidisciplinary Research
                              Conference</p>
                          <a href="event-single.html">
-                             <h4 class="card-title">Join PANUKIDUKI 6.0: The 6th International Multidisciplinary
-                                 Research
-                                 Conference! Central Mindanao Colleges (CMC) ...</h4>
+                             <h4 class="card-title">UM Research and Publication Center</h4>
                          </a>
                      </div>
                  </div>
@@ -52,9 +50,7 @@
                              Multidisciplinary Research
                              Conference</p>
                          <a href="event-single.html">
-                             <h4 class="card-title">Join PANUKIDUKI 6.0: The 6th International Multidisciplinary
-                                 Research
-                                 Conference! Central Mindanao Colleges (CMC) ...</h4>
+                             <h4 class="card-title">UM Research and Publication Center</h4>
                          </a>
                      </div>
                  </div>
@@ -74,9 +70,7 @@
                              Multidisciplinary Research
                              Conference</p>
                          <a href="event-single.html">
-                             <h4 class="card-title">Join PANUKIDUKI 6.0: The 6th International Multidisciplinary
-                                 Research
-                                 Conference! Central Mindanao Colleges (CMC) ...</h4>
+                             <h4 class="card-title">UM Research and Publication Center</h4>
                          </a>
                      </div>
                  </div>
