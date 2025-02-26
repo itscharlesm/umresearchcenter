@@ -23,7 +23,7 @@
                 <!-- Links Column -->
                 <div class="col-lg-3 col-md-3 col-sm-4 mb-5 mb-md-0">
                     <h4 class="text-white mb-4" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                        data-aos-once="false">CMC</h4>
+                        data-aos-once="false">UM</h4>
                     <ul class="list-unstyled">
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
                             data-aos-once="false"><a class="text-color-footer" href="about.html">About Us</a></li>
@@ -34,13 +34,13 @@
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
                             data-aos-once="false"><a class="text-color-footer" href="blog.html">Community Engagement</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="about.html">CMCian Life</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="about.html">UMian Life</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
                             data-aos-once="false"><a class="text-color-footer" href="teacher.html">Online Service</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
                             data-aos-once="false"><a class="text-color-footer" href="contact.html">Alumni</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="blog.html">CMC Cial</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="blog.html">UM Cial</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
                             data-aos-once="false"><a class="text-color-footer" href="blog.html">Publications</a></li>
                         <!-- Add more links as needed -->
@@ -56,9 +56,9 @@
                             data-aos-once="false"><a class="text-color-footer" href="courses.html">Online Enrollment</a>
                         </li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="events.html">CMC - EIS</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="events.html">UM - EIS</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="notice.html">CMC - SIS</a></li>
+                            data-aos-once="false"><a class="text-color-footer" href="notice.html">UM - SIS</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
                             data-aos-once="false"><a class="text-color-footer" href="scholarship.html">Online Request</a>
                         </li>
@@ -76,43 +76,43 @@
                         data-aos-once="false">Facebook Pages</h4>
                     <ul class="list-unstyled">
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">ICMC
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">IUM
                                 Communication</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">UM
                                 Admission</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">UM
                                 Registrar</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">UM
                                 Accounting & Finance</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC Senior
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">UM Senior
                                 High School</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC Computing
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">UM Computing
                                 Ed</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC Criminal
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">UM Criminal
                                 Justice</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC Civil
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">UM Civil
                                 Eng'g Ed</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">UM
                                 Accountancy & Buss.</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC Teacher
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">UM Teacher
                                 Education</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC Physical
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">UM Physical
                                 Education</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">UM
                                 Psychology Dep't</a></li>
                         <li class="mb-3" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100"
-                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">CMC Graduate
+                            data-aos-once="false"><a class="text-color-footer" href="https://themefisher.com/">UM Graduate
                                 School Ed.</a></li>
                         <!-- Add more links as needed -->
                     </ul>

@@ -105,7 +105,8 @@ class AdminController extends Controller
                 'users.usr_last_name',
                 'users.usr_first_name',
                 'users.usr_middle_name'
-            ) // Select required columns
+            )
+            ->orderBy('con_date_created', 'DESC')
             ->get();
 
         return view('admin.messages', compact('messages'));
