@@ -40,7 +40,11 @@ class AboutController extends Controller
 
     public function meet_our_team()
     {
-        return view('main.about.team', );
+        $team_descriptions = DB::table('about_team')
+            ->where('team_active', 1)
+            ->get();
+
+        return view('main.about.team', compact('team_descriptions'));
     }
 
     public function contact_us()
