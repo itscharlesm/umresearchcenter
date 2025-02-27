@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
 use DB;
 
@@ -218,6 +219,52 @@ class AboutController extends Controller
             ->get();
 
         return view('admin.about.team', compact('team_descriptions'));
+    }
+
+    public function admin_team_update(Request $request, $team_id)
+    {
+        $team_descriptions = DB::table('about_team')->where('team_id', $team_id)->first();
+
+        if (!$team_descriptions) {
+            session()->flash('errorMessage', 'Team not found.');
+            return redirect()->back();
+        }
+
+        $team_descriptions_image = $request->file('team_image');
+        $fileName = $team_descriptions->team_image; // Keep the existing image by default
+
+        if (isset($team_descriptions_image)) {
+            $validator = Validator::make($request->all(), [
+                'team_image' => 'image|mimes:jpeg,jpg,png|max:3072',
+            ]);
+
+            if ($validator->fails()) {
+                session()->flash('errorMessage', 'Invalid image attachment. Attached image is either more than 3MB or does not conform with allowed file types.');
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            // Generate unique file name
+            $file_uuid = generateuuid();
+            $fileName = $file_uuid . '.' . $team_descriptions_image->getClientOriginalExtension();
+
+            // Move new image to the 'images/about/team' folder
+            $team_descriptions_image->move(public_path('images/about/team'), $fileName);
+        }
+
+        // Update team entry
+        DB::table('about_team')
+            ->where('team_id', $team_id)
+            ->update([
+                'team_name' => $request->team_name,
+                'team_position' => $request->team_position,
+                'team_email' => $request->team_email,
+                'team_image' => $fileName, // Only update if a new image is uploaded
+                'team_date_modified' => Carbon::now(),
+                'team_modified_by' => session('usr_id')
+            ]);
+
+        session()->flash('successMessage', 'A team member has been successfully updated.');
+        return redirect()->back();
     }
 
     public function admin_team_delete($team_id)

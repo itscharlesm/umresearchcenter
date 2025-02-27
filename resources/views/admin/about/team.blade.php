@@ -68,7 +68,7 @@
         </div>
     </section>
 
-    {{-- Modal for Updated News --}}
+    {{-- Modal for Update Team --}}
     @foreach ($team_descriptions as $team_description)
         <div class="modal fade" id="updateTeamModal-{{ $team_description->team_id }}" tabindex="-1" role="dialog"
             aria-labelledby="updateNewsModalLabel" aria-hidden="true">
@@ -88,7 +88,7 @@
                             </button>
                         </div>
                     </div>
-                    <form action="{{ url('admin/publications/news/update/' . $team_description->team_id) }}" method="POST"
+                    <form action="{{ url('admin/about/team/update/' . $team_description->team_id) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
@@ -108,9 +108,9 @@
                                     placeholder="Title" value="{{ $team_description->team_email }}" required />
                             </div>
                             <div class="form-group">
-                                <label for="news_image">Image</label>
+                                <label for="team_image">Image</label>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile" name="news_image"
+                                    <input type="file" class="custom-file-input" id="customFile" name="team_image"
                                         accept=".jpg, .jpeg, .png" />
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
