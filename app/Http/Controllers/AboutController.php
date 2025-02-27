@@ -221,6 +221,47 @@ class AboutController extends Controller
         return view('admin.about.team', compact('team_descriptions'));
     }
 
+    public function admin_team_add(Request $request)
+    {
+        // Validate input fields
+        $validator = Validator::make($request->all(), [
+            'team_name' => 'required|string|max:255',
+            'team_position' => 'required|string|max:255',
+            'team_email' => 'required|email|max:255|unique:about_team,team_email',
+            'team_image' => 'required|image|mimes:jpeg,jpg,png|max:3072',
+        ]);
+
+        if ($validator->fails()) {
+            session()->flash('errorMessage', 'Validation failed. Please check the input fields.');
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $fileName = null;
+        if ($request->hasFile('team_image')) {
+            // Generate a unique file name
+            $file_uuid = generateuuid();
+            $team_image = $request->file('team_image');
+            $fileName = $file_uuid . '.' . $team_image->getClientOriginalExtension();
+
+            // Move uploaded image to 'images/about/team' directory
+            $team_image->move(public_path('images/about/team'), $fileName);
+        }
+
+        // Insert new team member into the database
+        DB::table('about_team')->insert([
+            'team_name' => $request->team_name,
+            'team_position' => $request->team_position,
+            'team_email' => $request->team_email,
+            'team_image' => $fileName,
+            'team_date_created' => Carbon::now(),
+            'team_created_by' => session('usr_id'),
+            'team_active' => 1
+        ]);
+
+        session()->flash('successMessage', 'A new team member has been successfully added.');
+        return redirect()->back();
+    }
+
     public function admin_team_update(Request $request, $team_id)
     {
         $team_descriptions = DB::table('about_team')->where('team_id', $team_id)->first();

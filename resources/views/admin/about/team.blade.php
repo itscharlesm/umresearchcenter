@@ -68,6 +68,61 @@
         </div>
     </section>
 
+    {{-- Modal for Add Team --}}
+    <div class="modal fade" id="addTeamModal" tabindex="-1" role="dialog"
+        aria-labelledby="addTeamModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-between align-items-center">
+                    <h5 class="modal-title" id="addTeamModalLabel">Add Personnel on the Team</h5>
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <form action="{{ url('admin/about/team/add') }}" method="POST"
+                    enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="team_name">Title <span style="color:red;">*</span></label>
+                            <input type="text" class="form-control" id="team_name" name="team_name"
+                                placeholder="Enter Name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="team_position">Position <span style="color:red;">*</span></label>
+                            <input type="text" class="form-control" id="team_position" name="team_position"
+                                placeholder="Enter Position" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="team_email">Email <span style="color:red;">*</span></label>
+                            <input type="email" class="form-control" id="team_email" name="team_email"
+                                placeholder="Enter Email" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="team_image">Image <span style="color:red;">*</span></label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile" name="team_image"
+                                    accept=".jpg, .jpeg, .png" required/>
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                            <small id="fileHelp" class="form-text text-muted">Please upload a valid image file in jpg
+                                or
+                                png
+                                format. Size of image should not be more than 3MB.</small>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><span
+                                class="fa fa-close"></span> Close</button>
+                        <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span> Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     {{-- Modal for Update Team --}}
     @foreach ($team_descriptions as $team_description)
         <div class="modal fade" id="updateTeamModal-{{ $team_description->team_id }}" tabindex="-1" role="dialog"
@@ -95,17 +150,17 @@
                             <div class="form-group">
                                 <label for="team_name">Title <span style="color:red;">*</span></label>
                                 <input type="text" class="form-control" id="team_name" name="team_name"
-                                    placeholder="Title" value="{{ $team_description->team_name }}" required />
+                                    placeholder="Enter Name" value="{{ $team_description->team_name }}" required />
                             </div>
                             <div class="form-group">
-                                <label for="team_position">Title <span style="color:red;">*</span></label>
+                                <label for="team_position">Position <span style="color:red;">*</span></label>
                                 <input type="text" class="form-control" id="team_position" name="team_position"
-                                    placeholder="Title" value="{{ $team_description->team_position }}" required />
+                                    placeholder="Enter Position" value="{{ $team_description->team_position }}" required />
                             </div>
                             <div class="form-group">
-                                <label for="team_email">Title <span style="color:red;">*</span></label>
-                                <input type="text" class="form-control" id="team_email" name="team_email"
-                                    placeholder="Title" value="{{ $team_description->team_email }}" required />
+                                <label for="team_email">Email <span style="color:red;">*</span></label>
+                                <input type="email" class="form-control" id="team_email" name="team_email"
+                                    placeholder="Enter Email" value="{{ $team_description->team_email }}" required />
                             </div>
                             <div class="form-group">
                                 <label for="team_image">Image</label>
@@ -136,6 +191,13 @@
             </div>
         </div>
     @endforeach
+
+    <script>
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
 
     <script>
         $(document).ready(function() {

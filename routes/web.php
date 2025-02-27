@@ -76,6 +76,7 @@ Route::post('/admin/about/agenda-priority/update/{agpr_id}', [AboutController::c
 Route::get('/admin/about/program-funding', [AboutController::class, 'admin_program_funding']);
 Route::post('/admin/about/program-funding/update/{prfu_id}', [AboutController::class, 'admin_program_funding_update']);
 Route::get('/admin/about/team', [AboutController::class, 'admin_team']);
+Route::post('/admin/about/team/add', [AboutController::class, 'admin_team_add']);
 Route::post('/admin/about/team/update/{team_id}', [AboutController::class, 'admin_team_update']);
 Route::post('/admin/about/team/delete/{team_id}', [AboutController::class, 'admin_team_delete']);
 
