@@ -197,6 +197,7 @@
                     ['color', ['color']],
                     ['para', ['ul', 'ol', 'paragraph']],
                     ['insert', ['link']],
+                    ['insert', ['picture']],
                     ['height', ['height']]
                 ],
                 callbacks: {
