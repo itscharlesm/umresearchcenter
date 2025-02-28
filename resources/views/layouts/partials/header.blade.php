@@ -119,6 +119,29 @@
                             </li>
                         </ul>
                     </li>
+                    {{-- Offices --}}
+                    <li class="nav-item dropdown view {{ request()->is('center/*') ? 'active' : '' }}">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Offices
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item {{ request()->is('center/nanotechnology') ? 'active' : '' }}"
+                                    href="{{ url('/center/nanotechnology') }}">
+                                    TTIPMO
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item {{ request()->is('center/coleoptera') ? 'active' : '' }}"
+                                    href="{{ url('/center/coleoptera') }}">ITSO</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item {{ request()->is('center/policy') ? 'active' : '' }}"
+                                    href="{{ url('/center/policy') }}">UMASENSO Hub</a>
+                            </li>
+                        </ul>
+                    </li>
                     {{-- Journals --}}
                     <li class="nav-item {{ request()->is('journals') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/journals') }}">Journals</a>

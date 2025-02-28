@@ -13,6 +13,7 @@ use App\Http\Controllers\CenterController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\ConferenceController;
 use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\OfficeController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\CommunityEngagementController;
@@ -111,6 +112,9 @@ Route::get('/admin/center/coleoptera', [CenterController::class, 'admin_coleopte
 Route::post('/admin/center/coleoptera/update/{col_id}', [CenterController::class, 'admin_coleoptera_update']);
 Route::get('/admin/center/policy', [CenterController::class, 'admin_policy']);
 Route::post('/admin/center/policy/update/{col_id}', [CenterController::class, 'admin_policy_update']);
+
+// Office
+Route::get('/office/technology', [OfficeController::class, 'technology']);
 
 // Journal
 Route::get('/journals', [JournalController::class, 'main']);
