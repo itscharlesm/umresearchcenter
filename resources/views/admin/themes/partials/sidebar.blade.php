@@ -358,7 +358,7 @@
                                 <a href="{{ action('App\Http\Controllers\OfficeController@admin_umasenso') }}"
                                     class="nav-link {{ request()->is('admin/office/umasenso') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>TPI - UMASENSO</p>
+                                    <p>TBI - UMASENSO</p>
                                 </a>
                             </li>
                         </ul>

@@ -20,7 +20,7 @@
                     <div class="section-title">
                         <h2>Technology Transfer and Intellectual Property Management Office</h2>
                         <div>
-                            
+                            {!! $tech_description !!}
                         </div>
                     </div>
                 </div>

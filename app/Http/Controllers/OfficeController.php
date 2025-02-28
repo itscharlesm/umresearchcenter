@@ -12,7 +12,13 @@ class OfficeController extends Controller
 {
     public function technology()
     {
-        return view('main.office.technology');
+        $technology = DB::table('office_technology')
+        ->where('tech_active', 1)
+        ->first();
+
+        return view('main.office.technology', [
+            'tech_description' => $technology->tech_description ?? ''
+        ]);
     }
 
     public function innovation()
