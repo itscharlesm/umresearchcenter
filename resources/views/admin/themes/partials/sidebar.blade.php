@@ -347,6 +347,13 @@
                                     <p>TTIPMO</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\OfficeController@admin_innovation') }}"
+                                    class="nav-link {{ request()->is('admin/office/innovation') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>ITSO</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item {{ request()->is('admin/users*') ? 'menu-open' : '' }}">

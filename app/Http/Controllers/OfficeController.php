@@ -56,4 +56,36 @@ class OfficeController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_innovation()
+    {
+        $innovation = DB::table('office_innovation')
+            ->where('inno_active', 1)
+            ->get();
+
+        return view('admin.office.innovation', compact('innovation'));
+    }
+
+    public function admin_innovation_update(Request $request, $inno_id)
+    {
+        // Validate the request
+        $request->validate([
+            'inno_description' => 'required|string',
+        ]);
+
+        // Update the data in the database
+        DB::table('office_innovation')
+            ->where('inno_id', $inno_id)
+            ->update([
+                'inno_description' => $request->inno_description,
+                'inno_date_modified' => Carbon::now(),
+                'inno_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }
