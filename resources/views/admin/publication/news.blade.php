@@ -196,6 +196,7 @@
                     ['font', ['strikethrough', 'superscript', 'subscript']],
                     ['color', ['color']],
                     ['para', ['ul', 'ol', 'paragraph']],
+                    ['insert', ['link']],
                     ['height', ['height']]
                 ],
                 callbacks: {
