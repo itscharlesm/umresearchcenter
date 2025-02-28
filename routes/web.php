@@ -118,6 +118,9 @@ Route::get('/office/technology', [OfficeController::class, 'technology']);
 Route::get('/office/innovation', [OfficeController::class, 'innovation']);
 Route::get('/office/umasenso', [OfficeController::class, 'umasenso']);
 
+// Admin Office
+Route::get('/admin/offices/technology', [OfficeController::class, 'admin_technology']);
+
 // Journal
 Route::get('/journals', [JournalController::class, 'main']);
 

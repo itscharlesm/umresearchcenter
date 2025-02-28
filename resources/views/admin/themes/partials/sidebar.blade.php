@@ -330,6 +330,25 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item {{ request()->is('admin/offices*') ? 'menu-open' : '' }}">
+                        <a href="#"
+                            class="nav-link {{ request()->is('admin/offices*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-landmark"></i>
+                            <p>
+                                Manage Offices
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\OfficeController@admin_technology') }}"
+                                    class="nav-link {{ request()->is('admin/offices/technology') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>TTIPMO</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item {{ request()->is('admin/users*') ? 'menu-open' : '' }}">
                         <a href="#" class="nav-link {{ request()->is('admin/users*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-users"></i>

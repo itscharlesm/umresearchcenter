@@ -138,7 +138,7 @@
                             </li>
                             <li>
                                 <a class="dropdown-item {{ request()->is('office/umasenso') ? 'active' : '' }}"
-                                    href="{{ url('/office/umasenso') }}">UMASENSO Hub</a>
+                                    href="{{ url('/office/umasenso') }}">UMASENSO HUB</a>
                             </li>
                         </ul>
                     </li>
