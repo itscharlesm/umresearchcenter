@@ -20,7 +20,7 @@
                     <div class="section-title">
                         <h2>TBI - UMASENSO Hub</h2>
                         <div>
-                            
+                            {!! $umas_description !!}
                         </div>
                     </div>
                 </div>

@@ -13,8 +13,8 @@ class OfficeController extends Controller
     public function technology()
     {
         $technology = DB::table('office_technology')
-        ->where('tech_active', 1)
-        ->first();
+            ->where('tech_active', 1)
+            ->first();
 
         return view('main.office.technology', [
             'tech_description' => $technology->tech_description ?? ''
@@ -24,8 +24,8 @@ class OfficeController extends Controller
     public function innovation()
     {
         $innovation = DB::table('office_innovation')
-        ->where('inno_active', 1)
-        ->first();
+            ->where('inno_active', 1)
+            ->first();
 
         return view('main.office.innovation', [
             'inno_description' => $innovation->inno_description ?? ''
@@ -34,7 +34,13 @@ class OfficeController extends Controller
 
     public function umasenso()
     {
-        return view('main.office.umasenso');
+        $umasenso = DB::table('office_umasenso')
+            ->where('umas_active', 1)
+            ->first();
+
+        return view('main.office.umasenso', [
+            'umas_description' => $umasenso->umas_description ?? ''
+        ]);
     }
 
     public function admin_technology()
