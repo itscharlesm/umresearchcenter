@@ -137,8 +137,8 @@
                                     href="{{ url('/office/innovation') }}">ITSO</a>
                             </li>
                             <li>
-                                <a class="dropdown-item {{ request()->is('center/policy') ? 'active' : '' }}"
-                                    href="{{ url('/center/policy') }}">UMASENSO Hub</a>
+                                <a class="dropdown-item {{ request()->is('office/umasenso') ? 'active' : '' }}"
+                                    href="{{ url('/office/umasenso') }}">UMASENSO Hub</a>
                             </li>
                         </ul>
                     </li>

@@ -19,4 +19,9 @@ class OfficeController extends Controller
     {
         return view('main.office.innovation');
     }
+
+    public function umasenso()
+    {
+        return view('main.office.umasenso');
+    }
 }
