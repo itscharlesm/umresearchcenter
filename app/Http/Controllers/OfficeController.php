@@ -92,7 +92,7 @@ class OfficeController extends Controller
     public function admin_umasenso()
     {
         $umasenso = DB::table('office_umasenso')
-            ->where('inno_active', 1)
+            ->where('umas_active', 1)
             ->get();
 
         return view('admin.office.umasenso', compact('umasenso'));

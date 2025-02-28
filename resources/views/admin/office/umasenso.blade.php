@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">TECHNOLOGY TRANSFER AND INTELLECTUAL PROPERTY MANAGEMENT OFFICE (TTIPMO)</h1>
+                    <h1 class="m-0">UMASENSO HUB (TBI)</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -13,7 +13,7 @@
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
                         </li>
                         <li class="breadcrumb-item active">Offices</li>
-                        <li class="breadcrumb-item active">TTIPMO</li>
+                        <li class="breadcrumb-item active">TBI</li>
                     </ol>
                 </div>
             </div>
