@@ -20,7 +20,7 @@
                     <div class="section-title">
                         <h2>Innovation and Technology Support Office</h2>
                         <div>
-                            
+                            {!! $inno_description !!}
                         </div>
                     </div>
                 </div>

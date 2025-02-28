@@ -23,7 +23,13 @@ class OfficeController extends Controller
 
     public function innovation()
     {
-        return view('main.office.innovation');
+        $innovation = DB::table('office_innovation')
+        ->where('inno_active', 1)
+        ->first();
+
+        return view('main.office.innovation', [
+            'inno_description' => $innovation->inno_description ?? ''
+        ]);
     }
 
     public function umasenso()
