@@ -49,7 +49,7 @@
                     <div class="section-title">
                         <h2>COLLEGE JOURNALS</h2>
                         <div>
-                            
+
                         </div>
                     </div>
                 </div>
