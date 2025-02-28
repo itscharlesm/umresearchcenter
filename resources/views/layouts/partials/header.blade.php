@@ -120,15 +120,15 @@
                         </ul>
                     </li>
                     {{-- Offices --}}
-                    <li class="nav-item dropdown view {{ request()->is('center/*') ? 'active' : '' }}">
+                    <li class="nav-item dropdown view {{ request()->is('office/*') ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Offices
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                                <a class="dropdown-item {{ request()->is('center/nanotechnology') ? 'active' : '' }}"
-                                    href="{{ url('/center/nanotechnology') }}">
+                                <a class="dropdown-item {{ request()->is('office/technology') ? 'active' : '' }}"
+                                    href="{{ url('/office/technology') }}">
                                     TTIPMO
                                 </a>
                             </li>
