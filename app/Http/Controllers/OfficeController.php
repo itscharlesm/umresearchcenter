@@ -14,4 +14,9 @@ class OfficeController extends Controller
     {
         return view('main.office.technology');
     }
+
+    public function innovation()
+    {
+        return view('main.office.innovation');
+    }
 }

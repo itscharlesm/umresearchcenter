@@ -133,8 +133,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item {{ request()->is('center/coleoptera') ? 'active' : '' }}"
-                                    href="{{ url('/center/coleoptera') }}">ITSO</a>
+                                <a class="dropdown-item {{ request()->is('office/innovation') ? 'active' : '' }}"
+                                    href="{{ url('/office/innovation') }}">ITSO</a>
                             </li>
                             <li>
                                 <a class="dropdown-item {{ request()->is('center/policy') ? 'active' : '' }}"

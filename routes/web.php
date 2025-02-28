@@ -115,6 +115,7 @@ Route::post('/admin/center/policy/update/{col_id}', [CenterController::class, 'a
 
 // Office
 Route::get('/office/technology', [OfficeController::class, 'technology']);
+Route::get('/office/innovation', [OfficeController::class, 'innovation']);
 
 // Journal
 Route::get('/journals', [JournalController::class, 'main']);
