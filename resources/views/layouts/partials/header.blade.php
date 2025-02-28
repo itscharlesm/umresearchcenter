@@ -120,39 +120,8 @@
                         </ul>
                     </li>
                     {{-- Journals --}}
-                    <li class="nav-item dropdown view {{ request()->is('journal/*') ? 'active' : '' }}">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Journals
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li>
-                                <a class="dropdown-item {{ request()->is('journal/multidisciplinary') ? 'active' : '' }}"
-                                    href="{{ url('/journal/multidisciplinary') }}">
-                                    UMIMRJ
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item {{ request()->is('journal/emerging') ? 'active' : '' }}"
-                                    href="{{ url('/journal/emerging') }}">JETI</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item {{ request()->is('journal/economy') ? 'active' : '' }}"
-                                    href="{{ url('/journal/economy') }}">JEES</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item {{ request()->is('journal/tropical') ? 'active' : '' }}"
-                                    href="{{ url('/journal/tropical') }}">JTC</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item {{ request()->is('journal/social') ? 'active' : '' }}"
-                                    href="{{ url('/journal/social') }}">JSWHDS</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item {{ request()->is('journal/college-journals') ? 'active' : '' }}"
-                                    href="{{ url('/journal/college-journals') }}">College Journals</a>
-                            </li>
-                        </ul>
+                    <li class="nav-item {{ request()->is('journals') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ url('/journals') }}">Journals</a>
                     </li>
                     {{-- Conferences --}}
                     <li class="nav-item dropdown view {{ request()->is('conference/*') ? 'active' : '' }}">

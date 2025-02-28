@@ -113,12 +113,7 @@ Route::get('/admin/center/policy', [CenterController::class, 'admin_policy']);
 Route::post('/admin/center/policy/update/{col_id}', [CenterController::class, 'admin_policy_update']);
 
 // Journal
-Route::get('/journal/multidisciplinary', [JournalController::class, 'multidisciplinary']);
-Route::get('/journal/emerging', [JournalController::class, 'emerging']);
-Route::get('/journal/economy', [JournalController::class, 'economy']);
-Route::get('/journal/tropical', [JournalController::class, 'tropical']);
-Route::get('/journal/social', [JournalController::class, 'social']);
-Route::get('/journal/college-journals', [JournalController::class, 'journals']);
+Route::get('/journals', [JournalController::class, 'main']);
 
 // Admin Journal
 Route::get('/admin/journal/multidisciplinary', [JournalController::class, 'admin_multidisciplinary']);

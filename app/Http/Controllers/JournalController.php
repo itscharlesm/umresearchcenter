@@ -9,57 +9,33 @@ use DB;
 
 class JournalController extends Controller
 {
-    public function multidisciplinary()
+    public function main()
     {
         $multidisciplinary = DB::table('journal_multidisciplinary')
             ->where('mul_active', 1)
             ->first();
 
-        return view('main.journal.multidisciplinary', [
-            'mul_description' => $multidisciplinary->mul_description ?? ''
-        ]);
-    }
-
-    public function emerging()
-    {
         $emerging = DB::table('journal_emerging')
             ->where('eme_active', 1)
             ->first();
 
-        return view('main.journal.emerging', [
-            'eme_description' => $emerging->eme_description ?? ''
-        ]);
-    }
-
-    public function economy()
-    {
         $economy = DB::table('journal_economy')
             ->where('eco_active', 1)
             ->first();
 
-        return view('main.journal.economy', [
-            'eco_description' => $economy->eco_description ?? ''
-        ]);
-    }
-
-    public function tropical()
-    {
         $tropical = DB::table('journal_tropical')
             ->where('tro_active', 1)
             ->first();
 
-        return view('main.journal.tropical', [
-            'tro_description' => $tropical->tro_description ?? ''
-        ]);
-    }
-
-    public function social()
-    {
         $social = DB::table('journal_social')
             ->where('soc_active', 1)
             ->first();
 
-        return view('main.journal.social', [
+        return view('main.journal.index', [
+            'mul_description' => $multidisciplinary->mul_description ?? '',
+            'eme_description' => $emerging->eme_description ?? '',
+            'eco_description' => $economy->eco_description ?? '',
+            'tro_description' => $tropical->tro_description ?? '',
             'soc_description' => $social->soc_description ?? ''
         ]);
     }
