@@ -330,9 +330,9 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item {{ request()->is('admin/offices*') ? 'menu-open' : '' }}">
+                    <li class="nav-item {{ request()->is('admin/office*') ? 'menu-open' : '' }}">
                         <a href="#"
-                            class="nav-link {{ request()->is('admin/offices*') ? 'active' : '' }}">
+                            class="nav-link {{ request()->is('admin/office*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-landmark"></i>
                             <p>
                                 Manage Offices
@@ -342,7 +342,7 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ action('App\Http\Controllers\OfficeController@admin_technology') }}"
-                                    class="nav-link {{ request()->is('admin/offices/technology') ? 'active' : '' }}">
+                                    class="nav-link {{ request()->is('admin/office/technology') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>TTIPMO</p>
                                 </a>

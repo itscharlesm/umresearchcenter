@@ -5,15 +5,15 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">JOURNAL OF ECONOMY AND ENTERPRISE STUDIES (JEES)</h1>
+                    <h1 class="m-0">TECHNOLOGY TRANSFER AND INTELLECTUAL PROPERTY MANAGEMENT OFFICE (TTIPMO)</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
                         </li>
-                        <li class="breadcrumb-item active">Journals</li>
-                        <li class="breadcrumb-item active">JEES</li>
+                        <li class="breadcrumb-item active">Offices</li>
+                        <li class="breadcrumb-item active">TTIPMO</li>
                     </ol>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{ url('admin/journal/economy/update/' . $tech->tech_id) }}"
+                                            <form action="{{ url('admin/office/technology/update/' . $tech->tech_id) }}"
                                                 method="POST">
                                                 @csrf
                                                 <div class="form-group">
