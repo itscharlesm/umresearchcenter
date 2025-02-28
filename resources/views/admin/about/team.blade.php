@@ -69,8 +69,8 @@
     </section>
 
     {{-- Modal for Add Team --}}
-    <div class="modal fade" id="addTeamModal" tabindex="-1" role="dialog"
-        aria-labelledby="addTeamModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addTeamModal" tabindex="-1" role="dialog" aria-labelledby="addTeamModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-between align-items-center">
@@ -81,8 +81,7 @@
                         </button>
                     </div>
                 </div>
-                <form action="{{ url('admin/about/team/add') }}" method="POST"
-                    enctype="multipart/form-data">
+                <form action="{{ url('admin/about/team/add') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
@@ -104,7 +103,7 @@
                             <label for="team_image">Image <span style="color:red;">*</span></label>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="customFile" name="team_image"
-                                    accept=".jpg, .jpeg, .png" required/>
+                                    accept=".jpg, .jpeg, .png" required />
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                             <small id="fileHelp" class="form-text text-muted">Please upload a valid image file in jpg
@@ -132,8 +131,8 @@
                     <div class="modal-header d-flex justify-content-between align-items-center">
                         <h5 class="modal-title" id="updateNewsModalLabel">Update Information</h5>
                         <div class="d-flex align-items-center">
-                            <form action="{{ url('admin/about/team/delete/' . $team_description->team_id) }}" method="POST"
-                                enctype="multipart/form-data" class="mr-2">
+                            <form action="{{ url('admin/about/team/delete/' . $team_description->team_id) }}"
+                                method="POST" enctype="multipart/form-data" class="mr-2">
                                 @csrf
                                 <button type="submit" class="btn btn-warning btn-sm"><span
                                         class="fa fa-trash"></span></button>
@@ -155,7 +154,8 @@
                             <div class="form-group">
                                 <label for="team_position">Position <span style="color:red;">*</span></label>
                                 <input type="text" class="form-control" id="team_position" name="team_position"
-                                    placeholder="Enter Position" value="{{ $team_description->team_position }}" required />
+                                    placeholder="Enter Position" value="{{ $team_description->team_position }}"
+                                    required />
                             </div>
                             <div class="form-group">
                                 <label for="team_email">Email <span style="color:red;">*</span></label>
@@ -209,6 +209,7 @@
                     ['font', ['strikethrough', 'superscript', 'subscript']],
                     ['color', ['color']],
                     ['para', ['ul', 'ol', 'paragraph']],
+                    ['insert', ['link']],
                     ['height', ['height']]
                 ],
                 callbacks: {
