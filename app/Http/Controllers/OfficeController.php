@@ -88,4 +88,36 @@ class OfficeController extends Controller
         // Redirect back
         return redirect()->back();
     }
+
+    public function admin_umasenso()
+    {
+        $umasenso = DB::table('office_umasenso')
+            ->where('inno_active', 1)
+            ->get();
+
+        return view('admin.office.umasenso', compact('umasenso'));
+    }
+
+    public function admin_umasenso_update(Request $request, $umas_id)
+    {
+        // Validate the request
+        $request->validate([
+            'umas_description' => 'required|string',
+        ]);
+
+        // Update the data in the database
+        DB::table('office_umasenso')
+            ->where('umas_id', $umas_id)
+            ->update([
+                'umas_description' => $request->umas_description,
+                'umas_date_modified' => Carbon::now(),
+                'umas_modified_by' => session('usr_id'),
+            ]);
+
+        // Flash success message
+        session()->flash('successMessage', 'Description updated successfully.');
+
+        // Redirect back
+        return redirect()->back();
+    }
 }

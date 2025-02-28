@@ -122,7 +122,9 @@ Route::get('/office/umasenso', [OfficeController::class, 'umasenso']);
 Route::get('/admin/office/technology', [OfficeController::class, 'admin_technology']);
 Route::post('/admin/office/technology/update/{tech_id}', [OfficeController::class, 'admin_technology_update']);
 Route::get('/admin/office/innovation', [OfficeController::class, 'admin_innovation']);
-Route::post('/admin/office/innovation/update/{tech_id}', [OfficeController::class, 'admin_innovation_update']);
+Route::post('/admin/office/innovation/update/{inno_id}', [OfficeController::class, 'admin_innovation_update']);
+Route::get('/admin/office/umasenso', [OfficeController::class, 'admin_umasenso']);
+Route::post('/admin/office/umasenso/update/{umas_id}', [OfficeController::class, 'admin_umasenso_update']);
 
 // Journal
 Route::get('/journals', [JournalController::class, 'main']);
