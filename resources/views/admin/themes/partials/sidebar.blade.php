@@ -200,7 +200,7 @@
                                 <a href="{{ action('App\Http\Controllers\InstituteController@admin_popular') }}"
                                     class="nav-link {{ request()->is('admin/institute/popular') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>PO</p>
+                                    <p>IPO</p>
                                 </a>
                             </li>
                         </ul>
@@ -227,7 +227,7 @@
                                 <a href="{{ action('App\Http\Controllers\InstituteController@admin_economy') }}"
                                     class="nav-link {{ request()->is('admin/institute/economy') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>EES</p>
+                                    <p>IEES</p>
                                 </a>
                             </li>
                         </ul>
