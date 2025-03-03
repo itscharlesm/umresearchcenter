@@ -270,4 +270,13 @@ class PublicationController extends Controller
         session()->flash('successMessage', 'IPO Press Release has been successfully deleted.');
         return redirect()->back();
     }
+
+    public function admin_policy()
+    {
+        $policy_descriptions = DB::table('publication_policy')
+            ->where('pol_active', 1)
+            ->get();
+
+        return view('admin.publication.policy', compact('policy_descriptions'));
+    }
 }

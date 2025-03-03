@@ -338,6 +338,15 @@
                                 </a>
                             </li>
                         </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\PublicationController@admin_policy') }}"
+                                    class="nav-link {{ request()->is('admin/publications/policy') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Policy Briefs</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item {{ request()->is('admin/office*') ? 'menu-open' : '' }}">
                         <a href="#"
