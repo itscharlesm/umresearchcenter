@@ -5,15 +5,15 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">JOURNAL OF ECONOMY AND ENTERPRISE STUDIES (JEES)</h1>
+                    <h1 class="m-0">POLICY BRIEFS</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
                         </li>
-                        <li class="breadcrumb-item active">Journals</li>
-                        <li class="breadcrumb-item active">JEES</li>
+                        <li class="breadcrumb-item active">Publications</li>
+                        <li class="breadcrumb-item active">Policy Briefs</li>
                     </ol>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                                 </div>
                             </div>
 
-                            <!-- Modal for Economy -->
+                            <!-- Modal for Policy -->
                             <div class="modal fade" id="updateDescriptionModal-{{ $pol->pol_id }}" tabindex="-1"
                                 role="dialog" aria-labelledby="updateDescriptionModal" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
@@ -57,7 +57,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{ url('admin/journal/economy/update/' . $pol->pol_id) }}"
+                                            <form action="{{ url('admin/publications/policy/update/' . $pol->pol_id) }}"
                                                 method="POST">
                                                 @csrf
                                                 <div class="form-group">
