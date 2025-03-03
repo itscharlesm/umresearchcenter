@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Manage News</h1>
+                    <h1 class="m-0">Manage IPO Press Release</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -13,7 +13,7 @@
                             <a href="{{ action('App\Http\Controllers\AdminController@home') }}">Home</a>
                         </li>
                         <li class="breadcrumb-item active">Publications</li>
-                        <li class="breadcrumb-item active">News</li>
+                        <li class="breadcrumb-item active">IPO</li>
                     </ol>
                 </div>
             </div>
@@ -28,9 +28,9 @@
                 <div class="col-md-12">
                     <div class="timeline">
                         <div class="time-label">
-                            <span class="bg-warning"><i class="fa fa-bullhorn"></i> News</span>
+                            <span class="bg-warning"><i class="fa fa-bullhorn"></i> IPO</span>
                             <a class="btn btn-warning float-right" href="javascript:void(0)" data-toggle="modal"
-                                data-target="#createNewsModal"><i class="fa fa-comment"></i> Compose</a>
+                                data-target="#createIPOModal"><i class="fa fa-comment"></i> Compose</a>
                         </div>
                         @foreach ($ipo_releases as $ipo_release)
                             <div>
@@ -57,12 +57,10 @@
                                     </div>
                                     <div class="timeline-footer">
                                         <a class="btn btn-secondary btn-sm activate-btn" href="javascript:void(0)"
-                                            data-toggle="modal"
-                                            data-target="#updateNewsModal-{{ $ipo_release->ipo_id }}">
+                                            data-toggle="modal" data-target="#updateIPOModal-{{ $ipo_release->ipo_id }}">
                                             <span class="fa fa-edit"></span> Update
                                         </a>
-                                        <form
-                                            action="{{ url('admin/publications/news/delete/' . $ipo_release->ipo_id) }}"
+                                        <form action="{{ url('admin/publications/ipo/delete/' . $ipo_release->ipo_id) }}"
                                             method="POST" style="display:inline;">
                                             @csrf
                                             <button type="submit" class="btn btn-danger btn-sm">
@@ -79,18 +77,18 @@
         </div>
     </section>
 
-    {{-- Modal for Creating News --}}
-    <div class="modal fade" id="createNewsModal" tabindex="-1" role="dialog" aria-labelledby="createNewsModalLabel"
+    {{-- Modal for Creating IPO --}}
+    <div class="modal fade" id="createIPOModal" tabindex="-1" role="dialog" aria-labelledby="createIPOModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="createNewsModalLabel">Create News</h5>
+                    <h5 class="modal-title" id="createIPOModalLabel">Create IPO Press Release</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{ url('admin/publications/news/create') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('admin/publications/ipo/create') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
@@ -124,20 +122,20 @@
         </div>
     </div>
 
-    {{-- Modal for Updated News --}}
+    {{-- Modal for Updated IPO --}}
     @foreach ($ipo_releases as $ipo_release)
-        <div class="modal fade" id="updateNewsModal-{{ $ipo_release->ipo_id }}" tabindex="-1" role="dialog"
-            aria-labelledby="updateNewsModalLabel" aria-hidden="true">
+        <div class="modal fade" id="updateIPOModal-{{ $ipo_release->ipo_id }}" tabindex="-1" role="dialog"
+            aria-labelledby="updateIPOModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="updateNewsModalLabel">Update News</h5>
+                        <h5 class="modal-title" id="updateIPOModalLabel">Update IPO Press Release</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{ url('admin/publications/news/update/' . $ipo_release->ipo_id) }}"
-                        method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('admin/publications/ipo/update/' . $ipo_release->ipo_id) }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
                             <div class="form-group">
@@ -163,9 +161,8 @@
                             </div>
                             <div class="image-container"
                                 style="width: 100%; height: 400px; display: flex; justify-content: center; align-items: center; overflow: hidden;">
-                                <img src="{{ asset('images/ipo/' . $ipo_release->ipo_image) }}"
-                                    alt="carousel-item-1" class="img-fluid"
-                                    style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="{{ asset('images/ipo/' . $ipo_release->ipo_image) }}" alt="carousel-item-1"
+                                    class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                         </div>
                         <div class="modal-footer">

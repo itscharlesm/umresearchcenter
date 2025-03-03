@@ -169,6 +169,9 @@ Route::post('/admin/publications/news/create', [PublicationController::class, 'a
 Route::post('/admin/publications/news/update/{news_id}', [PublicationController::class, 'admin_news_update']);
 Route::post('/admin/publications/news/delete/{news_id}', [PublicationController::class, 'admin_news_delete']);
 Route::get('/admin/publications/ipo', [PublicationController::class, 'admin_ipo']);
+Route::post('/admin/publications/ipo/create', [PublicationController::class, 'admin_ipo_create']);
+Route::post('/admin/publications/ipo/update/{ipo_id}', [PublicationController::class, 'admin_ipo_update']);
+Route::post('/admin/publications/ipo/delete/{ipo_id}', [PublicationController::class, 'admin_ipo_delete']);
 
 // Linkage
 Route::get('/linkages', [LinkageController::class, 'linkages']);
