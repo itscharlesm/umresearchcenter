@@ -138,6 +138,16 @@ class PublicationController extends Controller
         return redirect()->back();
     }
 
+    public function ipo()
+    {
+        $ipo_releases = DB::table('publication_ipo')
+            ->where('ipo_active', 1)
+            ->orderBy('ipo_date_created', 'DESC')
+            ->paginate(20);
+
+        return view('main.publication.ipo', compact('ipo_releases'));
+    }
+
     public function admin_ipo()
     {
         $ipo_releases = DB::table('publication_ipo')

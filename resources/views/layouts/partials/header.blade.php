@@ -6,7 +6,8 @@
                 <div class="col-lg-4 text-center text-lg-left">
                     <ul class="list-inline d-inline">
                         <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color"
-                                href="https://www.facebook.com/umrpc/" target="_blank"><i class="ti-facebook"></i></a></li>
+                                href="https://www.facebook.com/umrpc/" target="_blank"><i class="ti-facebook"></i></a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-8 text-center text-lg-right">
@@ -188,6 +189,12 @@
                                 <a class="dropdown-item {{ request()->is('publications/news') ? 'active' : '' }}"
                                     href="{{ url('/publications/news') }}">
                                     News
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item {{ request()->is('publications/ipo-press-release') ? 'active' : '' }}"
+                                    href="{{ url('/publications/ipo-press-release') }}">
+                                    IPO Press Release
                                 </a>
                             </li>
                         </ul>
