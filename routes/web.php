@@ -163,6 +163,7 @@ Route::post('/admin/conference/social/update/{soc_id}', [ConferenceController::c
 // Publication
 Route::get('/publications/news', [PublicationController::class, 'news']);
 Route::get('/publications/ipo-press-release', [PublicationController::class, 'ipo']);
+Route::get('/publications/policy', [PublicationController::class, 'policy']);
 
 // Admin Publication
 Route::get('/admin/publications/news', [PublicationController::class, 'admin_news']);

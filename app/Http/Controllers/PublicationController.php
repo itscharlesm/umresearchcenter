@@ -20,6 +20,21 @@ class PublicationController extends Controller
         return view('main.publication.news', compact('news_descriptions'));
     }
 
+    public function ipo()
+    {
+        $ipo_releases = DB::table('publication_ipo')
+            ->where('ipo_active', 1)
+            ->orderBy('ipo_date_created', 'DESC')
+            ->paginate(20);
+
+        return view('main.publication.ipo', compact('ipo_releases'));
+    }
+
+    public function policy()
+    {
+        return view('main.publication.policy');
+    }
+
     public function admin_news()
     {
         $news_descriptions = DB::table('publication_news')
@@ -136,16 +151,6 @@ class PublicationController extends Controller
 
         session()->flash('successMessage', 'News has been successfully deleted.');
         return redirect()->back();
-    }
-
-    public function ipo()
-    {
-        $ipo_releases = DB::table('publication_ipo')
-            ->where('ipo_active', 1)
-            ->orderBy('ipo_date_created', 'DESC')
-            ->paginate(20);
-
-        return view('main.publication.ipo', compact('ipo_releases'));
     }
 
     public function admin_ipo()

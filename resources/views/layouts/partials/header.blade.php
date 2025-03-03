@@ -197,6 +197,12 @@
                                     IPO Press Release
                                 </a>
                             </li>
+                            <li>
+                                <a class="dropdown-item {{ request()->is('publications/policy') ? 'active' : '' }}"
+                                    href="{{ url('/publications/policy') }}">
+                                    Policy Briefs
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     {{-- Lingkages --}}
