@@ -329,6 +329,15 @@
                                 </a>
                             </li>
                         </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ action('App\Http\Controllers\PublicationController@admin_ipo') }}"
+                                    class="nav-link {{ request()->is('admin/publications/ipo') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>IPO Pres Release</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item {{ request()->is('admin/office*') ? 'menu-open' : '' }}">
                         <a href="#"

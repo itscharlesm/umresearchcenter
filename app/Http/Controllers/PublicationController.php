@@ -137,4 +137,14 @@ class PublicationController extends Controller
         session()->flash('successMessage', 'News has been successfully deleted.');
         return redirect()->back();
     }
+
+    public function admin_ipo()
+    {
+        $ipo_releases = DB::table('publication_ipo')
+            ->where('ipo_active', 1)
+            ->orderBy('ipo_date_created', 'DESC')
+            ->get();
+
+        return view('admin.publication.ipo', compact('ipo_releases'));
+    }
 }
